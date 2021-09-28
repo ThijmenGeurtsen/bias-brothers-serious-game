@@ -97,3 +97,17 @@ body{
 .game-menu:hover .game-menu-button {
     background-color: #3e8e41;
 }
+
+.game-middle{
+    background-color: white;
+}
+
+.map{
+    width: 100%;
+    max-height: 400px;
+}
+
+.newsfeed{
+
+}
+
