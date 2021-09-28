@@ -39,3 +39,12 @@ body{
     margin: 5px;
     min-width: 55px;
 }
+
+.infection-numbers{
+    float: left;
+    width: 40%;
+}
+
+.infection-numbers li{
+    list-style: none;
+}
