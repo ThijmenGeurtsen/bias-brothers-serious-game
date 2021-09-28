@@ -48,3 +48,9 @@ body{
 .infection-numbers li{
     list-style: none;
 }
+
+.timer{
+    text-align: center;
+    width: 10%;
+    float: left;
+}
