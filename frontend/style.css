@@ -111,3 +111,21 @@ body{
 
 }
 
+.game-bottem{
+    min-height: 250px;
+}
+
+.scenario{
+    float: left;
+    width: 40%;
+
+}
+
+.questions{
+    float: right;
+    width: 60%;
+}
+
+@media only screen and (min-width: 800px){
+
+}
