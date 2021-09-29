@@ -137,8 +137,8 @@
 
 // var button = document.getElementById('next').addEventListener('click', buttonClick)
 
- function buttonClick(){
-    console.log('Button clicked');
-   document.getElementById('next').textContent = 'Antwoorden inleveren';}
+// function buttonClick(){
+//    console.log('Button clicked');
+//   document.getElementById('next').textContent = 'Antwoorden inleveren';}
 
 
