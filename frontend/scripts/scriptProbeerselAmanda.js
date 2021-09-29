@@ -6,11 +6,10 @@ function buttonNextClick(){
 
 function buttonLoginClick(){
 var name = document.querySelector('#name');
-    alert(name.value);
+    alert('Welkom ' + name.value);
     document.documentElement.textContent = 'index.html'
 }
 
 function buttonLogoutClick(){
     document.documentElement.textContent = 'start.html';
-
 }

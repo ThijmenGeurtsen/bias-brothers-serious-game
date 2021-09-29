@@ -110,7 +110,7 @@ body {
 
 .scenario {
   box-sizing: border-box;
-  width: 40%;
+  width: 50%;
   height: 229px;
   float: left;
   border-top: solid black 1px;
@@ -121,7 +121,7 @@ body {
 
 .questions {
   box-sizing: border-box;
-  width: 60%;
+  width: 50%;
   height: 229px;
   float: right;
   border-top: solid black 1px;
