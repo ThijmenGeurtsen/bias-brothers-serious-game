@@ -12,22 +12,10 @@ body {
   min-width: 500px;
 }
 
-.text-general {
-  font-size: 12px;
-  line-height: 1.2em;
-}
-
-.text-heading {
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .container {
   box-sizing: border-box;
   width: 960px;
   height: 700px;
-  border: solid purple 0px;
-  /* background-color: purple; */
 }
 
 .game {
@@ -36,6 +24,7 @@ body {
   width: 100%;
   background-color: #61ce70;
   border: 1px solid black;
+  backdrop-filter:
 }
 
 .game-top {
@@ -142,7 +131,6 @@ body {
   float: left;
   border-top: solid black 1px;
   border-right: solid black 1px;
-
   background: white;
   padding: 5px;
 }
