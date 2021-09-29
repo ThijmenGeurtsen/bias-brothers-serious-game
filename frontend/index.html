@@ -5,7 +5,6 @@
     <title>Serious Game</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="styleAmanda.css">
-    <link rel="script" href="script.js" />
   </head>
   <body>
     <div class="container">
@@ -22,9 +21,9 @@
             <!-- Veranderen in een table format SPRINT 1 -->
             <!-- Verbinding maken met back-end data voor infectie cijfers SPRINT 1/2 -->
             <ul class="infection-numbers">
-              <li>Gezonde bevolking: 19362815</li>
-              <li>Besmette bevolking: 0</li>
-              <li>Gemuteerde bevolking: 0</li>
+              <li class="infection-numbers">Gezonde bevolking: 19362815</li>
+              <li class="infection-numbers">Besmette bevolking: 0</li>
+              <li class="infection-numbers">Gemuteerde bevolking: 0</li>
             </ul>
           </div>
           <div class="timer">
@@ -52,13 +51,13 @@
           <!-- nieuwsfeed eerst als box aan de rechterkant SPRINT 1 -->
           <!-- nieuwsfeed block uitklapbaar maken SPRINT 2 -->
           <!-- Kijken naar icoontjes met pop up op de kaart SPRINT 3 -->
-          <aside class="newsfeed"></aside>
+          <div class="newsfeed"></div>
         </div>
         <div class="game-bottom">
           <!-- Vanuit back-end halen SPRINT 1/2 -->
           <div class="scenario">
-            <h3>Hamsterwoede!</h3>
-            <p>
+            <h3 id="scenario-title">Hamster<span>woede!</span></h3>
+            <p id="scenario-text">
               Met oplopende Olifantengriepcijfers op de horizon zijn inwoners
               Deze zouden helpen de Olifantengriep uit de neus te houden en
               daarmee een infectie te voorkomen. De regering van Engelse Eiland
@@ -81,5 +80,6 @@
         </div>
       </div>
     </div>
+  <script src="script.js"></script>
   </body>
 </html>
