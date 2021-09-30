@@ -5,11 +5,12 @@ function buttonNextClick(){
 }
 
 function buttonLoginClick(){
-var name = document.querySelector('#name');
+    var name = document.querySelector('#name');
     alert('Welkom ' + name.value);
     document.documentElement.textContent = 'index.html'
 }
 
 function buttonLogoutClick(){
+    alert('Tot ziens ');
     document.documentElement.textContent = 'start.html';
 }
