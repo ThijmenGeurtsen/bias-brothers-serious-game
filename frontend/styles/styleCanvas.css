@@ -1,0 +1,116 @@
+.canvas-header{
+    display: grid;
+    grid-template-columns: 0.25fr 2fr 0.5fr 1fr;
+    grid-auto-rows: minmax(40px, auto);
+}
+
+.title-round{
+
+}
+
+.timer-box{
+
+}
+
+.game-menu-button {
+    width: 160px;
+}
+
+.game-menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.game-menu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.game-menu-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.game-menu:hover .game-menu-content {
+    display: block;
+}
+
+.game-middle{
+    background-color: #61ce70;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row: auto;
+}
+
+.map{
+    max-height: 400px;
+    width: 100%;
+    overflow: scroll;
+    background-color: white;
+}
+
+.map-img{
+    min-height: 410px;
+    min-width: 750px;
+}
+
+.newsfeed{
+
+}
+
+.newsfeed-list{
+
+}
+
+.newsfeed-items{
+
+}
+
+.infection-box table{
+    background-color: white;
+    width: 100%;
+}
+
+.canvas-footer{
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    grid-auto-rows: minmax(40px, auto);
+}
+
+.scenario-box{
+    background-color: white;
+}
+
+.scenario-title{
+
+}
+
+.scenario-text{
+
+}
+
+.question-box{
+    background: white;
+}
+
+.question-title{
+
+}
+
+.question-list{
+
+}
+
+.question-list li{
+
+}
+
+.canvas-footer-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

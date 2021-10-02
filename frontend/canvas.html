@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Serious Game</title>
+    <link rel="stylesheet" type="text/css" href="styles/styleStandard.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styleCanvas.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+  </head>
+  <body>
+      <div class="game-container">
+        <div class="canvas-header">
+          <div class="logo">
+            <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers"/>
+          </div>
+          <div class="title-round"><h2>Ronde 1: </h2></div>
+          <div class="timer-box"><!-- Javascript timer --></div>
+          <div class="game-menu">
+            <button class="game-menu-button">Menu</button>
+            <nav class="game-menu-content">
+              <a href="#">Bias omschrijvingen</a>
+              <a onclick= "buttonLogoutClick()" >Uitloggen</a>
+            </nav>
+          </div>
+        </div>
+        <div class="infection-box">
+          <table class="infection-table">
+            <tr>
+              <th>Gezonde bevolking: </th>
+              <th>Besmette bevolking: </th>
+              <th>Gemuteerde bevolking: </th>
+            </tr>
+            <tr>
+              <td>19362815</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+
+          </table>
+        </div>
+
+        <div class="game-middle">
+          <div class="map">
+          <img class="map-img" src="images/map.png" width="1574" alt="Map" />
+          </div>
+          <div class="newsfeed">
+            <ul class="newsfeed-list">
+              <li class="newsfeed-items">Krant 1</li>
+              <li class="newsfeed-items">Krant 2</li>
+              <li class="newsfeed-items">Krant 3</li>
+            </ul>
+          </div>
+        </div>
+        <div class="canvas-footer">
+          <div class="scenario-box">
+            <h3 class="scenario-title">Hamsterwoede!</h3>
+            <p class="scenario-text">
+              Met oplopende Olifantengriepcijfers op de horizon zijn inwoners
+              Deze zouden helpen de Olifantengriep uit de neus te houden en
+              daarmee een infectie te voorkomen. De regering van Engelse Eiland
+              verzoekt haar burgers dringend om te stoppen met hamsteren, en
+              verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen
+              te kunnen bedienen. Over de effectiviteit van het tampongebruik
+              als preventie van de Olifantengriep zijn door experts nog geen
+              uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al
+              op te gaan om spullen in te slaan. Wat moet de overheid doen?
+            </p>
+          </div>
+          <div class="question-box">
+            <h3 class="question-title">Welke bias?</h3>
+            <ol class="question-list"></ol>
+            <p>
+              Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+              ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+            </p>
+          </div>
+        </div>
+        <div class="canvas-footer-buttons">
+          <div>
+
+          </div>
+          <div>
+
+          </div>
+          <div>
+          <button type="submit" onclick="buttonNextClick()" class="next" id="next">Volgende</button>
+          </div>
+        </div>
+      </div>
+      <script src="scripts/script.js"></script>
+      <script src="scripts/scriptAmanda.js"></script>
+  </body>
+</html>
