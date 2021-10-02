@@ -57,6 +57,7 @@
 .map-img{
     min-height: 410px;
     min-width: 750px;
+    width: 100%;
 }
 
 .newsfeed{
