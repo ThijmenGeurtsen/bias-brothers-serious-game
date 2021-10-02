@@ -1,6 +1,6 @@
 .canvas-header{
     display: grid;
-    grid-template-columns: 0.25fr 2fr 0.5fr 1fr;
+    grid-template-columns: 0.25fr 2fr 0.5fr 0.25fr;
     grid-auto-rows: minmax(40px, auto);
 }
 
@@ -60,16 +60,21 @@
     width: 100%;
 }
 
-.newsfeed{
-
+.newsfeed {
+    max-height: 400px;
+    overflow: scroll;
 }
 
-.newsfeed-list{
-
+.newsfeed-title {
+    font-size: 18px;
 }
 
-.newsfeed-items{
+.newsfeed-text {
+    font-size: 12px;
+}
 
+.newsfeed-paper {
+    font-size: 10px;
 }
 
 .infection-box table{
@@ -77,41 +82,121 @@
     width: 100%;
 }
 
-.canvas-footer{
+.canvas-footer {
     display: grid;
-    grid-template-columns: 0.6fr 0.4fr;
-    grid-auto-rows: minmax(40px, auto);
-}
-
-.scenario-box{
     background-color: white;
+    grid-template-columns: 0.4fr 0.6fr;
 }
 
-.scenario-title{
-
+.scenario-box {
+    padding: 10px;
 }
 
-.scenario-text{
-
+.question-box {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
 }
 
-.question-box{
-    background: white;
-}
-
-.question-title{
-
-}
-
-.question-list{
+.question-box > li {
+    text-decoration: none;
 
 }
 
-.question-list li{
-
-}
-
-.canvas-footer-buttons{
+.question-tab {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 0.5fr;
+}
+
+.question-tab button {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 12px;
+    transition: 0.3s;
+    font-size: 14px;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), #61ce70;
+    border: 2px solid rgba(66, 133, 75, 0.71);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+}
+
+.question-tab button:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), #61ce70;
+}
+
+.question-tab button.active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), #61ce70;
+}
+
+.question-content {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.popup {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup .biasPopup {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 25%;
+    margin-left: -100px;
+}
+
+/* Popup arrow */
+.popup .biasPopup::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.submit-button {
+    display: grid;
 }
