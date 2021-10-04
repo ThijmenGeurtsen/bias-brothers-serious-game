@@ -1,154 +1,165 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Serious Game</title>
-    <link rel="stylesheet" type="text/css" href="styles/styleStandard.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/styleStandard.css" />
     <link rel="stylesheet" type="text/css" href="styles/styleCanvas.css">
 </head>
-<body>
-<div class="game-container">
-    <div class="canvas-header">
-        <div class="logo">
-            <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers"/>
-        </div>
-        <div class="title-round-box"><h2 id="title-round"></h2></div>
-        <div class="timer-box"><h2 id="timer"></h2><!-- Javascript timer --></div>
-        <div class="game-menu">
-            <button class="game-menu-button">Menu</button>
-            <nav class="game-menu-content">
-                <a href="#">Bias omschrijvingen</a>
-                <a onclick="buttonLogoutClick()">Uitloggen</a>
-            </nav>
-        </div>
-    </div>
-    <div class="infection-box">
-        <table class="infection-table">
-            <tr>
-                <th>Gezonde bevolking:</th>
-                <th>Besmette bevolking:</th>
-                <th>Gemuteerde bevolking:</th>
-            </tr>
-            <tr>
-                <td id="gezonde-bevolking"></td>
-                <td id="besmette-bevolking"></td>
-                <td id="gemuteerde bevolking"></td>
-            </tr>
 
-        </table>
-    </div>
-    <div class="game-middle">
-        <div class="map">
-            <img class="map-img" src="images/map.png" alt="Map"/>
-        </div>
-        <div class="newsfeed">
-            <ul class="newsfeed-list">
-                <li class="newsfeed-items-pop-up newsfeed-items">
-                    <h4 class="newsfeed-title">Een nieuw en potentieel levensbedreigend virus is gevonden in
-                        Noord-Kropslavië</h4>
-                    <p class="newsfeed-text">De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een
-                        nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege
-                        de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een
-                        permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met
-                        een onderzoek om het virus tegen te gaan.</p>
-                    <p class="newsfeed-paper"><I>~ Daily Digitanzanië ~</I></p></li>
-                <li class="newsfeed-items">
-                    <h4 class="newsfeed-title">Experts maken zich zorgen over stijgende aantal besmettingen
-                        Olifantengriep</h4>
-                    <p class="newsfeed-text">Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep.
-                        Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding
-                        en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste
-                        maatregelen om het land voor te bereiden op een uitbraak.</p>
-                    <p class="newsfeed-paper"><I>~ Degressia Dagblad ~</I></p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="canvas-footer">
-        <div class="scenario-box">
-            <h3 id="scenario-title"></h3>
-            <p id="scenario-text">
-            </p>
-        </div>
-        <div class="question-box">
-            <div class="question-tab">
-                <button onclick="questionTab(event, 'question-bias')" class="question-tab-link">Bias vraag</button>
-                <button onclick="questionTab(event, 'question-what-to-do')" class="question-tab-link">Wat te
-                    doen vraag
-                </button>
+<body>
+    <div class="game-container">
+        <div class="canvas-header">
+            <div class="logo">
+                <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers" />
             </div>
-            <div id="question-bias" class="question-content">
-                <h3 class="question-title">Welke bias?</h3>
-                <ol type="A" class="question-list-bias">
-                    <li class="bias-list-item">
-                        <input type="radio" id="answer-a-bias" name="answer-bias">
-                        <label for="answer-a-bias"></label>
-                        <div class="popup" onclick="biasPopup('decoyEffect')"> Decoy effect<span class="biasPopup"
-                                                                                                 id="decoyEffect">
-                            <div class="twoColumn">
-                                <h5>Omschrijving: </h5>
-                                <h5>Voorbeeld:</h5>
-                                <p>In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.</p>
-                                <p>In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk.</p>
-                            </div>
-                        </span></div>
-                    </li>
-                    <li class="bias-list-item">
-                        <input type="radio" id="answer-b-bias" name="answer-bias">
-                        <label for="answer-b-bias"></label>
-                        <div class="popup" onclick="biasPopup('represantativenessHeuristic')"> Representativeness
-                            Heuristic<span class="biasPopup" id="represantativenessHeuristic">
-                            <div class="twoColumn">
-                                <h5>Omschrijving: </h5>
-                                <h5>Voorbeeld:</h5>
-                                <p>We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal verband tussen bestaat.</p>
-                                <p>In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen.</p>
-                            </div>
-                        </span></div>
-                    </li>
-                    <li class="bias-list-item">
-                        <input type="radio" id="answer-c-bias" name="answer-bias">
-                        <label for="answer-c-bias"></label>
-                        <div class="popup" onclick="biasPopup('negativityBias')"> Negativity Bias<span class="biasPopup"
-                                                                                                       id="negativityBias">
-                            <div class="twoColumn">
-                                <h5>Omschrijving: </h5>
-                                <h5>Voorbeeld:</h5>
-                                <p>Negatieve prikkels hebben een disproportioneel groter effect op onze gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.</p>
-                                <p>Je zit al een uur in de vergadering met de directie. Je realiseert je dat het 90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden van deze zaken.</p>
-                            </div>
-                        </span></div>
-                    </li>
-                </ol>
+            <div class="title-round-box">
+                <h2 id="title-round"></h2>
             </div>
-            <div id="question-what-to-do" class="question-content">
-                <h3 class="question-title">Wat te doen?</h3>
-                <ol type="A" class="question-list-what-to-do">
-                    <li class="what-to-do-list-item">
-                        <input type="radio" id="answer-a-toDo" name="answer-toDo">
-                        <label for="answer-a-toDo">We plaatsen een overzicht van de informatie over het virus en
-                            omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.</label>
-                    </li>
-                    <li class="what-to-do-list-item">
-                        <input type="radio" id="answer-b-toDo" name="answer-toDo">
-                        <label for="answer-b-toDo">De bevolking van Digitanzanië is slim genoeg om te snappen dat dit
-                            soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te
-                            doen.</label>
-                    </li>
-                    <li class="what-to-do-list-item">
-                        <input type="radio" id="answer-c-toDo" name="answer-toDo">
-                        <label for="answer-c-toDo">Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten
-                            koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.</label>
-                    </li>
-                </ol>
+            <div class="timer-box">
+                <h2 id="timer"></h2><!-- Javascript timer -->
+            </div>
+            <div class="game-menu">
+                <button class="game-menu-button">Menu</button>
+                <nav class="game-menu-content">
+                    <a href="#">Bias omschrijvingen</a>
+                    <a onclick="buttonLogoutClick()">Uitloggen</a>
+                </nav>
             </div>
         </div>
+        <div class="infection-box">
+            <table class="infection-table">
+                <tr>
+                    <th>Gezonde bevolking:</th>
+                    <th>Besmette bevolking:</th>
+                    <th>Gemuteerde bevolking:</th>
+                </tr>
+                <tr>
+                    <td id="gezonde-bevolking"></td>
+                    <td id="besmette-bevolking"></td>
+                    <td id="gemuteerde bevolking"></td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="game-middle">
+            <div class="map">
+                <img class="map-img" src="images/map.png" alt="Map" />
+            </div>
+            <div class="newsfeed">
+                <ul class="newsfeed-list">
+                    <li class="newsfeed-items-pop-up newsfeed-items">
+                        <h4 class="newsfeed-title" id="canvas1-news-title-1"></h4>
+                        <p class="newsfeed-text" id="canvas1-news-text-1"></p>
+                        <p class="newsfeed-paper" id="canvas1-news-paper-1"><I></I></p>
+                    </li>
+                    <li class="newsfeed-items">
+                        <h4 class="newsfeed-title" id="canvas1-news-title-2"></h4>
+                        <p class="newsfeed-text" id="canvas1-news-text-2"></p>
+                        <p class="newsfeed-paper" id="canvas1-news-paper-2"><I></I></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="canvas-footer">
+            <div class="scenario-box">
+                <h3 id="scenario-title"></h3>
+                <p id="scenario-text">
+                </p>
+            </div>
+            <div class="question-box">
+                <div class="question-tab">
+                    <button onclick="questionTab(event, 'question-bias')" class="question-tab-link">Bias vraag</button>
+                    <button onclick="questionTab(event, 'question-what-to-do')" class="question-tab-link">Wat te
+                        doen vraag
+                    </button>
+                </div>
+                <div id="question-bias" class="question-content">
+                    <h3 class="question-title">Welke bias?</h3>
+                    <ol type="A" class="question-list-bias">
+                        <li class="bias-list-item">
+                            <input type="radio" id="answer-a-bias" name="answer-bias">
+                            <label for="answer-a-bias"></label>
+                            <div class="popup" onclick="biasPopup('decoyEffect')"> Decoy effect<span class="biasPopup"
+                                    id="decoyEffect">
+                                    <div class="twoColumn">
+                                        <h5>Omschrijving: </h5>
+                                        <h5>Voorbeeld:</h5>
+                                        <p>In de keuze tussen twee producten zal er een voorkeur optreden voor een van
+                                            de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter
+                                            bij een van de opties ligt.</p>
+                                        <p>In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50
+                                            en €4,00 respectievelijk.</p>
+                                    </div>
+                                </span></div>
+                        </li>
+                        <li class="bias-list-item">
+                            <input type="radio" id="answer-b-bias" name="answer-bias">
+                            <label for="answer-b-bias"></label>
+                            <div class="popup" onclick="biasPopup('represantativenessHeuristic')"> Representativeness
+                                Heuristic<span class="biasPopup" id="represantativenessHeuristic">
+                                    <div class="twoColumn">
+                                        <h5>Omschrijving: </h5>
+                                        <h5>Voorbeeld:</h5>
+                                        <p>We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor
+                                            elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal
+                                            verband tussen bestaat.</p>
+                                        <p>In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te
+                                            eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het
+                                            gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen.</p>
+                                    </div>
+                                </span></div>
+                        </li>
+                        <li class="bias-list-item">
+                            <input type="radio" id="answer-c-bias" name="answer-bias">
+                            <label for="answer-c-bias"></label>
+                            <div class="popup" onclick="biasPopup('negativityBias')"> Negativity Bias<span
+                                    class="biasPopup" id="negativityBias">
+                                    <div class="twoColumn">
+                                        <h5>Omschrijving: </h5>
+                                        <h5>Voorbeeld:</h5>
+                                        <p>Negatieve prikkels hebben een disproportioneel groter effect op onze
+                                            gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.</p>
+                                        <p>Je zit al een uur in de vergadering met de directie. Je realiseert je dat het
+                                            90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden
+                                            van deze zaken.</p>
+                                    </div>
+                                </span></div>
+                        </li>
+                    </ol>
+                </div>
+                <div id="question-what-to-do" class="question-content">
+                    <h3 class="question-title">Wat te doen?</h3>
+                    <ol type="A" class="question-list-what-to-do">
+                        <li class="what-to-do-list-item">
+                            <input type="radio" id="answer-a-toDo" name="answer-toDo">
+                            <label for="answer-a-toDo">We plaatsen een overzicht van de informatie over het virus en
+                                omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.</label>
+                        </li>
+                        <li class="what-to-do-list-item">
+                            <input type="radio" id="answer-b-toDo" name="answer-toDo">
+                            <label for="answer-b-toDo">De bevolking van Digitanzanië is slim genoeg om te snappen dat
+                                dit
+                                soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te
+                                doen.</label>
+                        </li>
+                        <li class="what-to-do-list-item">
+                            <input type="radio" id="answer-c-toDo" name="answer-toDo">
+                            <label for="answer-c-toDo">Een gevoel van veiligheid is ook wat waard, maar dat moet niet
+                                ten
+                                koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.</label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="submit-button">
+            <button type="submit" onclick="" class="next" id="next">Antwoorden inleveren</button>
+        </div>
     </div>
-    <div class="submit-button">
-        <button type="submit" onclick="" class="next" id="next">Antwoorden inleveren</button>
-    </div>
-</div>
-<script src="scripts/scriptCanvas.js"></script>
-<script src="scripts/scriptLoginLogout.js"></script>
+    <script src="scripts/scriptCanvas.js"></script>
+    <script src="scripts/scriptLoginLogout.js"></script>
 </body>
+
 </html>

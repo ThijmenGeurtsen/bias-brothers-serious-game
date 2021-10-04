@@ -7,7 +7,8 @@ async function json() {
     countdown(data.timer);
     loadInfections(data.infections.gezond, data.infections.besmet, data.infections.gemuteerd);
     loadMap();
-    loadNewsfeed();
+    loadNewsfeed1(data.newsArticles[0].newsArticletitle, data.newsArticles[0].newsArticleMessage, data.newsArticles[0].newsArticleSource, data.newsArticles[0].newsArticlePopup);
+    loadNewsfeed2(data.newsArticles[1].newsArticletitle, data.newsArticles[1].newsArticleMessage, data.newsArticles[1].newsArticleSource, data.newsArticles[1].newsArticlePopup);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     loadQuestions();
     loadBias();
@@ -62,8 +63,18 @@ function loadMap() {
 
 }
 
-function loadNewsfeed() {
+function loadNewsfeed1(newsTitle, newsMessage, newsSource, boolPopup) {
+    document.getElementById("canvas1-news-title-1").innerHTML = newsTitle;
+    document.getElementById("canvas1-news-text-1").innerHTML = newsMessage;
+    document.getElementById("canvas1-news-paper-1").innerHTML = newsSource;
+    let popup = boolPopup;
+}
 
+function loadNewsfeed2(newsTitle, newsMessage, newsSource, boolPopup) {
+    document.getElementById("canvas1-news-title-2").innerHTML = newsTitle;
+    document.getElementById("canvas1-news-text-2").innerHTML = newsMessage;
+    document.getElementById("canvas1-news-paper-2").innerHTML = newsSource;
+    let popup = boolPopup;
 }
 
 function loadScenario(scenarioTitle, scenarioText) {
