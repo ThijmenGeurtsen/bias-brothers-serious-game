@@ -1,34 +1,56 @@
 function loadCanvas() {
-    loadTitleRound();
-    loadTimer();
-    loadInfections();
+    loadTitleRound("Ronde 1: ", "De start");
+    countdown(6);
+    loadInfections("19362815", "0", "0");
     loadMap();
     loadNewsfeed();
-    loadScenario();
+    loadScenario("Hamsterwoede!", "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?");
     loadQuestions();
     loadBias();
     loadToDo();
 }
 
-function loadTitleRound() {
-    const round = "Ronde 1: ";
-    const title = "De start";
-
+function loadTitleRound(round, title) {
     document.getElementById("title-round").innerHTML = round + title;
 }
 
-function loadTimer() {
-    document.getElementById("timer").innerHTML = "Timer";
+let timeoutHandle;
+
+function countdown(minutes) {
+    let seconds = 60;
+    let mins = minutes;
+
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = mins - 1
+        seconds--;
+        counter.innerHTML =
+            current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if (seconds > 0) {
+            timeoutHandle = setTimeout(tick, 1000);
+        } else {
+
+            if (mins > 1) {
+
+                // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                setTimeout(function () {
+                    countdown(mins - 1);
+                }, 1000);
+
+            }
+        }
+    }
+
+    tick();
 }
 
-function loadInfections() {
-    const gezondeBevolking = "19362815";
-    const besmetteBevolking = "0";
-    const gemuteerdeBevolking = "0";
+countdown(2);
 
-    document.getElementById("gezonde-bevolking").innerHTML = gezondeBevolking;
-    document.getElementById("besmette-bevolking").innerHTML = besmetteBevolking;
-    document.getElementById("gemuteerde bevolking").innerHTML = gemuteerdeBevolking;
+
+function loadInfections(gezond, besmet, gemuteerd) {
+    document.getElementById("gezonde-bevolking").innerHTML = gezond;
+    document.getElementById("besmette-bevolking").innerHTML = besmet;
+    document.getElementById("gemuteerde bevolking").innerHTML = gemuteerd;
 }
 
 function loadMap() {
@@ -39,10 +61,7 @@ function loadNewsfeed() {
 
 }
 
-function loadScenario() {
-    const scenarioTitle = "Hamsterwoede!";
-    const scenarioText = "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?";
-
+function loadScenario(scenarioTitle, scenarioText) {
     document.getElementById("scenario-title").innerHTML = scenarioTitle;
     document.getElementById("scenario-text").innerHTML = scenarioText
 
