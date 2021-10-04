@@ -7,45 +7,39 @@
   "biasPoints": [
     {
       "bias": {
-        "biasName": "Anchoring",
-        "biasDescription": "We laten een eerder beschikbaar gekregen stukje informatie onze latere besluitvorming beïnvloeden. Ondanks dat deze info niet relevant hoeft te zijn. Dit gebeurt vaak als er prijzen of schattingen mee gemoeid zijn.",
-        "biasExample": "Wanneer je onderhandelt om prijs is het raadzaam om een absurd openingsbod te negeren. En voordat je zelf een bod plaatst, de tegenpartij een realistisch tegenbod te laten plaatsen. Om te voorkomen dat het eindigt in de buurt van dit absurde eerste bod."
-      },
-      "points": 4
-    },
-    {
-      "bias": {
-        "biasName": "Authority bias",
-        "biasDescription": "We schatten de mening van een door ons bestempeld autoriteit in als nauwkeuriger en meer \u0027waar\u0027. Dit is onafhankelijk van onze rationele beoordeling van de boodschap of content. Of mogelijk zelfs onafhankelijk van het expertisegebied van die persoon.",
-        "biasExample": "We nemen van externe consultants met een bepaalde expertise sneller een aanbeveling over. Zelfs als dat buiten het eigen expertisegebied valt."
+        "biasName": "Decoy effect",
+        "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
+        "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk."
       },
       "points": 0
     },
     {
       "bias": {
-        "biasName": "Backfire effect",
-        "biasDescription": "We versterken onze eigen overtuigingen juist als we worden geconfronteerd met tegengesteld bewijs.",
-        "biasExample": "Neef Fred beweert op een verjaardagsfeestje dat zijn wijk aan het verloederen is. Op het moment dat je hem dalende criminaliteitscijfers laat zien in de afgelopen jaren schudt hij zijn hoofd. Dat zie je toch echt verkeerd. Dat is volgens hem alleen maar bewijs dat onderzoekers hun werk niet goed hebben gedaan."
+        "biasName": "Representativeness Heuristic",
+        "biasDescription": "We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal verband tussen bestaat.",
+        "biasExample": "In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen."
       },
-      "points": 10
+      "points": 5
+    },
+    {
+      "bias": {
+        "biasName": "Negativity bias",
+        "biasDescription": "Negatieve prikkels hebben een disproportioneel groter effect op onze gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.",
+        "biasExample": "Je zit al een uur in de vergadering met de directie. Je realiseert je dat het 90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden van deze zaken."
+      },
+      "points": 2
     }
   ],
   "newsArticles": [
     {
-      "newsArticleTitle": "Degressia sluit grenzen",
-      "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
-      "newsArticleSource": "~ Montangia Mail ~",
-      "newsArticlePopup": false
-    },
-    {
-      "newsArticleTitle": "Hamsterwoede overvalt ook Digitanzanië",
-      "newsArticleMessage": "De overheid van Digitanzanië heeft een dashboard gelanceerd waarin alle actuele informatie over de Olifantengriep staat weergegeven. Het dashboard geeft daarnaast aan wat voor stappen burgers kunnen nemen om besmetting met het virus te voorkomen. Zo wordt er geadviseerd om regelmatig de handen te wassen en in de elleboog te niezen.",
-      "newsArticleSource": "~ Pretechnostan Post ~",
+      "newsArticletitle": "Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië",
+      "newsArticleMessage": "De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.",
+      "newsArticleSource": "~ Daily Digitanzanië ~",
       "newsArticlePopup": true
     },
     {
-      "newsArticleTitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
-      "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
+      "newsArticletitle": "Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep",
+      "newsArticleMessage": "Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.",
       "newsArticleSource": "~ Degressia Dagblad ~",
       "newsArticlePopup": false
     }
