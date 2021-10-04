@@ -12,8 +12,8 @@
         <div class="logo">
             <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers"/>
         </div>
-        <div class="title-round"><h2>Ronde 1: De start</h2></div>
-        <div class="timer-box"><h2>Timer</h2><!-- Javascript timer --></div>
+        <div class="title-round-box"><h2 id="title-round"></h2></div>
+        <div class="timer-box"><h2 id="timer"></h2><!-- Javascript timer --></div>
         <div class="game-menu">
             <button class="game-menu-button">Menu</button>
             <nav class="game-menu-content">
@@ -30,9 +30,9 @@
                 <th>Gemuteerde bevolking:</th>
             </tr>
             <tr>
-                <td>19362815</td>
-                <td>0</td>
-                <td>0</td>
+                <td id="gezonde-bevolking"></td>
+                <td id="besmette-bevolking"></td>
+                <td id="gemuteerde bevolking"></td>
             </tr>
 
         </table>
@@ -66,17 +66,8 @@
     </div>
     <div class="canvas-footer">
         <div class="scenario-box">
-            <h3 class="scenario-title">Hamsterwoede!</h3>
-            <p class="scenario-text">
-                Met oplopende Olifantengriepcijfers op de horizon zijn inwoners
-                Deze zouden helpen de Olifantengriep uit de neus te houden en
-                daarmee een infectie te voorkomen. De regering van Engelse Eiland
-                verzoekt haar burgers dringend om te stoppen met hamsteren, en
-                verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen
-                te kunnen bedienen. Over de effectiviteit van het tampongebruik
-                als preventie van de Olifantengriep zijn door experts nog geen
-                uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al
-                op te gaan om spullen in te slaan. Wat moet de overheid doen?
+            <h3 id="scenario-title"></h3>
+            <p id="scenario-text">
             </p>
         </div>
         <div class="question-box">
@@ -90,8 +81,8 @@
                 <h3 class="question-title">Welke bias?</h3>
                 <ol type="A" class="question-list-bias">
                     <li class="bias-list-item">
-                        <input type="checkbox" id="optionAbias" name="A">
-                        <label for="optionAbias"></label>
+                        <input type="radio" id="answer-a-bias" name="answer-bias">
+                        <label for="answer-a-bias"></label>
                         <div class="popup" onclick="biasPopup('decoyEffect')"> Decoy effect<span class="biasPopup"
                                                                                                  id="decoyEffect">
                             <div class="twoColumn">
@@ -103,8 +94,8 @@
                         </span></div>
                     </li>
                     <li class="bias-list-item">
-                        <input type="checkbox" id="optionBbias" name="B">
-                        <label for="optionBbias"></label>
+                        <input type="radio" id="answer-b-bias" name="answer-bias">
+                        <label for="answer-b-bias"></label>
                         <div class="popup" onclick="biasPopup('represantativenessHeuristic')"> Representativeness
                             Heuristic<span class="biasPopup" id="represantativenessHeuristic">
                             <div class="twoColumn">
@@ -114,11 +105,10 @@
                                 <p>In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen.</p>
                             </div>
                         </span></div>
-
                     </li>
                     <li class="bias-list-item">
-                        <input type="checkbox" id="optionCbias" name="C">
-                        <label for="optionCbias"></label>
+                        <input type="radio" id="answer-c-bias" name="answer-bias">
+                        <label for="answer-c-bias"></label>
                         <div class="popup" onclick="biasPopup('negativityBias')"> Negativity Bias<span class="biasPopup"
                                                                                                        id="negativityBias">
                             <div class="twoColumn">
@@ -135,19 +125,19 @@
                 <h3 class="question-title">Wat te doen?</h3>
                 <ol type="A" class="question-list-what-to-do">
                     <li class="what-to-do-list-item">
-                        <input type="checkbox" id="optionAtodo" name="A">
-                        <label for="optionAtodo">We plaatsen een overzicht van de informatie over het virus en
+                        <input type="radio" id="answer-a-toDo" name="answer-toDo">
+                        <label for="answer-a-toDo">We plaatsen een overzicht van de informatie over het virus en
                             omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.</label>
                     </li>
                     <li class="what-to-do-list-item">
-                        <input type="checkbox" id="optionBtodo" name="B">
-                        <label for="optionBtodo">De bevolking van Digitanzanië is slim genoeg om te snappen dat dit
+                        <input type="radio" id="answer-b-toDo" name="answer-toDo">
+                        <label for="answer-b-toDo">De bevolking van Digitanzanië is slim genoeg om te snappen dat dit
                             soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te
                             doen.</label>
                     </li>
                     <li class="what-to-do-list-item">
-                        <input type="checkbox" id="optionCtodo" name="C">
-                        <label for="optionCtodo">Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten
+                        <input type="radio" id="answer-c-toDo" name="answer-toDo">
+                        <label for="answer-c-toDo">Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten
                             koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.</label>
                     </li>
                 </ol>
@@ -158,7 +148,7 @@
         <button type="submit" onclick="" class="next" id="next">Antwoorden inleveren</button>
     </div>
 </div>
-<script src="scripts/script.js"></script>
-<script src="scripts/scriptAmanda.js"></script>
+<script src="scripts/scriptCanvas.js"></script>
+<script src="scripts/scriptLoginLogout.js"></script>
 </body>
 </html>
