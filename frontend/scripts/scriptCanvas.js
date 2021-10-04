@@ -1,14 +1,15 @@
-const jsonFile = "data.json";
+let jsonName = "R2";
+const jsonFile = jsonName + ".json";
 
-async function json() {
+async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
-    loadInfections(data.infections.gezond, data.infections.besmet, data.infections.gemuteerd);
+    loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
-    loadNewsfeed1(data.newsArticles[0].newsArticletitle, data.newsArticles[0].newsArticleMessage, data.newsArticles[0].newsArticleSource, data.newsArticles[0].newsArticlePopup);
-    loadNewsfeed2(data.newsArticles[1].newsArticletitle, data.newsArticles[1].newsArticleMessage, data.newsArticles[1].newsArticleSource, data.newsArticles[1].newsArticlePopup);
+    loadNewsfeed1(data.canvas[2].newsArticles[0].newsArticleTitle, data.canvas[2].newsArticles[0].newsArticleMessage, data.canvas[2].newsArticles[0].newsArticleSource, data.canvas[2].newsArticles[0].newsArticlePopup);
+    loadNewsfeed2(data.canvas[2].newsArticles[1].newsArticleTitle, data.canvas[2].newsArticles[1].newsArticleMessage, data.canvas[2].newsArticles[1].newsArticleSource, data.canvas[2].newsArticles[1].newsArticlePopup);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     loadQuestions();
     loadBias();
@@ -114,4 +115,4 @@ function biasPopup(biasName) {
     popup.classList.toggle("show");
 }
 
-json();
+json(jsonFile);
