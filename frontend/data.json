@@ -32,19 +32,19 @@
   ],
   "newsArticles": [
     {
-      "newsArticletitle": "Degressia sluit grenzen",
+      "newsArticleTitle": "Degressia sluit grenzen",
       "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
       "newsArticleSource": "~ Montangia Mail ~",
       "newsArticlePopup": false
     },
     {
-      "newsArticletitle": "Hamsterwoede overvalt ook Digitanzanië",
+      "newsArticleTitle": "Hamsterwoede overvalt ook Digitanzanië",
       "newsArticleMessage": "De overheid van Digitanzanië heeft een dashboard gelanceerd waarin alle actuele informatie over de Olifantengriep staat weergegeven. Het dashboard geeft daarnaast aan wat voor stappen burgers kunnen nemen om besmetting met het virus te voorkomen. Zo wordt er geadviseerd om regelmatig de handen te wassen en in de elleboog te niezen.",
       "newsArticleSource": "~ Pretechnostan Post ~",
       "newsArticlePopup": true
     },
     {
-      "newsArticletitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
+      "newsArticleTitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
       "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
       "newsArticleSource": "~ Degressia Dagblad ~",
       "newsArticlePopup": false
@@ -55,8 +55,8 @@
     "scenarioText": "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?"
   },
   "infections": {
-    "gezond": "19362815",
-    "besmet": 0,
-    "gemuteerd": 0
+    "healthy": "19362815",
+    "infected": 0,
+    "mutated": 0
   }
 }
