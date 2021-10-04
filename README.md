@@ -1,2 +1,0 @@
-# Bias Brothers Serious Game
-
