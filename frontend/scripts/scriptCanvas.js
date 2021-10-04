@@ -1,14 +1,19 @@
-function loadCanvas() {
-    loadTitleRound("Ronde 1: ", "De start");
-    countdown(6);
-    loadInfections("19362815", "0", "0");
+const jsonFile = "data.json";
+
+async function json() {
+    const response = await fetch(jsonFile);
+    const data = await response.json();
+    loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
+    countdown(data.timer);
+    loadInfections(data.infections.gezond, data.infections.besmet, data.infections.gemuteerd);
     loadMap();
     loadNewsfeed();
-    loadScenario("Hamsterwoede!", "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?");
+    loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     loadQuestions();
     loadBias();
     loadToDo();
 }
+
 
 function loadTitleRound(round, title) {
     document.getElementById("title-round").innerHTML = round + title;
@@ -71,7 +76,7 @@ function loadQuestions() {
 
 }
 
-function loadBias() {
+function loadBias(data) {
 
 }
 
@@ -98,4 +103,4 @@ function biasPopup(biasName) {
     popup.classList.toggle("show");
 }
 
-loadCanvas();
+json();

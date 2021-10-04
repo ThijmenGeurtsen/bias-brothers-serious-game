@@ -1,0 +1,62 @@
+{
+  "titleRound": {
+    "roundNumber": "Ronde 1: ",
+    "title": "De start"
+  },
+  "timer": 7,
+  "biasPoints": [
+    {
+      "bias": {
+        "biasName": "Anchoring",
+        "biasDescription": "We laten een eerder beschikbaar gekregen stukje informatie onze latere besluitvorming beïnvloeden. Ondanks dat deze info niet relevant hoeft te zijn. Dit gebeurt vaak als er prijzen of schattingen mee gemoeid zijn.",
+        "biasExample": "Wanneer je onderhandelt om prijs is het raadzaam om een absurd openingsbod te negeren. En voordat je zelf een bod plaatst, de tegenpartij een realistisch tegenbod te laten plaatsen. Om te voorkomen dat het eindigt in de buurt van dit absurde eerste bod."
+      },
+      "points": 4
+    },
+    {
+      "bias": {
+        "biasName": "Authority bias",
+        "biasDescription": "We schatten de mening van een door ons bestempeld autoriteit in als nauwkeuriger en meer \u0027waar\u0027. Dit is onafhankelijk van onze rationele beoordeling van de boodschap of content. Of mogelijk zelfs onafhankelijk van het expertisegebied van die persoon.",
+        "biasExample": "We nemen van externe consultants met een bepaalde expertise sneller een aanbeveling over. Zelfs als dat buiten het eigen expertisegebied valt."
+      },
+      "points": 0
+    },
+    {
+      "bias": {
+        "biasName": "Backfire effect",
+        "biasDescription": "We versterken onze eigen overtuigingen juist als we worden geconfronteerd met tegengesteld bewijs.",
+        "biasExample": "Neef Fred beweert op een verjaardagsfeestje dat zijn wijk aan het verloederen is. Op het moment dat je hem dalende criminaliteitscijfers laat zien in de afgelopen jaren schudt hij zijn hoofd. Dat zie je toch echt verkeerd. Dat is volgens hem alleen maar bewijs dat onderzoekers hun werk niet goed hebben gedaan."
+      },
+      "points": 10
+    }
+  ],
+  "newsArticles": [
+    {
+      "newsArticletitle": "Degressia sluit grenzen",
+      "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
+      "newsArticleSource": "~ Montangia Mail ~",
+      "newsArticlePopup": false
+    },
+    {
+      "newsArticletitle": "Hamsterwoede overvalt ook Digitanzanië",
+      "newsArticleMessage": "De overheid van Digitanzanië heeft een dashboard gelanceerd waarin alle actuele informatie over de Olifantengriep staat weergegeven. Het dashboard geeft daarnaast aan wat voor stappen burgers kunnen nemen om besmetting met het virus te voorkomen. Zo wordt er geadviseerd om regelmatig de handen te wassen en in de elleboog te niezen.",
+      "newsArticleSource": "~ Pretechnostan Post ~",
+      "newsArticlePopup": true
+    },
+    {
+      "newsArticletitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
+      "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
+      "newsArticleSource": "~ Degressia Dagblad ~",
+      "newsArticlePopup": false
+    }
+  ],
+  "scenario": {
+    "scenarioTitle": "Hamsterwoede!",
+    "scenarioText": "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?"
+  },
+  "infections": {
+    "gezond": "19362815",
+    "besmet": 0,
+    "gemuteerd": 0
+  }
+}
