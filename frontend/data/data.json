@@ -1,0 +1,56 @@
+{
+  "titleRound": {
+    "roundNumber": "Ronde 1: ",
+    "title": "De start"
+  },
+  "timer": 7,
+  "biasPoints": [
+    {
+      "bias": {
+        "biasName": "Decoy effect",
+        "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
+        "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk."
+      },
+      "points": 0
+    },
+    {
+      "bias": {
+        "biasName": "Representativeness Heuristic",
+        "biasDescription": "We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal verband tussen bestaat.",
+        "biasExample": "In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen."
+      },
+      "points": 5
+    },
+    {
+      "bias": {
+        "biasName": "Negativity bias",
+        "biasDescription": "Negatieve prikkels hebben een disproportioneel groter effect op onze gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.",
+        "biasExample": "Je zit al een uur in de vergadering met de directie. Je realiseert je dat het 90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden van deze zaken."
+      },
+      "points": 2
+    }
+  ],
+  "newsArticles": [
+    {
+      "newsArticletitle": "Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië",
+      "newsArticleMessage": "De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.",
+      "newsArticleSource": "~ Daily Digitanzanië ~",
+      "newsArticlePopup": true
+    },
+    {
+      "newsArticletitle": "Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep",
+      "newsArticleMessage": "Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.",
+      "newsArticleSource": "~ Degressia Dagblad ~",
+      "newsArticlePopup": false
+    }
+  ],
+  "scenario": {
+    "scenarioTitle": "Hamsterwoede!",
+    "scenarioText": "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?"
+  },
+  "infections": {
+    "healthy": "19362815",
+    "infected": 0,
+    "mutated": 0
+  }
+}

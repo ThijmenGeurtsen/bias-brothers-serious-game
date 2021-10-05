@@ -1,13 +1,26 @@
-function loadCanvas() {
-    loadTitleRound("Ronde 1: ", "De start");
-    countdown(6);
-    loadInfections("19362815", "0", "0");
+let jsonName = "data/R1";
+const jsonFile = jsonName + ".json";
+
+async function json(jsonFile) {
+    const response = await fetch(jsonFile);
+    const data = await response.json();
+    loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
-    loadNewsfeed();
-    loadScenario("Hamsterwoede!", "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?");
-    loadQuestions();
-    loadBias();
-    loadToDo();
+
+    for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
+        loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
+    }
+
+    console.log();
+    dataHandler(data);
+}
+
+function dataHandler(data) {
+    loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
+    countdown(data.timer);
+    loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
+    loadBias(data);
+    loadMeasure(data.measureOption.a.answer, data.measureOption.b.answer, data.measureOption.c.answer)
 }
 
 function loadTitleRound(round, title) {
@@ -29,55 +42,54 @@ function countdown(minutes) {
         if (seconds > 0) {
             timeoutHandle = setTimeout(tick, 1000);
         } else {
-
             if (mins > 1) {
-
-                // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                // countdown(mins-1);
                 setTimeout(function () {
                     countdown(mins - 1);
                 }, 1000);
-
             }
         }
     }
-
     tick();
 }
 
-countdown(2);
 
-
-function loadInfections(gezond, besmet, gemuteerd) {
-    document.getElementById("gezonde-bevolking").innerHTML = gezond;
-    document.getElementById("besmette-bevolking").innerHTML = besmet;
-    document.getElementById("gemuteerde bevolking").innerHTML = gemuteerd;
+function loadInfections(healthy, infected, mutated) {
+    document.getElementById("healthy-population").innerHTML = healthy;
+    document.getElementById("infected-population").innerHTML = infected;
+    document.getElementById("mutated-population").innerHTML = mutated;
 }
 
 function loadMap() {
 
 }
 
-function loadNewsfeed() {
-
+function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
+    articleNumber++;
+    document.getElementById("title-" + articleNumber).innerHTML = newsTitle;
+    document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
+    document.getElementById("source-" + articleNumber).innerHTML = newsSource;
+    let popup = boolPopup;
+    console.log(popup);
 }
 
 function loadScenario(scenarioTitle, scenarioText) {
     document.getElementById("scenario-title").innerHTML = scenarioTitle;
-    document.getElementById("scenario-text").innerHTML = scenarioText
+    document.getElementById("scenario-text").innerHTML = scenarioText;
 
 }
 
-function loadQuestions() {
+function loadMeasure(answerA, answerB, answerC) {
+    document.getElementById("measureA").nextElementSibling.innerHTML = answerA;
+    document.getElementById("measureB").nextElementSibling.innerHTML = answerB;
+    document.getElementById("measureC").nextElementSibling.innerHTML = answerC;
+    console.log(answerA);
+}
+
+function loadBias(data) {
 
 }
 
-function loadBias() {
-
-}
-
-function loadToDo() {
-
-}
 
 function questionTab(evt, questionName) {
     let i, questionContent, questionTabLink;
@@ -98,4 +110,4 @@ function biasPopup(biasName) {
     popup.classList.toggle("show");
 }
 
-loadCanvas();
+json(jsonFile);

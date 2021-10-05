@@ -1,0 +1,193 @@
+{
+  "titleRound": {
+    "roundNumber": "",
+    "title": ""
+  },
+  "timer": 7,
+  "scenario": {
+    "scenarioTitle": "",
+    "scenarioText": ""
+  },
+  "bias": [
+    {
+      "a": {
+        "biasName": "",
+        "biasDescription": "",
+        "biasExample": ""
+      },
+      "points": 0
+    },
+    {
+      "b": {
+        "biasName": "",
+        "biasDescription": "",
+        "biasExample": ""
+      },
+      "points": 0
+    },
+    {
+      "c": {
+        "biasName": "",
+        "biasDescription": "",
+        "biasExample": ""
+      },
+      "points": 0
+    }
+  ],
+  "measureOption": {
+    "a": {
+      "answer": "",
+      "points": 0
+    },
+    "b": {
+      "answer": "",
+      "points": 0
+    },
+    "c": {
+      "answer": "",
+      "points": 0
+    }
+  },
+  "canvas": [
+    {
+      "points": 1,
+      "newsArticles": [
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": true
+        }
+      ],
+      "infections": {
+        "healthy": "",
+        "infected": 0,
+        "mutated": 0
+      }
+    },
+    {
+      "points": 2,
+      "newsArticles": [
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": true
+        }
+      ],
+      "infections": {
+        "healthy": "",
+        "infected": 0,
+        "mutated": 0
+      }
+    },
+    {
+      "points": 3,
+      "newsArticles": [
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": true
+        }
+      ],
+      "infections": {
+        "healthy": "",
+        "infected": 0,
+        "mutated": 0
+      }
+    },
+    {
+      "points": 4,
+      "newsArticles": [
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": true
+        }
+      ],
+      "infections": {
+        "healthy": "",
+        "infected": 0,
+        "mutated": 0
+      }
+    },
+    {
+      "points": 5,
+      "newsArticles": [
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        },
+        {
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
+        }
+      ],
+      "infections": {
+        "healthy": "",
+        "infected": 0,
+        "mutated": 0
+      }
+    }
+  ]
+}
