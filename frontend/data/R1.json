@@ -34,20 +34,26 @@
       "points": 2
     }
   ],
-  "measureOption": {
-    "a": {
-      "answer": "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.",
-      "points": 5
+  "measureOption": [
+    {
+      "a": {
+        "answer": "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.",
+        "points": 5
+      }
     },
-    "b": {
-      "answer": "De bevolking van Digitanzanië is slim genoeg om te snappen dat dit soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te doen.",
-      "points": 0
+    {
+      "b": {
+        "answer": "De bevolking van Digitanzanië is slim genoeg om te snappen dat dit soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te doen.",
+        "points": 0
+      }
     },
-    "c": {
-      "answer": "Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.",
-      "points": 2
+    {
+      "c": {
+        "answer": "Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.",
+        "points": 2
+      }
     }
-  },
+  ],
   "canvas": [
     {
       "points": 1,

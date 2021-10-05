@@ -19,8 +19,8 @@ function dataHandler(data) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    loadBias(data);
-    loadMeasure(data.measureOption.a.answer, data.measureOption.b.answer, data.measureOption.c.answer)
+    loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
+    loadMeasure(data.measureOption[0].a.answer, data.measureOption[1].b.answer, data.measureOption[2].c.answer)
 }
 
 function loadTitleRound(round, title) {
@@ -43,7 +43,7 @@ function countdown(minutes) {
             timeoutHandle = setTimeout(tick, 1000);
         } else {
             if (mins > 1) {
-                // countdown(mins-1);
+                countdown(mins - 1);
                 setTimeout(function () {
                     countdown(mins - 1);
                 }, 1000);
@@ -70,7 +70,7 @@ function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPop
     document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
     document.getElementById("source-" + articleNumber).innerHTML = newsSource;
     let popup = boolPopup;
-    console.log(popup);
+    //console.log(popup);
 }
 
 function loadScenario(scenarioTitle, scenarioText) {
@@ -80,16 +80,17 @@ function loadScenario(scenarioTitle, scenarioText) {
 }
 
 function loadMeasure(answerA, answerB, answerC) {
+
     document.getElementById("measureA").nextElementSibling.innerHTML = answerA;
     document.getElementById("measureB").nextElementSibling.innerHTML = answerB;
     document.getElementById("measureC").nextElementSibling.innerHTML = answerC;
-    console.log(answerA);
 }
 
-function loadBias(data) {
-
+function loadBias(answerA, answerB, answerC) {
+    document.getElementById("biasA").nextElementSibling.innerHTML = answerA;
+    document.getElementById("biasB").nextElementSibling.innerHTML = answerB;
+    document.getElementById("biasC").nextElementSibling.innerHTML = answerC;
 }
-
 
 function questionTab(evt, questionName) {
     let i, questionContent, questionTabLink;
