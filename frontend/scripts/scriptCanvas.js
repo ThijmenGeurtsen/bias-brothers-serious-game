@@ -6,11 +6,9 @@ async function json(jsonFile) {
     const data = await response.json();
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
-    // loadNewsfeed1(data.canvas[2].newsArticles[0].newsArticleTitle, data.canvas[2].newsArticles[0].newsArticleMessage, data.canvas[2].newsArticles[0].newsArticleSource, data.canvas[2].newsArticles[0].newsArticlePopup);
-    // loadNewsfeed2(data.canvas[2].newsArticles[1].newsArticleTitle, data.canvas[2].newsArticles[1].newsArticleMessage, data.canvas[2].newsArticles[1].newsArticleSource, data.canvas[2].newsArticles[1].newsArticlePopup);
 
-    for (let i = 0; i < data.canvas.newsArticles.length; i++) {
-        loadNewsfeed1(data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
+    for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
+        loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
     }
 
     console.log();
@@ -57,26 +55,20 @@ function countdown(minutes) {
 
 
 function loadInfections(healthy, infected, mutated) {
-    document.getElementById("gezonde-bevolking").innerHTML = healthy;
-    document.getElementById("besmette-bevolking").innerHTML = infected;
-    document.getElementById("gemuteerde bevolking").innerHTML = mutated;
+    document.getElementById("healthy-population").innerHTML = healthy;
+    document.getElementById("infected-population").innerHTML = infected;
+    document.getElementById("mutated-population").innerHTML = mutated;
 }
 
 function loadMap() {
 
 }
 
-function loadNewsfeed1(newsTitle, newsMessage, newsSource, boolPopup) {
-    document.getElementById("canvas1-news-title-1").innerHTML = newsTitle;
-    document.getElementById("canvas1-news-text-1").innerHTML = newsMessage;
-    document.getElementById("canvas1-news-paper-1").innerHTML = newsSource;
-    let popup = boolPopup;
-}
-
-function loadNewsfeed2(newsTitle, newsMessage, newsSource, boolPopup) {
-    document.getElementById("canvas1-news-title-2").innerHTML = newsTitle;
-    document.getElementById("canvas1-news-text-2").innerHTML = newsMessage;
-    document.getElementById("canvas1-news-paper-2").innerHTML = newsSource;
+function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
+    articleNumber++;
+    document.getElementById("canvas1-title-" + articleNumber).innerHTML = newsTitle;
+    document.getElementById("canvas1-message-" + articleNumber).innerHTML = newsMessage;
+    document.getElementById("canvas1-source-" + articleNumber).innerHTML = newsSource;
     let popup = boolPopup;
 }
 
