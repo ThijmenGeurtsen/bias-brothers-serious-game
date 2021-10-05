@@ -66,16 +66,16 @@ function loadMap() {
 
 function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
     articleNumber++;
-    document.getElementById("canvas1-title-" + articleNumber).innerHTML = newsTitle;
-    document.getElementById("canvas1-message-" + articleNumber).innerHTML = newsMessage;
-    document.getElementById("canvas1-source-" + articleNumber).innerHTML = newsSource;
+    document.getElementById("title-" + articleNumber).innerHTML = newsTitle;
+    document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
+    document.getElementById("source-" + articleNumber).innerHTML = newsSource;
     let popup = boolPopup;
     console.log(popup);
 }
 
 function loadScenario(scenarioTitle, scenarioText) {
     document.getElementById("scenario-title").innerHTML = scenarioTitle;
-    document.getElementById("scenario-text").innerHTML = scenarioText
+    document.getElementById("scenario-text").innerHTML = scenarioText;
 
 }
 
