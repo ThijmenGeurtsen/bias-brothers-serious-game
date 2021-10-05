@@ -71,18 +71,18 @@
             <div class="question-box">
                 <div class="question-tab">
                     <button onclick="questionTab(event, 'question-bias')" class="question-tab-link">Bias vraag</button>
-                    <button onclick="questionTab(event, 'question-what-to-do')" class="question-tab-link">Wat te
+                    <button onclick="questionTab(event, 'question-measure')" class="question-tab-link">Wat te
                         doen vraag
                     </button>
                 </div>
                 <div id="question-bias" class="question-content">
                     <h3 class="question-title">Welke bias?</h3>
-                    <ol type="A" class="question-list-bias">
+                    <ol type="A" class="question-bias-list">
                         <li class="bias-list-item">
-                            <input type="radio" id="answer-a-bias" name="answer-bias">
-                            <label for="answer-a-bias"></label>
+                            <input type="radio" id="biasA" name="answer-bias">
+                            <label for="biasA"></label>
                             <div class="popup" onclick="biasPopup('decoyEffect')"> Decoy effect<span class="biasPopup"
-                                    id="decoyEffect">
+                                                                                                     id="decoyEffect">
                                     <div class="twoColumn">
                                         <h5>Omschrijving: </h5>
                                         <h5>Voorbeeld:</h5>
@@ -95,8 +95,8 @@
                                 </span></div>
                         </li>
                         <li class="bias-list-item">
-                            <input type="radio" id="answer-b-bias" name="answer-bias">
-                            <label for="answer-b-bias"></label>
+                            <input type="radio" id="biasB" name="answer-bias">
+                            <label for="biasB"></label>
                             <div class="popup" onclick="biasPopup('represantativenessHeuristic')"> Representativeness
                                 Heuristic<span class="biasPopup" id="represantativenessHeuristic">
                                     <div class="twoColumn">
@@ -112,8 +112,8 @@
                                 </span></div>
                         </li>
                         <li class="bias-list-item">
-                            <input type="radio" id="answer-c-bias" name="answer-bias">
-                            <label for="answer-c-bias"></label>
+                            <input type="radio" id="biasC" name="answer-bias">
+                            <label for="biasC"></label>
                             <div class="popup" onclick="biasPopup('negativityBias')"> Negativity Bias<span
                                     class="biasPopup" id="negativityBias">
                                     <div class="twoColumn">
@@ -129,26 +129,25 @@
                         </li>
                     </ol>
                 </div>
-                <div id="question-what-to-do" class="question-content">
+                <div id="question-measure" class="question-content">
                     <h3 class="question-title">Wat te doen?</h3>
-                    <ol type="A" class="question-list-what-to-do">
-                        <li class="what-to-do-list-item">
-                            <input type="radio" id="answer-a-toDo" name="answer-toDo">
-                            <label for="answer-a-toDo">We plaatsen een overzicht van de informatie over het virus en
+                    <ol type="A" class="question-measure-list">
+                        <li class="measure-list-item">
+                            <input type="radio" id="measureA" name="answer-toDo">
+                            <label for="measureA">We plaatsen een overzicht van de informatie over het virus en
                                 omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.</label>
                         </li>
-                        <li class="what-to-do-list-item">
-                            <input type="radio" id="answer-b-toDo" name="answer-toDo">
-                            <label for="answer-b-toDo">De bevolking van Digitanzanië is slim genoeg om te snappen dat
+                        <li class="measure-list-item">
+                            <input type="radio" id="measureB" name="answer-toDo">
+                            <label for="measureB">De bevolking van Digitanzanië is slim genoeg om te snappen dat
                                 dit
                                 soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te
                                 doen.</label>
                         </li>
-                        <li class="what-to-do-list-item">
-                            <input type="radio" id="answer-c-toDo" name="answer-toDo">
-                            <label for="answer-c-toDo">Een gevoel van veiligheid is ook wat waard, maar dat moet niet
-                                ten
-                                koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.</label>
+                        <li class="measure-list-item">
+                            <input type="radio" id="measureC" name="answer-toDo">
+                            <label for="measureC">Een gevoel van veiligheid is ook wat waard, maar dat moet niet
+                                ten koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.</label>
                         </li>
                     </ol>
                 </div>

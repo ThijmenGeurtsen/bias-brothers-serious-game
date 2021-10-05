@@ -10,7 +10,7 @@
   },
   "bias": [
     {
-      "bias-a-answer": {
+      "a": {
         "biasName": "Confabulation",
         "biasDescription": "We wisselen soms echte en verbeelde herinneringen in. Waardoor we onbewust overdreven, opgeblazen en vertekende herinneringen over onszelf en de wereld voortbrengen.",
         "biasExample": "Vol overtuiging vertel je aan je collega's hoe op het bedrijfsfeest van 2009 Sjaak van afdeling finance net iets teveel had gedronken. Niemand herinnert zich het, maar je bent zo overtuig(en)d, dat ze het ook niet tegenspreken."
@@ -18,7 +18,7 @@
       "points": 0
     },
     {
-      "bias-b-answer": {
+      "b": {
         "biasName": "Backfire effect",
         "biasDescription": "We versterken onze eigen overtuigingen juist als we worden geconfronteerd met tegengesteld bewijs.",
         "biasExample": "Neef Fred beweert op een verjaardagsfeestje dat zijn wijk aan het verloederen is. Op het moment dat je hem dalende criminaliteitscijfers laat zien in de afgelopen jaren schudt hij zijn hoofd. Dat zie je toch echt verkeerd. Dat is volgens hem alleen maar bewijs dat onderzoekers hun werk niet goed hebben gedaan."
@@ -26,7 +26,7 @@
       "points": 2
     },
     {
-      "bias-c-answer": {
+      "c": {
         "biasName": "Self-serving bias",
         "biasDescription": "We verbuigen ons waarnemingsvermogen om ons zelfbeeld in stand te houden, of om onszelf juist in een overdreven positieve manier te zien.",
         "biasExample": "Manager Kees vindt zichzelf een geweldig mensen-mens met tact en empathie. Als je zijn medewerkers om een beschrijving vraagt van zijn mensen-vaardigheden, dan zou je eerder vermoeden dat Kees een weekdier met tentakels is dat in de zee leeft."
@@ -35,15 +35,15 @@
     }
   ],
   "measureOption": {
-    "measure-answer-a": {
+    "a": {
       "answer": "De situatie in Digitanzanië is anders dan de rest van de wereld. We houden vast aan de koers en gaan meer versoepelingen doorvoeren.",
       "points": 0
     },
-    "measure-answer-b": {
+    "b": {
       "answer": "We zijn waakzaam en onderzoeken nog iets langer of vooral het afstand houden niet verlengd moet worden.",
       "points": 5
     },
-    "measure-answer-c": {
+    "c": {
       "answer": "We houden vast aan de versoepelingen van de afstand. Maar we herzien onze conclusies als dit beter blijkt te zijn voor de complete bevolking.",
       "points": 2
     }

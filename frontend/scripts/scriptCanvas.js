@@ -1,21 +1,25 @@
-let jsonName = "R2";
+let jsonName = "data/R1";
 const jsonFile = jsonName + ".json";
 
 async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
-    loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
-    countdown(data.timer);
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
     loadNewsfeed1(data.canvas[2].newsArticles[0].newsArticleTitle, data.canvas[2].newsArticles[0].newsArticleMessage, data.canvas[2].newsArticles[0].newsArticleSource, data.canvas[2].newsArticles[0].newsArticlePopup);
     loadNewsfeed2(data.canvas[2].newsArticles[1].newsArticleTitle, data.canvas[2].newsArticles[1].newsArticleMessage, data.canvas[2].newsArticles[1].newsArticleSource, data.canvas[2].newsArticles[1].newsArticlePopup);
-    loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    loadQuestions();
-    loadBias();
-    loadToDo();
+
+    console.log();
+    dataHandler(data);
 }
 
+function dataHandler(data) {
+    loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
+    countdown(data.timer);
+    loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
+    loadBias(data);
+    loadMeasure(data.measureOption.a.answer, data.measureOption.b.answer, data.measureOption.c.answer)
+}
 
 function loadTitleRound(round, title) {
     document.getElementById("title-round").innerHTML = round + title;
@@ -36,28 +40,22 @@ function countdown(minutes) {
         if (seconds > 0) {
             timeoutHandle = setTimeout(tick, 1000);
         } else {
-
             if (mins > 1) {
-
-                // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                // countdown(mins-1);
                 setTimeout(function () {
                     countdown(mins - 1);
                 }, 1000);
-
             }
         }
     }
-
     tick();
 }
 
-countdown(2);
 
-
-function loadInfections(gezond, besmet, gemuteerd) {
-    document.getElementById("gezonde-bevolking").innerHTML = gezond;
-    document.getElementById("besmette-bevolking").innerHTML = besmet;
-    document.getElementById("gemuteerde bevolking").innerHTML = gemuteerd;
+function loadInfections(healthy, infected, mutated) {
+    document.getElementById("gezonde-bevolking").innerHTML = healthy;
+    document.getElementById("besmette-bevolking").innerHTML = infected;
+    document.getElementById("gemuteerde bevolking").innerHTML = mutated;
 }
 
 function loadMap() {
@@ -84,17 +82,17 @@ function loadScenario(scenarioTitle, scenarioText) {
 
 }
 
-function loadQuestions() {
-
+function loadMeasure(answerA, answerB, answerC) {
+    document.getElementById("measureA").nextElementSibling.innerHTML = answerA;
+    document.getElementById("measureB").nextElementSibling.innerHTML = answerB;
+    document.getElementById("measureC").nextElementSibling.innerHTML = answerC;
+    console.log(answerA);
 }
 
 function loadBias(data) {
 
 }
 
-function loadToDo() {
-
-}
 
 function questionTab(evt, questionName) {
     let i, questionContent, questionTabLink;
