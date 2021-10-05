@@ -70,6 +70,7 @@ function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPop
     document.getElementById("canvas1-message-" + articleNumber).innerHTML = newsMessage;
     document.getElementById("canvas1-source-" + articleNumber).innerHTML = newsSource;
     let popup = boolPopup;
+    console.log(popup);
 }
 
 function loadScenario(scenarioTitle, scenarioText) {
