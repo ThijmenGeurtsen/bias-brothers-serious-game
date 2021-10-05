@@ -83,7 +83,7 @@ function loadMeasure(answerA, answerB, answerC) {
     document.getElementById("measureA").nextElementSibling.innerHTML = answerA;
     document.getElementById("measureB").nextElementSibling.innerHTML = answerB;
     document.getElementById("measureC").nextElementSibling.innerHTML = answerC;
-    console.log(answerA);
+    //console.log(answerA);
 }
 
 function loadBias(data) {
@@ -105,9 +105,9 @@ function questionTab(evt, questionName) {
     evt.currentTarget.className += " active";
 }
 
-function biasPopup(biasName) {
-    const popup = document.getElementById(biasName);
-    popup.classList.toggle("show");
-}
+// function biasPopup(biasName) {
+//     const popup = document.getElementById(biasName);
+//     popup.classList.toggle("show");
+// }
 
 json(jsonFile);
