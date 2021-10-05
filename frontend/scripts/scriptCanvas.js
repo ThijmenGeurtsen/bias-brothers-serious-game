@@ -6,8 +6,12 @@ async function json(jsonFile) {
     const data = await response.json();
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
-    loadNewsfeed1(data.canvas[2].newsArticles[0].newsArticleTitle, data.canvas[2].newsArticles[0].newsArticleMessage, data.canvas[2].newsArticles[0].newsArticleSource, data.canvas[2].newsArticles[0].newsArticlePopup);
-    loadNewsfeed2(data.canvas[2].newsArticles[1].newsArticleTitle, data.canvas[2].newsArticles[1].newsArticleMessage, data.canvas[2].newsArticles[1].newsArticleSource, data.canvas[2].newsArticles[1].newsArticlePopup);
+    // loadNewsfeed1(data.canvas[2].newsArticles[0].newsArticleTitle, data.canvas[2].newsArticles[0].newsArticleMessage, data.canvas[2].newsArticles[0].newsArticleSource, data.canvas[2].newsArticles[0].newsArticlePopup);
+    // loadNewsfeed2(data.canvas[2].newsArticles[1].newsArticleTitle, data.canvas[2].newsArticles[1].newsArticleMessage, data.canvas[2].newsArticles[1].newsArticleSource, data.canvas[2].newsArticles[1].newsArticlePopup);
+
+    for (let i = 0; i < data.canvas.newsArticles.length; i++) {
+        loadNewsfeed1(data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
+    }
 
     console.log();
     dataHandler(data);
