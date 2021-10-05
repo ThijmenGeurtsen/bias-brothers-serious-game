@@ -91,6 +91,8 @@ function loadBias(data) {
 }
 
 
+
+
 function questionTab(evt, questionName) {
     let i, questionContent, questionTabLink;
     questionContent = document.getElementsByClassName("question-content");

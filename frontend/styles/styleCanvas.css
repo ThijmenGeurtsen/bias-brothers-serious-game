@@ -103,8 +103,8 @@
     grid-template-columns: 0.5fr 0.5fr;
 }
 
-.questionmark-img {
-    max-width: 55px;
+#questionmark-img {
+    max-width: 40px;
 }
 
 .question-tab button {
