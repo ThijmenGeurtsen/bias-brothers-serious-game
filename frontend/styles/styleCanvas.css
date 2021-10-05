@@ -1,14 +1,14 @@
-.canvas-header{
+.canvas-header {
     display: grid;
     grid-template-columns: 0.25fr 2fr 0.5fr 0.25fr;
     grid-auto-rows: minmax(40px, auto);
 }
 
-.title-round{
+.title-round {
 
 }
 
-.timer-box{
+.timer-box {
 
 }
 
@@ -40,21 +40,21 @@
     display: block;
 }
 
-.game-middle{
+.game-middle {
     background-color: #61ce70;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-row: auto;
 }
 
-.map{
+.map {
     max-height: 400px;
     width: 100%;
     overflow: scroll;
     background-color: white;
 }
 
-.map-img{
+.map-img {
     min-height: 410px;
     min-width: 750px;
     width: 100%;
@@ -77,7 +77,7 @@
     font-size: 10px;
 }
 
-.infection-box table{
+.infection-box table {
     background-color: white;
     width: 100%;
 }
@@ -135,6 +135,7 @@
     border-top: none;
 }
 
+/*
 .popup {
     position: absolute;
     display: inline-block;
@@ -160,7 +161,7 @@
     margin-left: -100px;
 }
 
-/* Popup arrow */
+        //  Popup arrow
 .popup .biasPopup::after {
     content: "";
     position: absolute;
@@ -178,7 +179,7 @@
     animation: fadeIn 1s;
 }
 
-/* Add animation (fade in the popup) */
+   // Add animation (fade in the popup)
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
@@ -196,7 +197,24 @@
         opacity: 1;
     }
 }
+*/
 
 .submit-button {
     display: grid;
+}
+
+.question-bias-list li label {
+    cursor: pointer;
+}
+
+.question-measure-list li label {
+    cursor: pointer;
+}
+
+.question-bias-list li input {
+    cursor: pointer;
+}
+
+.question-measure-list li label {
+    cursor: pointer;
 }

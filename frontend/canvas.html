@@ -1,129 +1,125 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Serious Game</title>
-    <link rel="stylesheet" type="text/css" href="styles/styleStandard.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styleStandard.css"/>
     <link rel="stylesheet" type="text/css" href="styles/styleCanvas.css">
 </head>
-
 <body>
-    <div class="game-container">
-        <div class="canvas-header">
-            <div class="logo">
-                <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers" />
-            </div>
-            <div class="title-round-box">
-                <h2 id="title-round"></h2>
-            </div>
-            <div class="timer-box">
-                <h2 id="timer"></h2>
-            </div>
-            <div class="game-menu">
-                <button class="game-menu-button">Menu</button>
-                <nav class="game-menu-content">
-                    <a href="#">Bias omschrijvingen</a>
-                    <a onclick="buttonLogoutClick()">Uitloggen</a>
-                </nav>
-            </div>
+<div class="game-container">
+    <div class="canvas-header">
+        <div class="logo">
+            <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers"/>
         </div>
-        <div class="infection-box">
-            <table class="infection-table">
-                <tr>
-                    <th>Gezonde bevolking:</th>
-                    <th>Besmette bevolking:</th>
-                    <th>Gemuteerde bevolking:</th>
-                </tr>
-                <tr>
-                    <td id="healthy-population"></td>
-                    <td id="infected-population"></td>
-                    <td id="mutated-population"></td>
-                </tr>
-
-            </table>
+        <div class="title-round-box">
+            <h2 id="title-round"></h2>
         </div>
-        <div class="game-middle">
-            <div class="map">
-                <img class="map-img" src="images/map.png" alt="Map" />
-            </div>
-            <div class="newsfeed">
-                <ul class="newsfeed-list">
-                    <li class="newsfeed-items-pop-up newsfeed-items">
-                        <h4 class="newsfeed-title" id="title-1"></h4>
-                        <p class="newsfeed-text" id="message-1"></p>
-                        <p class="newsfeed-paper" id="source-1"><I></I></p>
-                    </li>
-                    <li class="newsfeed-items">
-                        <h4 class="newsfeed-title" id="title-2"></h4>
-                        <p class="newsfeed-text" id="message-2"></p>
-                        <p class="newsfeed-paper" id="source-2"><I></I></p>
-                    </li>
-                    <li class="newsfeed-items">
-                        <h4 class="newsfeed-title" id="title-3"></h4>
-                        <p class="newsfeed-text" id="message-3"></p>
-                        <p class="newsfeed-paper" id="source-3"><I></I></p>
-                    </li>
-                </ul>
-            </div>
+        <div class="timer-box">
+            <h2 id="timer"></h2>
         </div>
-        <div class="canvas-footer">
-            <div class="scenario-box">
-                <h3 id="scenario-title"></h3>
-                <p id="scenario-text">
-                </p>
-            </div>
-            <div class="question-box">
-                <div class="question-tab">
-                    <button onclick="questionTab(event, 'question-bias')" class="question-tab-link">Bias vraag</button>
-                    <button onclick="questionTab(event, 'question-measure')" class="question-tab-link">Wat te
-                        doen vraag
-                    </button>
-                </div>
-                <div id="question-bias" class="question-content">
-                    <h3 class="question-title">Welke bias?</h3>
-                    <ol type="A" class="question-bias-list">
-                        <li class="bias-list-item">
-                            <input type="radio" id="biasA" name="answer-bias">
-                            <label for="biasA"></label>
-                        </li>
-                        <li class="bias-list-item">
-                            <input type="radio" id="biasB" name="answer-bias">
-                            <label for="biasB"></label>
-                        </li>
-                        <li class="bias-list-item">
-                            <input type="radio" id="biasC" name="answer-bias">
-                            <label for="biasC"></label>
-                        </li>
-                    </ol>
-                </div>
-
-
-                <div id="question-measure" class="question-content">
-                    <h3 class="question-title">Wat te doen?</h3>
-                    <ol type="A" class="question-measure-list">
-                        <li class="measure-list-item">
-                            <input type="radio" id="measureA" name="answer-toDo">
-                            <label for="measureA"></label>
-                        </li>
-                        <li class="measure-list-item">
-                            <input type="radio" id="measureB" name="answer-toDo">
-                            <label for="measureB"></label>
-                        </li>
-                        <li class="measure-list-item">
-                            <input type="radio" id="measureC" name="answer-toDo">
-                            <label for="measureC"></label>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="submit-button">
-            <button type="submit" onclick="" class="next" id="next">Antwoorden inleveren</button>
+        <div class="game-menu">
+            <button class="game-menu-button">Menu</button>
+            <nav class="game-menu-content">
+                <a href="#">Bias omschrijvingen</a>
+                <a onclick="buttonLogoutClick()">Uitloggen</a>
+            </nav>
         </div>
     </div>
-    <script src="scripts/scriptCanvas.js"></script>
-    <script src="scripts/scriptLoginLogout.js"></script>
+    <div class="infection-box">
+        <table class="infection-table">
+            <tr>
+                <th>Gezonde bevolking:</th>
+                <th>Besmette bevolking:</th>
+                <th>Gemuteerde bevolking:</th>
+            </tr>
+            <tr>
+                <td id="healthy-population"></td>
+                <td id="infected-population"></td>
+                <td id="mutated-population"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="game-middle">
+        <div class="map">
+            <img class="map-img" src="images/map.png" alt="Map"/>
+        </div>
+        <div class="newsfeed">
+            <ul class="newsfeed-list">
+                <li class="newsfeed-items-pop-up newsfeed-items">
+                    <h4 class="newsfeed-title" id="title-1"></h4>
+                    <p class="newsfeed-text" id="message-1"></p>
+                    <p class="newsfeed-paper" id="source-1"><I></I></p>
+                </li>
+                <li class="newsfeed-items">
+                    <h4 class="newsfeed-title" id="title-2"></h4>
+                    <p class="newsfeed-text" id="message-2"></p>
+                    <p class="newsfeed-paper" id="source-2"><I></I></p>
+                </li>
+                <li class="newsfeed-items">
+                    <h4 class="newsfeed-title" id="title-3"></h4>
+                    <p class="newsfeed-text" id="message-3"></p>
+                    <p class="newsfeed-paper" id="source-3"><I></I></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="canvas-footer">
+        <div class="scenario-box">
+            <h3 id="scenario-title"></h3>
+            <p id="scenario-text">
+            </p>
+        </div>
+        <div class="question-box">
+            <div class="question-tab">
+                <button onclick="questionTab(event, 'question-bias')" id="qBiasId" class="question-tab-link">Bias
+                    vraag
+                </button>
+                <button onclick="questionTab(event, 'question-measure')" class="question-tab-link">Wat te
+                    doen vraag
+                </button>
+            </div>
+            <div id="question-bias" class="question-content">
+                <h3 class="question-title">Welke bias?</h3>
+                <ol type="A" class="question-bias-list">
+                    <li class="bias-list-item">
+                        <input type="radio" id="biasA" name="answer-bias">
+                        <label for="biasA"></label>
+                    </li>
+                    <li class="bias-list-item">
+                        <input type="radio" id="biasB" name="answer-bias">
+                        <label for="biasB"></label>
+                    </li>
+                    <li class="bias-list-item">
+                        <input type="radio" id="biasC" name="answer-bias">
+                        <label for="biasC"></label>
+                    </li>
+                </ol>
+            </div>
+            <div id="question-measure" class="question-content">
+                <h3 class="question-title">Wat te doen?</h3>
+                <ol type="A" class="question-measure-list">
+                    <li class="measure-list-item">
+                        <input type="radio" id="measureA" name="answer-toDo">
+                        <label for="measureA"></label>
+                    </li>
+                    <li class="measure-list-item">
+                        <input type="radio" id="measureB" name="answer-toDo">
+                        <label for="measureB"></label>
+                    </li>
+                    <li class="measure-list-item">
+                        <input type="radio" id="measureC" name="answer-toDo">
+                        <label for="measureC"></label>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="submit-button">
+        <button type="submit" onclick="" class="next" id="next">Antwoorden inleveren</button>
+    </div>
+</div>
+<script src="scripts/scriptCanvas.js"></script>
+<script src="scripts/scriptLoginLogout.js"></script>
 </body>
-
 </html>

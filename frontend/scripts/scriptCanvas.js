@@ -4,31 +4,34 @@ const jsonFile = jsonName + ".json";
 async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
-    loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
-    loadMap();
 
-    for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
-        loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
-    }
-
-    console.log();
-    dataHandler(data);
-}
-
-function dataHandler(data) {
+// Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
     loadMeasure(data.measureOption[0].a.answer, data.measureOption[1].b.answer, data.measureOption[2].c.answer)
+// Dit verschilt voor elke ronde per canvas (in data)
+    loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
+    loadMap();
+// Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
+    for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
+        loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
+    }
+
+// Will make the BIAS question default showable
+    document.getElementById("qBiasId").click();
 }
 
+// Changes the title to what is send into the function
 function loadTitleRound(round, title) {
     document.getElementById("title-round").innerHTML = round + title;
 }
 
+// Code for the timer
 let timeoutHandle;
 
+// Changes the timer to the given minutes
 function countdown(minutes) {
     let seconds = 60;
     let mins = minutes;
@@ -50,48 +53,52 @@ function countdown(minutes) {
             }
         }
     }
+
     tick();
 }
 
-
+// Changes the infections numbers
 function loadInfections(healthy, infected, mutated) {
     document.getElementById("healthy-population").innerHTML = healthy;
     document.getElementById("infected-population").innerHTML = infected;
     document.getElementById("mutated-population").innerHTML = mutated;
 }
 
+// Hopefully load in the new map & animation etc.
 function loadMap() {
 
 }
 
+// Changes the articles max of 3 (CHECK IF WE COULD DO MORE)
 function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
     articleNumber++;
     document.getElementById("title-" + articleNumber).innerHTML = newsTitle;
     document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
     document.getElementById("source-" + articleNumber).innerHTML = newsSource;
     let popup = boolPopup;
-    //console.log(popup);
 }
 
+// Changes the scenario & text
 function loadScenario(scenarioTitle, scenarioText) {
     document.getElementById("scenario-title").innerHTML = scenarioTitle;
     document.getElementById("scenario-text").innerHTML = scenarioText;
-
 }
 
+// Changes the measurements in the question tab
 function loadMeasure(answerA, answerB, answerC) {
-
     document.getElementById("measureA").nextElementSibling.innerHTML = answerA;
     document.getElementById("measureB").nextElementSibling.innerHTML = answerB;
     document.getElementById("measureC").nextElementSibling.innerHTML = answerC;
 }
 
+// Changes the biases in the question tab
 function loadBias(answerA, answerB, answerC) {
     document.getElementById("biasA").nextElementSibling.innerHTML = answerA;
     document.getElementById("biasB").nextElementSibling.innerHTML = answerB;
     document.getElementById("biasC").nextElementSibling.innerHTML = answerC;
 }
 
+// Creates a tab function to display text of the chosen tab
 function questionTab(evt, questionName) {
     let i, questionContent, questionTabLink;
     questionContent = document.getElementsByClassName("question-content");
@@ -106,9 +113,11 @@ function questionTab(evt, questionName) {
     evt.currentTarget.className += " active";
 }
 
+// Creates old pop-up
 function biasPopup(biasName) {
     const popup = document.getElementById(biasName);
     popup.classList.toggle("show");
 }
 
+// Start first canvas
 json(jsonFile);
