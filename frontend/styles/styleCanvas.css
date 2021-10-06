@@ -1,16 +1,12 @@
-.canvas-header{
+.canvas-header {
     display: grid;
     grid-template-columns: 0.25fr 2fr 0.5fr 0.25fr;
     grid-auto-rows: minmax(40px, auto);
 }
 
-.title-round{
+.title-round {}
 
-}
-
-.timer-box{
-
-}
+.timer-box {}
 
 .game-menu-button {
     width: 160px;
@@ -40,27 +36,29 @@
     display: block;
 }
 
-.game-middle{
+.game-middle {
     background-color: #61ce70;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-row: auto;
+    scrollbar-shadow-color: darkmagenta;
 }
 
-.map{
+.map {
     max-height: 400px;
     width: 100%;
     overflow: scroll;
     background-color: white;
 }
 
-.map-img{
+.map-img {
     min-height: 410px;
     min-width: 750px;
     width: 100%;
 }
 
 .newsfeed {
+    background-color: white;
     max-height: 400px;
     overflow: scroll;
 }
@@ -70,14 +68,14 @@
 }
 
 .newsfeed-text {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .newsfeed-paper {
     font-size: 10px;
 }
 
-.infection-box table{
+.infection-box table {
     background-color: white;
     width: 100%;
 }
@@ -89,23 +87,26 @@
 }
 
 .scenario-box {
-    padding: 10px;
+    padding: 15px;
 }
 
 .question-box {
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-bottom: 15px;
     overflow: hidden;
 }
 
-.question-box > li {
+.question-box>li {
     text-decoration: none;
-
 }
 
 .question-tab {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
+}
+
+#questionmark-img {
+    max-width: 40px;
 }
 
 .question-tab button {
@@ -135,6 +136,7 @@
     border-top: none;
 }
 
+/*
 .popup {
     position: absolute;
     display: inline-block;
@@ -160,7 +162,7 @@
     margin-left: -100px;
 }
 
-/* Popup arrow */
+        //  Popup arrow
 .popup .biasPopup::after {
     content: "";
     position: absolute;
@@ -178,7 +180,7 @@
     animation: fadeIn 1s;
 }
 
-/* Add animation (fade in the popup) */
+   // Add animation (fade in the popup)
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
@@ -196,7 +198,87 @@
         opacity: 1;
     }
 }
+*/
 
 .submit-button {
     display: grid;
 }
+
+.question-bias-list li label {
+    cursor: pointer;
+}
+
+.question-measure-list li label {
+    cursor: pointer;
+}
+
+.question-bias-list li input {
+    cursor: pointer;
+}
+
+.question-measure-list li input {
+    cursor: pointer;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  /* The closeModal Button */
+  .closeModal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .closeModal:hover,
+  .closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

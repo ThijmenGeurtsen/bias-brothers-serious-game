@@ -10,44 +10,44 @@
   },
   "bias": [
     {
-      "a": {
-        "biasName": "Anchoring",
-        "biasDescription": "We laten een eerder beschikbaar gekregen stukje informatie onze latere besluitvorming beïnvloeden. Ondanks dat deze info niet relevant hoeft te zijn. Dit gebeurt vaak als er prijzen of schattingen mee gemoeid zijn.",
-        "biasExample": "Wanneer je onderhandelt om prijs is het raadzaam om een absurd openingsbod te negeren. En voordat je zelf een bod plaatst, de tegenpartij een realistisch tegenbod te laten plaatsen. Om te voorkomen dat het eindigt in de buurt van dit absurde eerste bod."
-      },
+      "char": "a",
+      "biasName": "Anchoring",
+      "biasDescription": "We laten een eerder beschikbaar gekregen stukje informatie onze latere besluitvorming beïnvloeden. Ondanks dat deze info niet relevant hoeft te zijn. Dit gebeurt vaak als er prijzen of schattingen mee gemoeid zijn.",
+      "biasExample": "Wanneer je onderhandelt om prijs is het raadzaam om een absurd openingsbod te negeren. En voordat je zelf een bod plaatst, de tegenpartij een realistisch tegenbod te laten plaatsen. Om te voorkomen dat het eindigt in de buurt van dit absurde eerste bod.",
       "points": 0
     },
     {
-      "b": {
-        "biasName": "Loss Aversion",
-        "biasDescription": "We hebben de neiging om (potentieel) verlies zwaarder te laten wegen als we een keuze krijgen om iets te winnen versus verliezen.",
-        "biasExample": "Je krijgt de keuze om een weddenschap te doen met inleg van 10 euro uit eigen zak. De kans op winst is 50%. Als je wint krijg je 20 euro, als je verliest niets. Onbewust ga je die weddenschap liever niet aan, ondanks dat je rationeel gezien per saldo op nul uitkomt."
-      },
+      "char": "b",
+      "biasName": "Loss Aversion",
+      "biasDescription": "We hebben de neiging om (potentieel) verlies zwaarder te laten wegen als we een keuze krijgen om iets te winnen versus verliezen.",
+      "biasExample": "Je krijgt de keuze om een weddenschap te doen met inleg van 10 euro uit eigen zak. De kans op winst is 50%. Als je wint krijg je 20 euro, als je verliest niets. Onbewust ga je die weddenschap liever niet aan, ondanks dat je rationeel gezien per saldo op nul uitkomt.",
       "points": 2
     },
     {
-      "c": {
-        "biasName": "Decoy effect",
-        "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
-        "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk."
-      },
+      "char": "c",
+      "biasName": "Decoy effect",
+      "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
+      "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk.",
       "points": 5
     }
   ],
-  "measureOption": {
-    "a": {
+  "measureOption": [
+    {
+      "char": "a",
       "answer": "Kies pakket 1",
       "points": 0
     },
-    "b": {
+    {
+      "char": "b",
       "answer": "Kies pakket 2",
       "points": 5
     },
-    "c": {
+    {
+      "char": "c",
       "answer": "Kies pakket 3",
       "points": 2
     }
-  },
+  ],
   "canvas": [
     {
       "points": 1,
