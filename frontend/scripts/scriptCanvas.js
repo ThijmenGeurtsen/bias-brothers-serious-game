@@ -9,7 +9,7 @@ async function json(jsonFile) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
+    loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
     // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
@@ -153,6 +153,18 @@ function questionTab(evt, questionName) {
     }
     document.getElementById(questionName).style.display = "block";
     evt.currentTarget.className += " active";
+}
+
+document.getElementById("qBiasId").addEventListener("click", clickBiasTab);
+function clickBiasTab(e){
+    questionContent = document.getElementsByClassName("question-content");
+    questionTab(e, "question-bias");
+}
+
+document.getElementById("qMeasureId").addEventListener("click", clickMeasureTab);
+function clickMeasureTab(e){
+    questionContent = document.getElementsByClassName("question-content");
+    questionTab(e, "question-measure");
 }
 
 // Creates old pop-up
