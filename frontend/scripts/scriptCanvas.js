@@ -9,11 +9,12 @@ async function json(jsonFile) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
+   // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
     loadMeasure(data.measureOption[0].a.answer, data.measureOption[1].b.answer, data.measureOption[2].c.answer)
 // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
+    loadBiasPopup(data.bias);
 // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
         loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
@@ -97,10 +98,19 @@ function loadBias(answerA, answerB, answerC) {
     document.getElementById("biasC").nextElementSibling.innerHTML = answerC;
 }
 
-    function loadBiasPopup(bias) {
-    document.getElementById("bias-name-1").innerHTML = bias.biasName;
-    document.getElementById("bias-description-1").innerHTML = bias.biasDescription;
-    document.getElementById("bias-example-1").innerHTML = bias.biasExample;
+function loadBiasPopup(bias) {
+    // Loop through to get all biasen in the pop up
+    for (i = 0; i < bias.length; i++) {
+        let biasName = bias[i].biasName;
+        let biasDescription = bias[i].biasDescription;
+        let biasExample = bias[i].biasExample;
+        let biasIndex = i + 1;
+
+        document.getElementById("bias-name-" + biasIndex).innerHTML = biasName;
+        document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
+        document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
+    }
+
 
     // Get the biasModal
     var biasModal = document.getElementById("biasModal");

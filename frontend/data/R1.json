@@ -10,48 +10,42 @@
   },
   "bias": [
     {
-      "a": {
-        "biasName": "Decoy effect",
-        "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
-        "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk."
-      },
+      "char": "a",
+      "biasName": "Decoy effect",
+      "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
+      "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk.",
       "points": 0
     },
     {
-      "b": {
-        "biasName": "Representativeness Heuristic",
-        "biasDescription": "We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal verband tussen bestaat.",
-        "biasExample": "In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen."
-      },
+      "char": "b",
+      "biasName": "Representativeness Heuristic",
+      "biasDescription": "We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal verband tussen bestaat.",
+      "biasExample": "In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen.",
       "points": 5
     },
     {
-      "c": {
-        "biasName": "Negativity bias",
-        "biasDescription": "Negatieve prikkels hebben een disproportioneel groter effect op onze gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.",
-        "biasExample": "Je zit al een uur in de vergadering met de directie. Je realiseert je dat het 90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden van deze zaken."
-      },
+      "char": "c",
+      "biasName": "Negativity bias",
+      "biasDescription": "Negatieve prikkels hebben een disproportioneel groter effect op onze gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.",
+      "biasExample": "Je zit al een uur in de vergadering met de directie. Je realiseert je dat het 90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden van deze zaken.",
       "points": 2
     }
   ],
   "measureOption": [
     {
-      "a": {
-        "answer": "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.",
-        "points": 5
-      }
+      "char": "a",
+      "answer": "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.",
+      "points": 5
     },
     {
-      "b": {
-        "answer": "De bevolking van Digitanzanië is slim genoeg om te snappen dat dit soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te doen.",
-        "points": 0
-      }
+      "char": "b",
+      "answer": "De bevolking van Digitanzanië is slim genoeg om te snappen dat dit soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te doen.",
+      "points": 0
     },
     {
-      "c": {
-        "answer": "Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.",
-        "points": 2
-      }
+      "char": "c",
+      "answer": "Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.",
+      "points": 2
     }
   ],
   "canvas": [
