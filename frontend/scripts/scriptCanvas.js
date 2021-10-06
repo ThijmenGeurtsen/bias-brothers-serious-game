@@ -10,7 +10,7 @@ async function json(jsonFile) {
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
    // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
-    loadMeasure(data.measureOption[0].a.answer, data.measureOption[1].b.answer, data.measureOption[2].c.answer)
+    loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
 // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
