@@ -10,44 +10,44 @@
   },
   "bias": [
     {
-      "a": {
-        "biasName": "",
-        "biasDescription": "",
-        "biasExample": ""
-      },
+      "char": "a",
+      "biasName": "",
+      "biasDescription": "",
+      "biasExample": "",
       "points": 0
     },
     {
-      "b": {
-        "biasName": "",
-        "biasDescription": "",
-        "biasExample": ""
-      },
+      "char": "b",
+      "biasName": "",
+      "biasDescription": "",
+      "biasExample": "",
       "points": 0
     },
     {
-      "c": {
-        "biasName": "",
-        "biasDescription": "",
-        "biasExample": ""
-      },
+      "char": "c",
+      "biasName": "",
+      "biasDescription": "",
+      "biasExample": "",
       "points": 0
     }
   ],
-  "measureOption": {
-    "a": {
+  "measureOption": [
+    {
+      "char": "a",
       "answer": "",
       "points": 0
     },
-    "b": {
+    {
+      "char": "b",
       "answer": "",
       "points": 0
     },
-    "c": {
+    {
+      "char": "c",
       "answer": "",
       "points": 0
     }
-  },
+  ],
   "canvas": [
     {
       "points": 1,
