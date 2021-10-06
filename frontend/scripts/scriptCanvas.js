@@ -15,6 +15,14 @@ async function json(jsonFile) {
     dataHandler(data);
 }
 
+document.getElementById("questionmark-img").addEventListener
+("click", biasButtonClick);
+
+function biasButtonClick(e){
+    console.log("button clicked");
+    document.querySelector(".tooltiptext").style.backgroundColor = "blue";
+}
+
 function dataHandler(data) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
