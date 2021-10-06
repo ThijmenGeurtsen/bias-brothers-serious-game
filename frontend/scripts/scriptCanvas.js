@@ -15,13 +15,7 @@ async function json(jsonFile) {
     dataHandler(data);
 }
 
-document.getElementById("questionmark-img").addEventListener
-("click", biasButtonClick);
 
-function biasButtonClick(e){
-    console.log("button clicked");
-    document.querySelector(".tooltiptext").style.backgroundColor = "blue";
-}
 
 function dataHandler(data) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
@@ -95,7 +89,31 @@ function loadMeasure(answerA, answerB, answerC) {
 }
 
 function loadBias(data) {
+    // Get the biasModal
+    var biasModal = document.getElementById("biasModal");
 
+    // Get the button that opens the biasModal
+    var biasButton = document.getElementById("questionmark-img");
+
+    // Get the <closeModal> element that closeModals the biasModal
+    var closeModal = document.getElementsByClassName("closeModal")[0];
+
+    // When the user clicks on the button, open the biasModal 
+    biasButton.onclick = function () {
+        biasModal.style.display = "block";
+    }
+
+    // When the user clicks on <closeModal> (x), closeModal the biasModal
+    closeModal.onclick = function () {
+        biasModal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the biasModal, closeModal it
+    window.onclick = function (event) {
+        if (event.target == biasModal) {
+            biasModal.style.display = "none";
+        }
+    }
 }
 
 
