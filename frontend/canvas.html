@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8"/>
     <title>Serious Game</title>
     <link rel="stylesheet" type="text/css" href="styles/styleStandard.css"/>
     <link rel="stylesheet" type="text/css" href="styles/styleCanvas.css">
 </head>
+
 <body>
-    <div class="game-container">
+<div class="game-container">
         <div class="canvas-header">
             <div class="logo">
                 <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers" />
@@ -73,10 +75,10 @@
             </div>
             <div class="question-box">
                 <div class="question-tab">
-                    <button onclick="questionTab(event, 'question-bias')" id="qBiasId" class="question-tab-link">Bias
+                    <button  id="qBiasId" class="question-tab-link">Bias
                         vraag
                     </button>
-                    <button onclick="questionTab(event, 'question-measure')" class="question-tab-link">Wat te
+                    <button id="qMeasureId" class="question-tab-link">Wat te
                         doen vraag
                     </button>
                 </div>
@@ -85,17 +87,15 @@
                     <ol type="A" class="question-bias-list">
                         <li class="bias-list-item">
                             <input type="radio" id="biasA" name="answer-bias" value="a">
-                            <label for="biasA">Decoy effect
-                            </label>
+                            <label for="biasA"></label>
                         </li>
                         <li class="bias-list-item">
                             <input type="radio" id="biasB" name="answer-bias" value="b">
-                            <label for="biasB">Representativeness
-                                Heuristic</label>
+                            <label for="biasB"></label>
                         </li>
                         <li class="bias-list-item">
                             <input type="radio" id="biasC" name="answer-bias" value="c">
-                            <label for="biasC">Negativity Bias</label>
+                            <label for="biasC"></label>
                         </li>
                     </ol>
                     <div class="tooltip"> <input type="image" id="questionmark-img" src="images/question-mark.png"
@@ -108,22 +108,27 @@
                                 <span class="closeModal">&times;</span>
                                 <div id="bias-A">
                                     <h3 id="bias-name-1">Bias naam</h3>
+                                    <h4>Omschrijving</h4>
                                     <p id="bias-description-1">Bias omschrijving</p>
                                     <br>
                                     <h4>Voorbeeld</h4>
                                     <p id="bias-example-1">Bias voorbeeld</p>
                                     <br>
+                                    <br>
                                 </div>
                                 <div id="bias-B">
                                     <h3 id="bias-name-2">Bias naam</h3>
+                                    <h4>Omschrijving</h4>
                                     <p id="bias-description-2">Bias omschrijving</p>
                                     <br>
                                     <h4>Voorbeeld</h4>
                                     <p id="bias-example-2">Bias voorbeeld</p>
                                     <br>
+                                    <br>
                                 </div>
                                 <div id="bias-C">
                                     <h3 id="bias-name-3">Bias naam</h3>
+                                    <h4>Omschrijving</h4>
                                     <p id="bias-description-3">Bias omschrijving</p>
                                     <br>
                                     <h4>Voorbeeld</h4>
@@ -158,7 +163,9 @@
             <button type="submit" class="next" id="next">Antwoorden inleveren</button>
         </div>
     </div>
+<script src="scripts/script.js"></script>
     <script src="scripts/scriptCanvas.js"></script>
     <script src="scripts/scriptLoginLogout.js"></script>
 </body>
+
 </html>

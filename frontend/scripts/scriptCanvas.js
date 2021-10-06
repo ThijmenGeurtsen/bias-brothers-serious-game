@@ -1,82 +1,35 @@
-let jsonName = "data/R1";
-const jsonFile = jsonName + ".json";
+let round = 1;
+let jsonName = "data/R" + round.toString();
+let jsonFile = jsonName + ".json";
+let canvasNumber = 2;
 
 async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
-
-// Dit is voor elke ronde hetzelfde per canvas (in data)
+    console.log(jsonFile);
+    // Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
+    loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
-// Dit verschilt voor elke ronde per canvas (in data)
-    loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
+    // Dit verschilt voor elke ronde per canvas (in data)
+    loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
     loadMap();
     loadBiasPopup(data.bias);
-// Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
-    for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
-        loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
+    // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
+    for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
+        loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
     }
 
-// Will make the BIAS question default showable
+    // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
 }
 
+// THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
 // Changes the title to what is send into the function
 function loadTitleRound(round, title) {
     document.getElementById("title-round").innerHTML = round + title;
-}
-
-// Code for the timer
-let timeoutHandle;
-
-// Changes the timer to the given minutes
-function countdown(minutes) {
-    let seconds = 60;
-    let mins = minutes;
-
-    function tick() {
-        var counter = document.getElementById("timer");
-        var current_minutes = mins - 1
-        seconds--;
-        counter.innerHTML =
-            current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if (seconds > 0) {
-            timeoutHandle = setTimeout(tick, 1000);
-        } else {
-            if (mins > 1) {
-                countdown(mins - 1);
-                setTimeout(function () {
-                    countdown(mins - 1);
-                }, 1000);
-            }
-        }
-    }
-
-    tick();
-}
-
-// Changes the infections numbers
-function loadInfections(healthy, infected, mutated) {
-    document.getElementById("healthy-population").innerHTML = healthy;
-    document.getElementById("infected-population").innerHTML = infected;
-    document.getElementById("mutated-population").innerHTML = mutated;
-}
-
-// Hopefully load in the new map & animation etc.
-function loadMap() {
-
-}
-
-// Changes the articles max of 3 (CHECK IF WE COULD DO MORE)
-function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
-    articleNumber++;
-    document.getElementById("title-" + articleNumber).innerHTML = newsTitle;
-    document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
-    document.getElementById("source-" + articleNumber).innerHTML = newsSource;
-    let popup = boolPopup;
 }
 
 // Changes the scenario & text
@@ -99,6 +52,38 @@ function loadBias(answerA, answerB, answerC) {
     document.getElementById("biasC").nextElementSibling.innerHTML = answerC;
 }
 
+// Adds eventlistener on question-bias-tab
+document.getElementById("qBiasId").addEventListener("click", clickBiasTab);
+
+function clickBiasTab(e) {
+    questionContent = document.getElementsByClassName("question-content");
+    questionTab(e, "question-bias");
+}
+
+// Adds eventlistener on question-measure-tab
+document.getElementById("qMeasureId").addEventListener("click", clickMeasureTab);
+
+function clickMeasureTab(e) {
+    questionContent = document.getElementsByClassName("question-content");
+    questionTab(e, "question-measure");
+}
+
+// Creates a tab function to display text of the chosen tab
+function questionTab(evt, questionName) {
+    let i, questionContent, questionTabLink;
+    questionContent = document.getElementsByClassName("question-content");
+    for (i = 0; i < questionContent.length; i++) {
+        questionContent[i].style.display = "none";
+    }
+    questionTabLink = document.getElementsByClassName("question-tab-link");
+    for (i = 0; i < questionTabLink.length; i++) {
+        questionTabLink[i].className = questionTabLink[i].className.replace(" active", "");
+    }
+    document.getElementById(questionName).style.display = "block";
+    evt.currentTarget.className += " active";
+    document.getElementById('question-tab')
+}
+
 function loadBiasPopup(bias) {
     // Loop through to get all biasen in the pop up
     for (i = 0; i < bias.length; i++) {
@@ -111,8 +96,6 @@ function loadBiasPopup(bias) {
         document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
         document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
     }
-
-
     // Get the biasModal
     var biasModal = document.getElementById("biasModal");
 
@@ -140,56 +123,101 @@ function loadBiasPopup(bias) {
     }
 }
 
-// Creates a tab function to display text of the chosen tab
-function questionTab(evt, questionName) {
-    let i, questionContent, questionTabLink;
-    questionContent = document.getElementsByClassName("question-content");
-    for (i = 0; i < questionContent.length; i++) {
-        questionContent[i].style.display = "none";
-    }
-    questionTabLink = document.getElementsByClassName("question-tab-link");
-    for (i = 0; i < questionTabLink.length; i++) {
-        questionTabLink[i].className = questionTabLink[i].className.replace(" active", "");
-    }
-    document.getElementById(questionName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-// Creates old pop-up
+/* //--Creates old pop-up--\\
 function biasPopup(biasName) {
     const popup = document.getElementById(biasName);
     popup.classList.toggle("show");
 }
+*/
+
+// Code for the timer
+let timeoutHandle;
+
+// Changes the timer to the given minutes
+function countdown(minutes) {
+    let seconds = 60;
+    let mins = minutes;
+
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = mins - 1
+        seconds--;
+        counter.innerHTML =
+            current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if (seconds > 0) {
+            timeoutHandle = setTimeout(tick, 1000);
+        } else {
+            if (mins > 1) {
+                //countdown(mins - 1);
+                setTimeout(function () {
+                    countdown(mins - 1);
+                }, 1000);
+            }
+        }
+    }
+
+    tick();
+}
+
+// THESE ITEMS CHANGE PER ROUND PER CANVAS
+// Changes the infections numbers
+function loadInfections(healthy, infected, mutated) {
+    document.getElementById("healthy-population").innerHTML = healthy;
+    document.getElementById("infected-population").innerHTML = infected;
+    document.getElementById("mutated-population").innerHTML = mutated;
+}
+
+// Changes the articles max of 3 (CHECK IF WE COULD DO MORE)
+function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
+    articleNumber++;
+    document.getElementById("title-" + articleNumber).innerHTML = newsTitle;
+    document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
+    document.getElementById("source-" + articleNumber).innerHTML = newsSource;
+    let popup = boolPopup;
+}
+
+// Hopefully load in the new map & animation etc.
+function loadMap() {
+}
 
 document.getElementById("next").addEventListener
-("click", displayRadioValue);
+("click", giveAnswer);
 
-function displayRadioValue(e) {
+function giveAnswer(e) {
     let bias = document.getElementsByName('answer-bias');
     let measure = document.getElementsByName('answer-measure');
     let biasValue;
     let measureValue;
 
-
     for (let i = 0; i < bias.length; i++) {
         if (bias[i].checked) {
-            console.log("Gekozen bias: " + bias[i].value);
             biasValue = bias[i].value;
         }
     }
 
     for (let j = 0; j < measure.length; j++) {
         if (measure[j].checked) {
-            console.log("Gekozen maatregel: " + measure[j].value);
             measureValue = measure[j].value;
         }
     }
 
     if (biasValue === undefined || measureValue === undefined) {
-        console.log("slechts 1 antwoord ingevuld")
+        alert("U heeft slechts 1 antwoord ingevuld.")
+    } else {
+        nextRound(biasValue, measureValue);
     }
+}
 
+function nextRound(biasAnswer, measureAnswer) {
+    round = round + 1;
+    let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
+    jsonName = "data/R" + round.toString();
+    jsonFile = jsonName + ".json";
 
+    json(jsonFile, newCanvasNumber);
+    console.log(biasAnswer);
+    console.log(measureAnswer);
+    console.log(round);
 }
 
 // Start first canvas
