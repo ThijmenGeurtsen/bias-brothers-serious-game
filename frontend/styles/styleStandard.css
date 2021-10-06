@@ -57,3 +57,25 @@ table {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border: 2px solid lightgrey;
+    background: #61ce70;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

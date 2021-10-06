@@ -133,7 +133,7 @@ function loadBiasPopup(bias) {
 
     // When the user clicks anywhere outside of the biasModal, closeModal it
     window.onclick = function (event) {
-        if (event.target == biasModal) {
+        if (event.target === biasModal) {
             biasModal.style.display = "none";
         }
     }
@@ -158,6 +158,24 @@ function questionTab(evt, questionName) {
 function biasPopup(biasName) {
     const popup = document.getElementById(biasName);
     popup.classList.toggle("show");
+}
+
+function displayRadioValue() {
+    let bias = document.getElementsByName('answer-bias');
+    let measure = document.getElementsByName('answer-measure');
+
+    for (i = 0; i < bias.length; i++) {
+        if (bias[i].checked)
+            bias = bias[i].value;
+
+    }
+
+    for (i = 0; i < measure.length; i++) {
+        if (measure[i].checked)
+            measure = measure[i].value;
+    }
+    console.log(bias + measure);
+
 }
 
 // Start first canvas
