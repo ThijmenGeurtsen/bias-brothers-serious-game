@@ -1,26 +1,26 @@
 let jsonName = "data/R1";
-const jsonFile = jsonName + ".json";
+let jsonFile = jsonName + ".json";
 
 async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
 
-// Dit is voor elke ronde hetzelfde per canvas (in data)
+    // Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
-// Dit verschilt voor elke ronde per canvas (in data)
+    // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
     loadBiasPopup(data.bias);
-// Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
+    // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
         loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
     }
 
-// Will make the BIAS question default showable
+    // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
 }
 
@@ -162,7 +162,7 @@ function biasPopup(biasName) {
 }
 
 document.getElementById("next").addEventListener
-("click", displayRadioValue);
+    ("click", displayRadioValue);
 
 function displayRadioValue(e) {
     let bias = document.getElementsByName('answer-bias');
@@ -173,23 +173,29 @@ function displayRadioValue(e) {
 
     for (let i = 0; i < bias.length; i++) {
         if (bias[i].checked) {
-            console.log("Gekozen bias: " + bias[i].value);
+            //console.log("Gekozen bias: " + bias[i].value);
             biasValue = bias[i].value;
         }
     }
 
     for (let j = 0; j < measure.length; j++) {
         if (measure[j].checked) {
-            console.log("Gekozen maatregel: " + measure[j].value);
+            //console.log("Gekozen maatregel: " + measure[j].value);
             measureValue = measure[j].value;
         }
     }
 
     if (biasValue === undefined || measureValue === undefined) {
-        console.log("slechts 1 antwoord ingevuld")
+        alert("U heeft slechts 1 antwoord ingevuld.")
+    } else {
+        checkAnswers(biasValue, measureValue);
     }
+}
 
-
+function checkAnswers(biasAnswer, measureAnswer) {
+    jsonName = "data/R2";
+    jsonFile = jsonName + ".json";
+    json(jsonFile);
 }
 
 // Start first canvas
