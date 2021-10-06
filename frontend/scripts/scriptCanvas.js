@@ -1,4 +1,5 @@
-let jsonName = "data/R1";
+let round = 1;
+let jsonName = "data/R" + round.toString();
 let jsonFile = jsonName + ".json";
 
 async function json(jsonFile) {
@@ -153,6 +154,7 @@ function questionTab(evt, questionName) {
     }
     document.getElementById(questionName).style.display = "block";
     evt.currentTarget.className += " active";
+    document.getElementById('question-tab')
 }
 
 document.getElementById("qBiasId").addEventListener("click", clickBiasTab);
@@ -205,9 +207,13 @@ function displayRadioValue(e) {
 }
 
 function checkAnswers(biasAnswer, measureAnswer) {
-    jsonName = "data/R2";
+    round = round + 1;
+    jsonName = "data/R" + round.toString();
     jsonFile = jsonName + ".json";
     json(jsonFile);
+    console.log(biasAnswer);
+    console.log(measureAnswer);
+    console.log(round);
 }
 
 // Start first canvas
