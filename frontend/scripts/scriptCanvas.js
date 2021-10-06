@@ -5,22 +5,22 @@ async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
 
-// Dit is voor elke ronde hetzelfde per canvas (in data)
+    // Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-   // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
-    loadMeasure(data.measureOption[0].a.answer, data.measureOption[1].b.answer, data.measureOption[2].c.answer)
-// Dit verschilt voor elke ronde per canvas (in data)
+    // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
+    loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer);
+    // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
     loadMap();
     loadBiasPopup(data.bias);
-// Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
+    // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < data.canvas[2].newsArticles.length; i++) {
         loadNewsfeed(i, data.canvas[2].newsArticles[i].newsArticleTitle, data.canvas[2].newsArticles[i].newsArticleMessage, data.canvas[2].newsArticles[i].newsArticleSource, data.canvas[2].newsArticles[i].newsArticlePopup);
     }
 
-// Will make the BIAS question default showable
+    // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
 }
 
@@ -162,3 +162,32 @@ function biasPopup(biasName) {
 
 // Start first canvas
 json(jsonFile);
+
+document.getElementsByClassName("submit-button")[0].addEventListener
+    ("click", submitClick);
+
+function submitClick(e) {
+    var biasAnswer = document.getElementsByName("answer-bias");
+    var measureAnswer = document.getElementsByName("answer-toDo");
+    var givenBiasAnswer;
+    var givenMeasureAnswer;
+
+    for (i = 0; i < biasAnswer.length; i++) {
+        if (biasAnswer[i].checked) {
+            console.log("Gekozen bias: " + biasAnswer[i].value);
+            givenBiasAnswer = biasAnswer[i].value;
+        }
+    }
+
+    for (i = 0; i < measureAnswer.length; i++) {
+        if (measureAnswer[i].checked) {
+            console.log("Gekozen maatregel: " + measureAnswer[i].value);
+            givenMeasureAnswer = measureAnswer[i].value;
+        }
+    }
+
+    // if (givenBiasAnswer === undefined || givenMeasureAnswer === undefined) {
+    //     console.log("slechts 1 antwoord ingevuld")
+    // }
+}
+
