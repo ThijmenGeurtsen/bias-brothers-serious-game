@@ -9,7 +9,7 @@ async function json(jsonFile) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-   // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
+    // loadBias(data.bias[0].a.biasName, data.bias[1].b.biasName, data.bias[2].c.biasName);
     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
 // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[2].infections.healthy, data.canvas[2].infections.infected, data.canvas[2].infections.mutated);
@@ -54,6 +54,7 @@ function countdown(minutes) {
             }
         }
     }
+
     tick();
 }
 
@@ -160,52 +161,37 @@ function biasPopup(biasName) {
     popup.classList.toggle("show");
 }
 
-function displayRadioValue() {
+document.getElementById("next").addEventListener
+("click", displayRadioValue);
+
+function displayRadioValue(e) {
     let bias = document.getElementsByName('answer-bias');
     let measure = document.getElementsByName('answer-measure');
+    let biasValue;
+    let measureValue;
 
-    for (i = 0; i < bias.length; i++) {
-        if (bias[i].checked)
-            bias = bias[i].value;
 
+    for (let i = 0; i < bias.length; i++) {
+        if (bias[i].checked) {
+            console.log("Gekozen bias: " + bias[i].value);
+            biasValue = bias[i].value;
+        }
     }
 
-    for (i = 0; i < measure.length; i++) {
-        if (measure[i].checked)
-            measure = measure[i].value;
+    for (let j = 0; j < measure.length; j++) {
+        if (measure[j].checked) {
+            console.log("Gekozen maatregel: " + measure[j].value);
+            measureValue = measure[j].value;
+        }
     }
-    console.log(bias + measure);
+
+    if (biasValue === undefined || measureValue === undefined) {
+        console.log("slechts 1 antwoord ingevuld")
+    }
+
 
 }
 
 // Start first canvas
 json(jsonFile);
-
-document.getElementsByClassName("submit-button")[0].addEventListener
-    ("click", submitClick);
-
-function submitClick(e) {
-    var biasAnswer = document.getElementsByName("answer-bias");
-    var measureAnswer = document.getElementsByName("answer-toDo");
-    var givenBiasAnswer;
-    var givenMeasureAnswer;
-
-    for (i = 0; i < biasAnswer.length; i++) {
-        if (biasAnswer[i].checked) {
-            console.log("Gekozen bias: " + biasAnswer[i].value);
-            givenBiasAnswer = biasAnswer[i].value;
-        }
-    }
-
-    for (i = 0; i < measureAnswer.length; i++) {
-        if (measureAnswer[i].checked) {
-            console.log("Gekozen maatregel: " + measureAnswer[i].value);
-            givenMeasureAnswer = measureAnswer[i].value;
-        }
-    }
-
-    // if (givenBiasAnswer === undefined || givenMeasureAnswer === undefined) {
-    //     console.log("slechts 1 antwoord ingevuld")
-    // }
-}
 
