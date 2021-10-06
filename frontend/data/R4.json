@@ -10,44 +10,44 @@
   },
   "bias": [
     {
-      "a": {
-        "biasName": "Illusion of validity",
-        "biasDescription": "We overschatten ons vermogen om data juist te interpreteren en er voorspellingen over te doen. Zeker als het gaat om data die \"consistente\" patronen laat zien en een verhaal lijkt te vertellen.",
-        "biasExample": "De dataset wijst erop dat de verkoop van hamburgers wordt gestimuleerd door de kleur van het postertje bij de balie groen of geel te maken. Terwijl dit er eigenlijk niets mee te maken heeft."
-      },
+      "char": "a",
+      "biasName": "Illusion of validity",
+      "biasDescription": "We overschatten ons vermogen om data juist te interpreteren en er voorspellingen over te doen. Zeker als het gaat om data die \"consistente\" patronen laat zien en een verhaal lijkt te vertellen.",
+      "biasExample": "De dataset wijst erop dat de verkoop van hamburgers wordt gestimuleerd door de kleur van het postertje bij de balie groen of geel te maken. Terwijl dit er eigenlijk niets mee te maken heeft.",
       "points": 5
     },
     {
-      "b": {
-        "biasName": "Illusory correlation",
-        "biasDescription": "We zien makkelijk verbanden tussen eigenschappen, variabelen en fenomenen die er in werkelijkheid niet zijn. Die neiging hebben we zeker als we naar datareeksen kijken.",
-        "biasExample": "Als amateur astroloog heb je al jaren de stand van de maan geobserveerd. Je concludeert dat er een relatie is tussen de maanfases en de dalende of juist stijgende geboortecijfers in Amsterdam."
-      },
+      "char": "b",
+      "biasName": "Illusory correlation",
+      "biasDescription": "We zien makkelijk verbanden tussen eigenschappen, variabelen en fenomenen die er in werkelijkheid niet zijn. Die neiging hebben we zeker als we naar datareeksen kijken.",
+      "biasExample": "Als amateur astroloog heb je al jaren de stand van de maan geobserveerd. Je concludeert dat er een relatie is tussen de maanfases en de dalende of juist stijgende geboortecijfers in Amsterdam.",
       "points": 2
     },
     {
-      "c": {
-        "biasName": "Confirmation bias",
-        "biasDescription": "We geven de voorkeur aan het zoeken, vinden en verwerken van informatieprikkels die onze bestaande overtuigingen bevestigen.",
-        "biasExample": "Je gelooft dat vrouwen slimmer zijn dan mannen. En je wordt je er vooral bewust van als je een slimme vrouw ontmoet. Voorbeelden van minder slimme vrouwen en mannen ontgaan je sneller."
-      },
+      "char": "c",
+      "biasName": "Confirmation bias",
+      "biasDescription": "We geven de voorkeur aan het zoeken, vinden en verwerken van informatieprikkels die onze bestaande overtuigingen bevestigen.",
+      "biasExample": "Je gelooft dat vrouwen slimmer zijn dan mannen. En je wordt je er vooral bewust van als je een slimme vrouw ontmoet. Voorbeelden van minder slimme vrouwen en mannen ontgaan je sneller.",
       "points": 0
     }
   ],
-  "measureOption": {
-    "a": {
+  "measureOption": [
+    {
+      "char": "a",
       "answer": "We halen de sinaasappels uit de schappen voor een periode van een week. Het risico voor de gezondheid van onze burgers is te groot.",
       "points": 0
     },
-    "b": {
+    {
+      "char": "b",
       "answer": "We gaan in meer dorpen en steden in het land vergelijkbare data verzamelen. Hiervoor moeten we grof investeren, maar het is de enige manier om zeker te zijn van het effect van sinaasappels op besmetting.",
       "points": 5
     },
-    "c": {
+    {
+      "char": "c",
       "answer": "We verstrekken sinaasappels via een voedselbon in de helft van de steden. Op deze manier kunnen we experimenteren met de werkelijke impact van sinaasappels op besmettingscijfers.",
       "points": 2
     }
-  },
+  ],
   "canvas": [
     {
       "points": 1,

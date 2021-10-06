@@ -10,48 +10,42 @@
   },
   "bias": [
     {
-      "a": {
-        "biasName": "Spotlight effect",
-        "biasDescription": "We denken soms dat we aandachtiger worden gezien en gehoord door anderen dan werkelijk waar is.",
-        "biasExample": "Tijdens een presentatie ben je gespannen over die paar zweetdruppels die op je voorhoofd staan. Je verwacht dat iedereen die zal zien en er iets van zal vinden. In werkelijkheid heeft bijna niemand het door. Bovendien vindt het publiek er helemaal niets van."
-      },
+      "char": "a",
+      "biasName": "Spotlight effect",
+      "biasDescription": "We denken soms dat we aandachtiger worden gezien en gehoord door anderen dan werkelijk waar is.",
+      "biasExample": "Tijdens een presentatie ben je gespannen over die paar zweetdruppels die op je voorhoofd staan. Je verwacht dat iedereen die zal zien en er iets van zal vinden. In werkelijkheid heeft bijna niemand het door. Bovendien vindt het publiek er helemaal niets van.",
       "points": 0
     },
     {
-      "b": {
-        "biasName": "Authority bias",
-        "biasDescription": "We schatten de mening van een door ons bestempeld autoriteit in als nauwkeuriger en meer 'waar'. Dit is onafhankelijk van onze rationele beoordeling van de boodschap of content. Of mogelijk zelfs onafhankelijk van het expertisegebied van die persoon.",
-        "biasExample": "We nemen van externe consultants met een bepaalde expertise sneller een aanbeveling over. Zelfs als dat buiten het eigen expertisegebied valt."
-      },
+      "char": "b",
+      "biasName": "Authority bias",
+      "biasDescription": "We schatten de mening van een door ons bestempeld autoriteit in als nauwkeuriger en meer 'waar'. Dit is onafhankelijk van onze rationele beoordeling van de boodschap of content. Of mogelijk zelfs onafhankelijk van het expertisegebied van die persoon.",
+      "biasExample": "We nemen van externe consultants met een bepaalde expertise sneller een aanbeveling over. Zelfs als dat buiten het eigen expertisegebied valt.",
       "points": 2
     },
     {
-      "c": {
-        "biasName": "Hot-hand fallacy",
-        "biasDescription": "We verwachten dat iemand die succes heeft gehad ook in de toekomst een grotere kans heeft op succes. Terwijl daar op basis van de logische kansverdeling geen aanleiding toe is.",
-        "biasExample": "Een basketballer heeft met vrije worpen een gemiddelde van 50% raak. Maar vanavond heeft hij de eerste 3 vrije worpen raak gegooid. Hij is niet te stoppen!"
-      },
+      "char": "c",
+      "biasName": "Hot-hand fallacy",
+      "biasDescription": "We verwachten dat iemand die succes heeft gehad ook in de toekomst een grotere kans heeft op succes. Terwijl daar op basis van de logische kansverdeling geen aanleiding toe is.",
+      "biasExample": "Een basketballer heeft met vrije worpen een gemiddelde van 50% raak. Maar vanavond heeft hij de eerste 3 vrije worpen raak gegooid. Hij is niet te stoppen!",
       "points": 5
     }
   ],
   "measureOption": [
     {
-      "a": {
-        "answer": "Als het gaat om de veiligheid van onze bevolking kunnen we niet genoeg doen! Het dragen van neuskapjes moet verplicht worden buiten huis.",
-        "points": 0
-      }
+      "char": "a",
+      "answer": "Als het gaat om de veiligheid van onze bevolking kunnen we niet genoeg doen! Het dragen van neuskapjes moet verplicht worden buiten huis.",
+      "points": 0
     },
     {
-      "b": {
-        "answer": "We weten niet zeker of het dragen van neuskapjes werkt, maar baat het niet dan schaadt het niet. We adviseren burgers om een neuskapje te dragen.",
-        "points": 2
-      }
+      "char": "b",
+      "answer": "We weten niet zeker of het dragen van neuskapjes werkt, maar baat het niet dan schaadt het niet. We adviseren burgers om een neuskapje te dragen.",
+      "points": 2
     },
     {
-      "c": {
-        "answer": "We adviseren de burgers zich te houden aan maatregelen waarvan we weten dat die effectief zijn.",
-        "points": 5
-      }
+      "char": "c",
+      "answer": "We adviseren de burgers zich te houden aan maatregelen waarvan we weten dat die effectief zijn.",
+      "points": 5
     }
   ],
   "canvas": [
@@ -59,21 +53,21 @@
       "points": 1,
       "newsArticles": [
         {
-          "newsArticleTitle": "Degressia sluit grenzen",
-          "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
-          "newsArticleSource": "~ Montangia Mail ~",
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
           "newsArticlePopup": false
         },
         {
-          "newsArticleTitle": "Hamsterwoede overvalt ook Digitanzanië",
-          "newsArticleMessage": "Na Engelse Eiland is ook in Digitanzanië hamsterwoede uitgebroken. Door het hele land worden supermarkten leeg gehaald. Met name tampons worden massaal ingeslagen. Deze zouden namelijk helpen tegen een infectie met de nieuwe Olifantengriep. Het nationaal onderzoeksinstituut in Montangia liet al weten dat dit gebruik geen effect heeft op de verspreiding van de Olifantengriep. Desalniettemin gaat het hamsteren onverminderd door met regionale tekorten als gevolg.",
-          "newsArticleSource": "~ Pretechnostan Post ~",
-          "newsArticlePopup": true
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
+          "newsArticlePopup": false
         },
         {
-          "newsArticleTitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
-          "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
-          "newsArticleSource": "~ Degressia Dagblad ~",
+          "newsArticleTitle": "",
+          "newsArticleMessage": "",
+          "newsArticleSource": "",
           "newsArticlePopup": false
         }
       ],
