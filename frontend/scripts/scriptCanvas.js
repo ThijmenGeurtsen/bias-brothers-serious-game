@@ -21,7 +21,8 @@ function dataHandler(data) {
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    loadBias(data);
+    //console.log(data.bias[0].a.biasDescription);
+    loadBias(data.bias[0].a);
     loadMeasure(data.measureOption.a.answer, data.measureOption.b.answer, data.measureOption.c.answer)
 }
 
@@ -88,7 +89,13 @@ function loadMeasure(answerA, answerB, answerC) {
     //console.log(answerA);
 }
 
-function loadBias(data) {
+function loadBias(bias) {
+    document.getElementById("bias-name-1").innerHTML = bias.biasName;
+    document.getElementById("bias-description-1").innerHTML = bias.biasDescription;
+    document.getElementById("bias-example-1").innerHTML = bias.biasExample;
+
+
+
     // Get the biasModal
     var biasModal = document.getElementById("biasModal");
 
