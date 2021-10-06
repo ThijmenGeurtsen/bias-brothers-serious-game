@@ -53,7 +53,6 @@ function countdown(minutes) {
             }
         }
     }
-
     tick();
 }
 
@@ -96,6 +95,38 @@ function loadBias(answerA, answerB, answerC) {
     document.getElementById("biasA").nextElementSibling.innerHTML = answerA;
     document.getElementById("biasB").nextElementSibling.innerHTML = answerB;
     document.getElementById("biasC").nextElementSibling.innerHTML = answerC;
+}
+
+    function loadBiasPopup(bias) {
+    document.getElementById("bias-name-1").innerHTML = bias.biasName;
+    document.getElementById("bias-description-1").innerHTML = bias.biasDescription;
+    document.getElementById("bias-example-1").innerHTML = bias.biasExample;
+
+    // Get the biasModal
+    var biasModal = document.getElementById("biasModal");
+
+    // Get the button that opens the biasModal
+    var biasButton = document.getElementById("questionmark-img");
+
+    // Get the <closeModal> element that closeModals the biasModal
+    var closeModal = document.getElementsByClassName("closeModal")[0];
+
+    // When the user clicks on the button, open the biasModal
+    biasButton.onclick = function () {
+        biasModal.style.display = "block";
+    }
+
+    // When the user clicks on <closeModal> (x), closeModal the biasModal
+    closeModal.onclick = function () {
+        biasModal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the biasModal, closeModal it
+    window.onclick = function (event) {
+        if (event.target == biasModal) {
+            biasModal.style.display = "none";
+        }
+    }
 }
 
 // Creates a tab function to display text of the chosen tab
