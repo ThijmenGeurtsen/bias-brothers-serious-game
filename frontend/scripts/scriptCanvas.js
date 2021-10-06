@@ -180,3 +180,32 @@ function displayRadioValue() {
 
 // Start first canvas
 json(jsonFile);
+
+document.getElementsByClassName("submit-button")[0].addEventListener
+    ("click", submitClick);
+
+function submitClick(e) {
+    var biasAnswer = document.getElementsByName("answer-bias");
+    var measureAnswer = document.getElementsByName("answer-toDo");
+    var givenBiasAnswer;
+    var givenMeasureAnswer;
+
+    for (i = 0; i < biasAnswer.length; i++) {
+        if (biasAnswer[i].checked) {
+            console.log("Gekozen bias: " + biasAnswer[i].value);
+            givenBiasAnswer = biasAnswer[i].value;
+        }
+    }
+
+    for (i = 0; i < measureAnswer.length; i++) {
+        if (measureAnswer[i].checked) {
+            console.log("Gekozen maatregel: " + measureAnswer[i].value);
+            givenMeasureAnswer = measureAnswer[i].value;
+        }
+    }
+
+    // if (givenBiasAnswer === undefined || givenMeasureAnswer === undefined) {
+    //     console.log("slechts 1 antwoord ingevuld")
+    // }
+}
+
