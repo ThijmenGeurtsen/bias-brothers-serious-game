@@ -192,12 +192,14 @@ function giveAnswer(e) {
     for (let i = 0; i < bias.length; i++) {
         if (bias[i].checked) {
             biasValue = bias[i].value;
+            bias[i].checked = false;
         }
     }
 
     for (let j = 0; j < measure.length; j++) {
         if (measure[j].checked) {
             measureValue = measure[j].value;
+            measure[j].checked = false;
         }
     }
 
@@ -209,6 +211,7 @@ function giveAnswer(e) {
 }
 
 function nextRound(biasAnswer, measureAnswer) {
+
     round = round + 1;
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
     jsonName = "data/R" + round.toString();
