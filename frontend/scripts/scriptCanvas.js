@@ -204,7 +204,7 @@ function giveAnswer(e) {
     }
 
     if (biasValue === undefined || measureValue === undefined) {
-        alert("U heeft slechts 1 antwoord ingevuld.")
+        alert("U heeft niet allebei de vragen ingevuld.")
     } else {
         nextRound(biasValue, measureValue);
     }

@@ -282,3 +282,22 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  #bias-mid-row {
+    background-color: rgba(175, 175, 175, 0.274);
+  }
+
+  #bias-table td {
+    padding: 15px;
+    text-align: left;
+  }
+
+  #bias-table th {
+    text-align: left;
+    padding: 15px;
+}
+
+  #bias-table {
+    border-spacing: 0px;
+}
+
