@@ -9,7 +9,7 @@ async function json(jsonFile) {
     console.log(jsonFile);
     // Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
-    countdown(data.timer);
+    //countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
