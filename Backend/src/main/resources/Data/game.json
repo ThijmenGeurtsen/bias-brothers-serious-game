@@ -1,0 +1,1136 @@
+[
+  {
+    "roundOne": {
+      "roundNumber": {
+        "roundNumber": "Ronde 1: ",
+        "roundTitle": "De start"
+      },
+      "timer": 7,
+      "scenario": {
+        "scenarioTitle": "Hamsterwoede!",
+        "scenarioText": "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?"
+      },
+      "bias": [
+        {
+          "char": "a",
+          "biasName": "Decoy effect",
+          "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
+          "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "biasName": "Representativeness Heuristic",
+          "biasDescription": "We hebben de neiging zaken die op elkaar lijken, die representatief zijn voor elkaar, met elkaar te verbinden. Ook als daar geen correlatie of causaal verband tussen bestaat.",
+          "biasExample": "In sommige alternatieve geneeswijzen wordt het aangeraden om orgaanvlees te eten overeenkomstig met het orgaan waar de patiënt last van heeft. Het gezonde, geconsumeerde vlees zou dan helpen het zieke weefsel te helen.",
+          "points": 5
+        },
+        {
+          "char": "c",
+          "biasName": "Negativity bias",
+          "biasDescription": "Negatieve prikkels hebben een disproportioneel groter effect op onze gemoedstoestand dan positieve prikkels van eenzelfde intensiteit.",
+          "biasExample": "Je zit al een uur in de vergadering met de directie. Je realiseert je dat het 90% van de tijd gaat over risico's, verliezen, bedreigingen en het vermijden van deze zaken.",
+          "points": 2
+        }
+      ],
+      "measureOption": [
+        {
+          "char": "a",
+          "answer": "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.",
+          "points": 5
+        },
+        {
+          "char": "b",
+          "answer": "De bevolking van Digitanzanië is slim genoeg om te snappen dat dit soort huis, tuin en keukenmiddeltjes hen niet veilig gaan houden. We hoeven niks te doen.",
+          "points": 0
+        },
+        {
+          "char": "c",
+          "answer": "Een gevoel van veiligheid is ook wat waard, maar dat moet niet ten koste gaan van anderen. We laten weten dat de tampons niet zullen helpen.",
+          "points": 2
+        }
+      ],
+      "canvas": [
+        {
+          "points": 1,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": "",
+            "infected": 0,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 2,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": "",
+            "infected": 0,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 3,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep",
+              "newsArticleMessage": "Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië",
+              "newsArticleMessage": "De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": 19362815,
+            "infected": 0,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 4,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": "",
+            "infected": 0,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 5,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": "",
+            "infected": 0,
+            "mutated": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "round": {
+      "roundNumber": {
+        "roundNumber": "Ronde 2: ",
+        "roundTitle": "De opmars"
+      },
+      "timer": 7,
+      "scenario": {
+        "scenarioTitle": "De redder",
+        "scenarioText": "De opmars van de Olifantengriep gaat onverminderd door. Onder de bevolking gaan er geluiden op dat neuskapjes mogelijk helpen tegen de verspreiding. Nico Vaarderen, spreker en trendwatcher, vertelde onlangs in een praatprogramma dat neuskapjes hoogst waarschijnlijk een vermindering van het aantal besmettingen konden opleveren. Nico Vaarderen was één van de eerste die zag dat Noord-Kropslavië hard getroffen zou gaan worden. Daarnaast voorspelde hij ook een snelle verbreiding van het virus naar Zuid-Kropslavië. Wat moet de overheid van Digitanzanië doen?"
+      },
+      "bias": [
+        {
+          "char": "a",
+          "biasName": "Spotlight effect",
+          "biasDescription": "We denken soms dat we aandachtiger worden gezien en gehoord door anderen dan werkelijk waar is.",
+          "biasExample": "Tijdens een presentatie ben je gespannen over die paar zweetdruppels die op je voorhoofd staan. Je verwacht dat iedereen die zal zien en er iets van zal vinden. In werkelijkheid heeft bijna niemand het door. Bovendien vindt het publiek er helemaal niets van.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "biasName": "Authority bias",
+          "biasDescription": "We schatten de mening van een door ons bestempeld autoriteit in als nauwkeuriger en meer 'waar'. Dit is onafhankelijk van onze rationele beoordeling van de boodschap of content. Of mogelijk zelfs onafhankelijk van het expertisegebied van die persoon.",
+          "biasExample": "We nemen van externe consultants met een bepaalde expertise sneller een aanbeveling over. Zelfs als dat buiten het eigen expertisegebied valt.",
+          "points": 2
+        },
+        {
+          "char": "c",
+          "biasName": "Hot-hand fallacy",
+          "biasDescription": "We verwachten dat iemand die succes heeft gehad ook in de toekomst een grotere kans heeft op succes. Terwijl daar op basis van de logische kansverdeling geen aanleiding toe is.",
+          "biasExample": "Een basketballer heeft met vrije worpen een gemiddelde van 50% raak. Maar vanavond heeft hij de eerste 3 vrije worpen raak gegooid. Hij is niet te stoppen!",
+          "points": 5
+        }
+      ],
+      "measureOption": [
+        {
+          "char": "a",
+          "answer": "Als het gaat om de veiligheid van onze bevolking kunnen we niet genoeg doen! Het dragen van neuskapjes moet verplicht worden buiten huis.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "answer": "We weten niet zeker of het dragen van neuskapjes werkt, maar baat het niet dan schaadt het niet. We adviseren burgers om een neuskapje te dragen.",
+          "points": 2
+        },
+        {
+          "char": "c",
+          "answer": "We adviseren de burgers zich te houden aan maatregelen waarvan we weten dat die effectief zijn.",
+          "points": 5
+        }
+      ],
+      "canvas": [
+        {
+          "points": 1,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362703,
+            "infected": 112,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 2,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Degressia sluit grenzen",
+              "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
+              "newsArticleSource": "~ Montangia Mail ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Hamsterwoede overvalt ook Digitanzanië",
+              "newsArticleMessage": "Na Engelse Eiland is ook in Digitanzanië hamsterwoede uitgebroken. Door het hele land worden supermarkten leeg gehaald. Met name tampons worden massaal ingeslagen. Deze zouden namelijk helpen tegen een infectie met de nieuwe Olifantengriep. Het nationaal onderzoeksinstituut in Montangia liet al weten dat dit gebruik geen effect heeft op de verspreiding van de Olifantengriep. Desalniettemin gaat het hamsteren onverminderd door met regionale tekorten als gevolg.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
+              "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362703,
+            "infected": 112,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 3,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Degressia sluit grenzen",
+              "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
+              "newsArticleSource": "~ Montangia Mail ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Aanstekelijke hamsterwoede",
+              "newsArticleMessage": "Eerder gingen inwoners van Engelse Eiland al massaal naar de winkels om tampons op te kopen. Nu zijn ook in het naburige Digitanzanië dergelijke taferelen waar te nemen. Hoewel de hamsterwoede nog niet zo erg is als op het eiland ontstaan er wel degelijk lokale tekorten. De aanmaningen van de Digitanzaneese overheid tegen het onconventionele gebruik van de tampons worden maar beperkt gehoord.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
+              "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362703,
+            "infected": 112,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 4,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Degressia sluit grenzen",
+              "newsArticleMessage": "Om te voorkomen dat Degressia wordt aangestoken met de Olifantengriep heeft het land besloten de grenzen te sluiten. Sinds in haar buurlanden de Olifantengriep is gevonden, treft het land alle voorzorgsmaatregelen om haar inwoners veilig te houden. Onder de inwoners van het land heerst verdeeldheid over de genomen maatregelen.",
+              "newsArticleSource": "~ Montangia Mail ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Overheid Digitanzanië lanceert preventie dashboard Olifantengriep",
+              "newsArticleMessage": "De overheid van Digitanzanië heeft een dashboard gelanceerd waarin alle actuele informatie over de Olifantengriep staat weergegeven. Het dashboard geeft daarnaast aan wat voor stappen burgers kunnen nemen om besmetting met het virus te voorkomen. Zo wordt er geadviseerd om regelmatig de handen te wassen en in de elleboog te niezen.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Olifantengriep wijd verbreid in Noord-Kropslavië",
+              "newsArticleMessage": "Besmettingen met de Olifantengriep lopen op in Noord-Kropslavië. Gevallen zijn nu geconstateerd in alle grote steden. Het totaal aantal besmettingen is tevens al boven de 5.000 gevallen uitgestegen. Daarbij zijn ook de eerste gevallen van een permanente mutatie gerapporteerd in de hoofdstad. Ziekenhuizen in de provincie zijn druk bezig hun capaciteit op te schalen om het stijgende aantal patiënten aan te kunnen.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362703,
+            "infected": 112,
+            "mutated": 0
+          }
+        },
+        {
+          "points": 5,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "",
+              "newsArticleMessage": "",
+              "newsArticleSource": "",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": "",
+            "infected": 0,
+            "mutated": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "round": {
+      "roundNumber": {
+        "roundNumber": "Ronde 3: ",
+        "roundTitle": "De eerste gevallen"
+      },
+      "timer": 7,
+      "scenario": {
+        "scenarioTitle": "Medicijn aangeboden",
+        "scenarioText": "Farmaceut ProCare BV biedt overheden de kans om het preventie medicijn Nosnez te bestellen. Nosnez inhibeert de niesreflex in mensen en vermindert de hoestreflex. Zo worden besmettingen voorkomen. ProCare wil per direct orders ontvangen om de productie op te schalen. De nog veranderlijke prognose is dat er tussen 1.5 en 1.7 miljoen doses nodig zullen zijn in Digitanzanië. ProCare biedt 3 pakketten aan: <br><br> 1) 1.000.000 doses Nosnez voor $51.380.000 <br> 2) 1.600.000 doses Nosnez voor $53.750.000 <br> 3) 2.000.000 doses Nosnez voor $58.000.000 <br><br> Financiering voor de aanschaf komt uit het Olifantengriep noodfonds. Deze wordt ook gebruikt voor, onder andere, de opschaling van ziekenhuis IC bedden en testcapaciteit. ProCare biedt Nosnez eenmalig aan. Het is onzeker wanneer ProCare na deze productie nieuwe doses aan zal bieden."
+      },
+      "bias": [
+        {
+          "char": "a",
+          "biasName": "Anchoring",
+          "biasDescription": "We laten een eerder beschikbaar gekregen stukje informatie onze latere besluitvorming beïnvloeden. Ondanks dat deze info niet relevant hoeft te zijn. Dit gebeurt vaak als er prijzen of schattingen mee gemoeid zijn.",
+          "biasExample": "Wanneer je onderhandelt om prijs is het raadzaam om een absurd openingsbod te negeren. En voordat je zelf een bod plaatst, de tegenpartij een realistisch tegenbod te laten plaatsen. Om te voorkomen dat het eindigt in de buurt van dit absurde eerste bod.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "biasName": "Loss Aversion",
+          "biasDescription": "We hebben de neiging om (potentieel) verlies zwaarder te laten wegen als we een keuze krijgen om iets te winnen versus verliezen.",
+          "biasExample": "Je krijgt de keuze om een weddenschap te doen met inleg van 10 euro uit eigen zak. De kans op winst is 50%. Als je wint krijg je 20 euro, als je verliest niets. Onbewust ga je die weddenschap liever niet aan, ondanks dat je rationeel gezien per saldo op nul uitkomt.",
+          "points": 2
+        },
+        {
+          "char": "c",
+          "biasName": "Decoy effect",
+          "biasDescription": "In de keuze tussen twee producten zal er een voorkeur optreden voor een van de twee zodra je een er een optie tussen plaatst die (asymmetrisch) dichter bij een van de opties ligt.",
+          "biasExample": "In de bioscoop verkoopt men kleine, medium en grote popcorn voor €2.50, €3,50 en €4,00 respectievelijk.",
+          "points": 5
+        }
+      ],
+      "measureOption": [
+        {
+          "char": "a",
+          "answer": "Kies pakket 1",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "answer": "Kies pakket 2",
+          "points": 5
+        },
+        {
+          "char": "c",
+          "answer": "Kies pakket 3",
+          "points": 2
+        }
+      ],
+      "canvas": [
+        {
+          "points": 1,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Voorgoed veranderd",
+              "newsArticleMessage": "De eerste gevallen van een permanente mutatie met het Olifantengriep virus in Digitanzanië zijn officieel. Zonder vaccin of medicijn zijn doctoren aangewezen op het verlichten van de symptomen en hopen op het beste. Bij een groep patiënten mocht dat niet baten. Zij zullen de rest van hun leven met een slurf moeten doorbrengen. Waarschijnlijk zullen zij niet de laatste zijn. De patiënten onder gaan momenteel training om gebruik te leren maken van hun nieuwe ledemaat.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Besmettingen Olifantengriep lopen onverwacht hoog op",
+              "newsArticleMessage": "De cijfers met Olifantengriep besmettingen zijn ondanks aangekondigde maatregelen hard gestegen in Digitanzanië. De regering roept haar burgers op om afstand te houden en in quarantaine te gaan wanneer men symptomen vertoont. De maatregelen worden echter slecht gevolgd. Velen lijken te denken al veilig te zijn als ze een neuskapje dragen. Deze blijken in de praktijk echter weinig te doen om een besmetting met het virus te voorkomen.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Zuid-Kropslavië volgt voorbeeld van Degressia",
+              "newsArticleMessage": "Vanochtend heeft de regering van Zuid-Kropslavië aangekondigd de grenzen met buurlanden Noord-Kropslavië en Pretechnostan te sluiten. De Zuid-Kropslavische overheid adviseert Zuid-Kropslaviërs in besmette gebieden om zich te laten testen alvorens terug te keren.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19361955,
+            "infected": 836,
+            "mutated": 24
+          }
+        },
+        {
+          "points": 2,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Voorgoed veranderd",
+              "newsArticleMessage": "De eerste gevallen van een permanente mutatie met het Olifantengriepvirus in Digitanzanië zijn officieel. Zonder vaccin of medicijn zijn doctoren aangewezen op het verlichten van de symptomen en hopen op het beste. Bij 16 patiënten mocht dat niet baten. Zij zullen de rest van hun leven met een slurf moeten doorbrengen. Waarschijnlijk zullen zij niet de laatste zijn. De patiënten ondergaan momenteel training om gebruik te leren maken van hun nieuwe ledemaat.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Besmettingen Olifantengriep lopen onverwacht hoog op",
+              "newsArticleMessage": "De cijfers met Olifantengriep besmettingen zijn ondanks aangekondigde maatregelen hard gestegen in Digitanzanië. De regering roept haar burgers op om afstand te houden en in quarantaine te gaan wanneer men symptomen vertoont. De maatregelen worden echter slecht gevolgd. Velen lijken te denken al veilig te zijn als ze een neuskapje dragen. Deze blijken in de praktijk echter weinig te doen om een besmetting met het virus te voorkomen.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Zuid-Kropslavië volgt voorbeeld van Degressia",
+              "newsArticleMessage": "Vanochtend heeft de regering van Zuid-Kropslavië aangekondigd de grenzen met buurlanden Noord-Kropslavië en Pretechnostan te sluiten. De Zuid-Kropslavische overheid adviseert Zuid-Kropslaviërs in besmette gebieden om zich te laten testen alvorens terug te keren.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362029,
+            "infected": 770,
+            "mutated": 16
+          }
+        },
+        {
+          "points": 3,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Voorgoed veranderd",
+              "newsArticleMessage": "De eerste gevallen van een permanente mutatie met het Olifantengriepvirus in Digitanzanië zijn officieel. Zonder vaccin of medicijn zijn doctoren aangewezen op het verlichten van de symptomen en hopen op het beste. Bij een elftal patiënten mocht dat niet baten. Zij zullen de rest van hun leven met een slurf moeten doorbrengen. Waarschijnlijk zullen zij niet de laatste zijn. De patiënten ondergaan momenteel training om gebruik te leren maken van hun nieuwe ledemaat.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Besmettingen Olifantengriep lopen op",
+              "newsArticleMessage": "Besmettingen Olifantengriep lopen op\tDe cijfers met Olifantengriep besmettingen zijn ondanks aangekondigde maatregelen gestegen in Digitanzanië. De regering roept haar burgers op om afstand te houden en in quarantaine te gaan wanneer men symptomen vertoont. De maatregelen worden wisselend opgepakt. Sommigen denken al veilig te zijn als ze een neuskapje dragen. In de praktijk doen die echter weinig om een besmetting met het virus te voorkomen.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Zuid-Kropslavië volgt voorbeeld van Degressia",
+              "newsArticleMessage": "Vanochtend heeft de regering van Zuid-Kropslavië aangekondigd de grenzen met buurlanden Noord-Kropslavië en Pretechnostan te sluiten. De Zuid-Kropslavische overheid adviseert Zuid-Kropslaviërs in besmette gebieden om zich te laten testen alvorens terug te keren.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362132,
+            "infected": 672,
+            "mutated": 11
+          }
+        },
+        {
+          "points": 4,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Voorgoed veranderd",
+              "newsArticleMessage": "De eerste gevallen van een permanente mutatie met het Olifantengriepvirus in Digitanzanië zijn officieel. Zonder vaccin of medicijn zijn doctoren aangewezen op het verlichten van de symptomen en hopen op het beste. Bij zeven patiënten mocht dat niet baten. Zij zullen de rest van hun leven met een slurf moeten doorbrengen. Waarschijnlijk zullen zij niet de laatste zijn. De patiënten ondergaan momenteel training om gebruik te leren maken van hun nieuwe ledemaat.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Olifantengriep uitbraak in Montangia!",
+              "newsArticleMessage": "De Olifantengriep verspreidt zich snel door Montangia. Modellen die de verspreiding door het land moesten voorspellen bleken er ver naast te zitten. Ondanks de noodmaatregelen die het land heeft genomen stijgt het aantal infecties snel. Experts wijten dit aan de neuskapjes. Eerder adviseerde de Montangiaanse overheid haar burgers om neuskapjes te dragen. Deze blijken na onderzoek echter niet te helpen een infectie met het virus tegen te gaan.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Zuid-Kropslavië volgt voorbeeld van Degressia",
+              "newsArticleMessage": "Vanochtend heeft de regering van Zuid-Kropslavië aangekondigd de grenzen met buurlanden Noord-Kropslavië en Pretechnostan te sluiten. De Zuid-Kropslavische overheid adviseert Zuid-Kropslaviërs in besmette gebieden om zich te laten testen alvorens terug te keren.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362214,
+            "infected": 594,
+            "mutated": 7
+          }
+        },
+        {
+          "points": 5,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Voorgoed veranderd",
+              "newsArticleMessage": "De eerste gevallen van een permanente mutatie met het Olifantengriepvirus in Digitanzanië zijn officieel. Zonder vaccin of medicijn zijn doctoren aangewezen op het verlichten van de symptomen en hopen op het beste. Bij een viertal patiënten mocht dat niet baten. Zij zullen de rest van hun leven met een slurf moeten doorbrengen. Waarschijnlijk zullen zij niet de laatste zijn. De patiënten ondergaan momenteel training om gebruik te leren maken van hun nieuwe ledemaat.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Olifantengriep uitbraak in Montangia!",
+              "newsArticleMessage": "De Olifantengriep verspreidt zich snel door Montangia. Modellen die de verspreiding door het land moesten voorspellen bleken er ver naast te zitten. Ondanks de noodmaatregelen die het land heeft genomen stijgt het aantal infecties snel. Experts wijten dit aan de neuskapjes. Eerder adviseerde de Montangiaanse overheid haar burgers om neuskapjes te dragen. Deze blijken na onderzoek echter niet te helpen een infectie met het virus tegen te gaan.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Zuid-Kropslavië volgt voorbeeld van Degressia",
+              "newsArticleMessage": "Vanochtend heeft de regering van Zuid-Kropslavië aangekondigd de grenzen met buurlanden Noord-Kropslavië en Pretechnostan te sluiten. De Zuid-Kropslavische overheid adviseert Zuid-Kropslaviërs in besmette gebieden om zich te laten testen alvorens terug te keren.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19362300,
+            "infected": 511,
+            "mutated": 4
+          }
+        }
+      ]
+    }
+  },
+  {
+    "round": {
+      "roundNumber": {
+        "roundNumber": "Ronde 4: ",
+        "roundTitle": "De pandemie"
+      },
+      "timer": 7,
+      "scenario": {
+        "scenarioTitle": "Zand in de oranje motor?",
+        "scenarioText": "De besmettingscijfers nemen nu ook in Digitanzanië serieuze vormen aan. De overheid-kritische Dikke Huidenbeweging beweert over informatie te beschikken dat het consumeren van sinaasappels en andere producten met hoge vitamine C concentratie de besmettingsgraad verhoogt. Het risico om dit niet te onderzoeken lijkt de overheid van Digitanzanië te groot. Zij heeft een onderzoeksteam gevraagd de sinaasappelconsumptie onder de loep te nemen. Met als doel om te bepalen of verse sinaasappels tijdelijk uit de winkels moeten verdwijnen. Er zijn op het hele continent steekproeven genomen (zie onderin de links naar de data en uitkomsten)."
+      },
+      "bias": [
+        {
+          "char": "a",
+          "biasName": "Illusion of validity",
+          "biasDescription": "We overschatten ons vermogen om data juist te interpreteren en er voorspellingen over te doen. Zeker als het gaat om data die \"consistente\" patronen laat zien en een verhaal lijkt te vertellen.",
+          "biasExample": "De dataset wijst erop dat de verkoop van hamburgers wordt gestimuleerd door de kleur van het postertje bij de balie groen of geel te maken. Terwijl dit er eigenlijk niets mee te maken heeft.",
+          "points": 5
+        },
+        {
+          "char": "b",
+          "biasName": "Illusory correlation",
+          "biasDescription": "We zien makkelijk verbanden tussen eigenschappen, variabelen en fenomenen die er in werkelijkheid niet zijn. Die neiging hebben we zeker als we naar datareeksen kijken.",
+          "biasExample": "Als amateur astroloog heb je al jaren de stand van de maan geobserveerd. Je concludeert dat er een relatie is tussen de maanfases en de dalende of juist stijgende geboortecijfers in Amsterdam.",
+          "points": 2
+        },
+        {
+          "char": "c",
+          "biasName": "Confirmation bias",
+          "biasDescription": "We geven de voorkeur aan het zoeken, vinden en verwerken van informatieprikkels die onze bestaande overtuigingen bevestigen.",
+          "biasExample": "Je gelooft dat vrouwen slimmer zijn dan mannen. En je wordt je er vooral bewust van als je een slimme vrouw ontmoet. Voorbeelden van minder slimme vrouwen en mannen ontgaan je sneller.",
+          "points": 0
+        }
+      ],
+      "measureOption": [
+        {
+          "char": "a",
+          "answer": "We halen de sinaasappels uit de schappen voor een periode van een week. Het risico voor de gezondheid van onze burgers is te groot.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "answer": "We gaan in meer dorpen en steden in het land vergelijkbare data verzamelen. Hiervoor moeten we grof investeren, maar het is de enige manier om zeker te zijn van het effect van sinaasappels op besmetting.",
+          "points": 5
+        },
+        {
+          "char": "c",
+          "answer": "We verstrekken sinaasappels via een voedselbon in de helft van de steden. Op deze manier kunnen we experimenteren met de werkelijke impact van sinaasappels op besmettingscijfers.",
+          "points": 2
+        }
+      ],
+      "canvas": [
+        {
+          "points": 1,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Engelse Eiland sluit luchthavens",
+              "newsArticleMessage": "Nadat de Olifantengriep het land binnen kwam via reizigers uit het buitenland heeft de koning van Engelse Eiland besloten om alle luchthavens te sluiten. De Olifantengriep verspreidt zich inmiddels snel door het land. Inwoners die in buitenland verblijven kunnen niet terug naar huis tot de pandemie voorbij is.",
+              "newsArticleSource": "~ Progressia magazine ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Olifantengriep cijfers stijgen onverminderd",
+              "newsArticleMessage": "Voorspellingen over de snelle stijging van de Olifantengriep cijfers in Digitanzanië lijken uit te komen. Verschillende onderzoeksinstituten zagen de relatief hoge bevolkingsdichtheid al als een risico voor een snelle verspreiding van het virus. In een poging om de besmettingsgraad te verlagen is Nosnez ingezet in de zwaarst getroffen steden. Wegens de beperkte beschikbaarheid van het preventiemiddel was de effectiviteit echter gering. Lokale overheden zijn inmiddels druk bezig noodopvang locaties in te richten voor patiënten.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Wildvuur grijpt genadeloos om zich heen!",
+              "newsArticleMessage": "Aanhoudende droogte in Pretechnostan heeft geleid tot meerdere bosbranden die honderden hectaren bos verslinden. Een aantal van de meest omvangrijke vuren naderen de grootste steden van het land. De overheid van Pretechnostan heeft blusvliegtuigen ingezet om de branden te bedwingen. ",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19356467,
+            "infected": 6233,
+            "mutated": 115
+          }
+        },
+        {
+          "points": 2,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Engelse Eiland sluit luchthavens",
+              "newsArticleMessage": "Nadat de Olifantengriep het land binnen kwam via reizigers uit het buitenland heeft de koning van Engelse Eiland besloten om alle luchthavens te sluiten. De Olifantengriep verspreidt zich inmiddels snel door het land. Inwoners die in buitenland verblijven kunnen niet terug naar huis tot de pandemie voorbij is.",
+              "newsArticleSource": "~ Progressia magazine ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Digitanzanië gaat strijd aan met Olifantengriep",
+              "newsArticleMessage": "Gewapend met het nieuwe preventiemiddel Nosnez gaat Digitanzanië de strijd aan met het Olifantengriep virus. In de zwaarst getroffen gebieden is men druk bezig met de verspreiding van het nieuwe medicijn dat moet helpen de besmettingsgraad te verminderen. Ook in andere landen wordt het nieuwe middel met succes ingezet om de stijging van de cijfers te bedwingen. Of het middel ook op lange termijn inzetbaar blijft is onduidelijk door onzekerheid over de productie capaciteit.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Wildvuur grijpt genadeloos om zich heen!",
+              "newsArticleMessage": "Aanhoudende droogte in Pretechnostan heeft geleid tot meerdere bosbranden die honderden hectaren bos verslinden. Een aantal van de meest omvangrijke vuren naderen de grootste steden van het land. De overheid van Pretechnostan heeft blusvliegtuigen ingezet om de branden te bedwingen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19357623,
+            "infected": 5097,
+            "mutated": 95
+          }
+        },
+        {
+          "points": 3,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Engelse Eiland sluit luchthavens",
+              "newsArticleMessage": "Nadat de Olifantengriep het land binnen kwam via reizigers uit het buitenland heeft de koning van Engelse Eiland besloten om alle luchthavens te sluiten. De Olifantengriep verspreidt zich inmiddels snel door het land. Inwoners die in buitenland verblijven kunnen niet terug naar huis tot de pandemie voorbij is.",
+              "newsArticleSource": "~ Progressia magazine ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Digitanzanië gaat strijd aan met Olifantengriep",
+              "newsArticleMessage": "Gewapend met het nieuwe preventiemiddel Nosnez gaat Digitanzanië de strijd aan met het Olifantengriep virus. In de zwaarst getroffen gebieden is men druk bezig met de verspreiding van het nieuwe medicijn dat moet helpen de besmettingsgraad te verminderen. Ook in andere landen wordt het nieuwe middel met succes ingezet om de stijging van de cijfers te bedwingen. Of het middel ook op lange termijn inzetbaar blijft is onduidelijk door onzekerheid over de productie capaciteit.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Wildvuur grijpt genadeloos om zich heen!",
+              "newsArticleMessage": "Aanhoudende droogte in Pretechnostan heeft geleid tot meerdere bosbranden die honderden hectaren bos verslinden. Een aantal van de meest omvangrijke vuren naderen de grootste steden van het land. De overheid van Pretechnostan heeft blusvliegtuigen ingezet om de branden te bedwingen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19358612,
+            "infected": 4132,
+            "mutated": 71
+          }
+        },
+        {
+          "points": 4,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Engelse Eiland sluit luchthavens",
+              "newsArticleMessage": "Nadat de Olifantengriep het land binnen kwam via reizigers uit het buitenland heeft de koning van Engelse Eiland besloten om alle luchthavens te sluiten. De Olifantengriep verspreidt zich inmiddels snel door het land. Inwoners die in buitenland verblijven kunnen niet terug naar huis tot de pandemie voorbij is.",
+              "newsArticleSource": "~ Progressia magazine ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Digitanzanië gaat strijd aan met Olifantengriep",
+              "newsArticleMessage": "Gewapend met het nieuwe preventiemiddel Nosnez gaat Digitanzanië de strijd aan met het Olifantengriep virus. In de zwaarst getroffen gebieden is men druk bezig met de verspreiding van het nieuwe medicijn dat moet helpen de besmettingsgraad te verminderen. Ook in andere landen wordt het nieuwe middel met succes ingezet om de stijging van de cijfers te bedwingen. Of het middel ook op lange termijn inzetbaar blijft is onduidelijk door onzekerheid over de productie capaciteit.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Wildvuur grijpt genadeloos om zich heen!",
+              "newsArticleMessage": "Aanhoudende droogte in Pretechnostan heeft geleid tot meerdere bosbranden die honderden hectaren bos verslinden. Een aantal van de meest omvangrijke vuren naderen de grootste steden van het land. De overheid van Pretechnostan heeft blusvliegtuigen ingezet om de branden te bedwingen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19359581,
+            "infected": 3178,
+            "mutated": 56
+          }
+        },
+        {
+          "points": 5,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Engelse Eiland sluit luchthavens",
+              "newsArticleMessage": "Nadat de Olifantengriep het land binnen kwam via reizigers uit het buitenland heeft de koning van Engelse Eiland besloten om alle luchthavens te sluiten. De Olifantengriep verspreidt zich inmiddels snel door het land. Inwoners die in buitenland verblijven kunnen niet terug naar huis tot de pandemie voorbij is.",
+              "newsArticleSource": "~ Progressia magazine ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Piek Olifantengriep uitbraak afgewend",
+              "newsArticleMessage": "Olifantengriep cijfers liepen hard op in verscheidene provincies in Digitanzanië eerder deze week. Experts vreesden dat het land daarmee achter Noord- en Zuid-Kropslavië zou aangaan als grote brandhaard. Met tijdige inzet van het nieuwe preventiemiddel, Nosnez, werd het ergste van deze golf echter bedwongen. Nosnez wordt momenteel in meerdere landen ingezet om besmettelijkheid van de Olifantengriep te verlagen onder geïnfecteerden.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Wildvuur grijpt genadeloos om zich heen!",
+              "newsArticleMessage": "Aanhoudende droogte in Pretechnostan heeft geleid tot meerdere bosbranden die honderden hectaren bos verslinden. Een aantal van de meest omvangrijke vuren naderen de grootste steden van het land. De overheid van Pretechnostan heeft blusvliegtuigen ingezet om de branden te bedwingen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19360451,
+            "infected": 2316,
+            "mutated": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "round": {
+      "roundNumber": {
+        "roundNumber": "Ronde 5: ",
+        "roundTitle": "Het hoogtij"
+      },
+      "timer": 7,
+      "scenario": {
+        "scenarioTitle": "Maatwerkregel",
+        "scenarioText": "Met de oplopende Olifantengriep cijfers heeft de regering van Digitanzanië een pakket met strengere maatregelen voorgesteld. Daarin wordt onder andere gepraat over een 3 meter afstandsregel, een avondklok vanaf 8 uur en het sluiten van alles behalve de supermarkten om zo contactmomenten zoveel mogelijk te beperken. Vanuit verschillende hoeken gaan mensen boos de straat op om tegen deze maatregelen te protesteren. Ze zouden te streng zijn en de onderbouwing voor het effect tegen de verspreiding gebrekkig. Vergelijkbare maatregelen zijn ook in Noord-Kropslavië ingezet. Daar zijn de cijfers voorzichtig optimistisch aan het worden."
+      },
+      "bias": [
+        {
+          "char": "a",
+          "biasName": "Illusory correlation",
+          "biasDescription": "We zien makkelijk verbanden tussen eigenschappen, variabelen en fenomenen die er in werkelijkheid niet zijn. Die neiging hebben we zeker als we naar datareeksen kijken.",
+          "biasExample": "Als amateur astroloog heb je al jaren de stand van de maan geobserveerd. Je concludeert dat er een relatie is tussen de maanfases en de dalende of juist stijgende geboortecijfers in Amsterdam.",
+          "points": 2
+        },
+        {
+          "char": "b",
+          "biasName": "Authority bias",
+          "biasDescription": "We schatten de mening van een door ons bestempeld autoriteit in als nauwkeuriger en meer 'waar'. Dit is onafhankelijk van onze rationele beoordeling van de boodschap of content. Of mogelijk zelfs onafhankelijk van het expertisegebied van die persoon.",
+          "biasExample": "We nemen van externe consultants met een bepaalde expertise sneller een aanbeveling over. Zelfs als dat buiten het eigen expertisegebied valt.",
+          "points": 0
+        },
+        {
+          "char": "c",
+          "biasName": "Reactance",
+          "biasDescription": "We ervaren onbewust een onplezierig gevoel en aversie richting mensen die ons beperken in onze keuzes of autonomie. Zeker als we deze mensen bestempelen als (de) autoriteit. Dit stuurt ons in, vaak opstandig, gedrag.",
+          "biasExample": "In een openbaar wc-gebouw hangt een bordje met \"Je mag niet op de muren tekenen\". Deze muren zijn volgekalkt. In een ander wc-gebouw waar het bordje niet hangt staat een enkele bescheiden liefdesverklaring.",
+          "points": 5
+        }
+      ],
+      "measureOption": [
+        {
+          "char": "a",
+          "answer": "We laten de maatregelen doorgaan met een duidelijk plan wanneer ze versoepeld kunnen worden.",
+          "points": 5
+        },
+        {
+          "char": "b",
+          "answer": "We verlichten het plan voor de avondklok naar 21:30 en verkleinen de afstand tot 1 meter.",
+          "points": 2
+        },
+        {
+          "char": "c",
+          "answer": "We schrappen de meest bezwaarlijke maatregelen en voeren alleen de breder gedragen maatregelen in.",
+          "points": 0
+        }
+      ],
+      "canvas": [
+        {
+          "points": 1,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Gehaaste wetenschap en drama",
+              "newsArticleMessage": "Na de ophef over het ontruimen van sinaasappels uit de supermarktschappen, is er wederom onrust in de wetenschappelijke wereld. De beslissing om de schappen te ontruimen zou voortkomen uit een onderzoek dat aantoonde hoe sinaasappels de kans op besmetting met het Olifantengriep virus verhoogde. Dat onderzoek werd vandaag ontkracht in een persconferentie waarin Samantha Kertam, voorzitter van de Dikke Huidenbeweging, haar excuses aanbood. De conclusies uit het onderzoek bleken overhaast en ongefundeerd.",
+              "newsArticleSource": "~ Wauw! Magazine ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Piek uitbraak Olifantengriep in Zuid-Kropslavië",
+              "newsArticleMessage": "Olifantencijfers in Zuid-Kropslavië zijn de afgelopen weken met onvoorstelbare snelheid omhoog geschoten. Vooral in de grote steden zijn de besmettingscijfers schrikbarend. Het Zuid-Kropslavische ministerie van Welzijn rapporteert overvolle ziekenhuizen en geeft aan sporthalen en congrescentra in te willen zetten als opvang locaties voor patiënten.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Noord-Kropslavië ziet eerste resultaten van maatregelen tegen Olifantengriep",
+              "newsArticleMessage": "Als eerste getroffen land heeft Noord-Kropslavië in korte tijd een groot aantal verregaande maatregelen genomen om de verspreiding van het virus te bedwingen. Deze lijken nu hun eerste vruchten af te werpen. De snelheid waarmee het aantal besmettingen stijgt lijkt af te nemen. Of de huidige maatregelen voldoende zijn is momenteel nog niet te zeggen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19315268,
+            "infected": 46747,
+            "mutated": 800
+          }
+        },
+        {
+          "points": 2,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Wat is gezond?",
+              "newsArticleMessage": "Veel is nog onduidelijk over de werking van het Olifantengriep virus. Zo beweerde de Dikke Huidenbeweging dat de verspreiding van het virus versneld zou worden door het eten van sinaasappels. Op verschillende plekken wordt er verder onderzoek gedaan naar deze bewering maar vooralsnog zonder definitief resultaat. Uit voorzorg zijn in bepaalde regio's de vruchten al preventief uit de schappen gehaald.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Piek uitbraak Olifantengriep in Zuid-Kropslavië",
+              "newsArticleMessage": "Olifantencijfers in Zuid-Kropslavië zijn de afgelopen weken met onvoorstelbare snelheid omhoog geschoten. Vooral in de grote steden zijn de besmettingscijfers schrikbarend. Het Zuid-Kropslavische ministerie van Welzijn rapporteert overvolle ziekenhuizen en geeft aan sporthalen en congrescentra in te willen zetten als opvang locaties voor patiënten.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Noord-Kropslavië ziet eerste resultaten van maatregelen tegen Olifantengriep",
+              "newsArticleMessage": "Als eerste getroffen land heeft Noord-Kropslavië in korte tijd een groot aantal, verregaande maatregelen genomen om de verspreiding van het virus te bedwingen. Deze lijken nu hun eerste vruchten af te werpen. De snelheid waarmee het aantal besmettingen stijgt lijkt af te nemen. Of de huidige maatregelen voldoende zijn is momenteel nog niet te zeggen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19327794,
+            "infected": 34404,
+            "mutated": 617
+          }
+        },
+        {
+          "points": 3,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Wat is gezond?",
+              "newsArticleMessage": "Veel is nog onduidelijk over de werking van het Olifantengriep virus. Zo beweerde de Dikke Huidenbeweging dat de verspreiding van het virus versneld zou worden door het eten van sinaasappels. Op verschillende plekken wordt er verder onderzoek gedaan naar deze bewering maar vooralsnog zonder definitief resultaat. Uit voorzorg zijn in bepaalde regio's de vruchten al preventief uit de schappen gehaald.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Piek uitbraak Olifantengriep in Zuid-Kropslavië",
+              "newsArticleMessage": "Olifantencijfers in Zuid-Kropslavië zijn de afgelopen weken met onvoorstelbare snelheid omhoog geschoten. Vooral in de grote steden zijn de besmettingscijfers schrikbarend. Het Zuid-Kropslavische ministerie van welzijn rapporteert overvolle ziekenhuizen en geeft aan sporthalen en congrescentra in te willen zetten als opvang locaties voor patiënten.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Noord-Kropslavië ziet eerste resultaten van maatregelen tegen Olifantengriep",
+              "newsArticleMessage": "Als eerste getroffen land heeft Noord-Kropslavië in korte tijd een groot aantal verregaande maatregelen genomen om de verspreiding van het virus te bedwingen. Deze lijken nu hun eerste vruchten af te werpen. De snelheid waarmee het aantal besmettingen stijgt lijkt af te nemen. Of de huidige maatregelen voldoende zijn is momenteel nog niet te zeggen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19337560,
+            "infected": 24792,
+            "mutated": 463
+          }
+        },
+        {
+          "points": 4,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Wat is gezond?",
+              "newsArticleMessage": "Veel is nog onduidelijk over de werking van het Olifantengriep virus. Zo beweerde de Dikke Huidenbeweging dat de verspreiding van het virus versneld zou worden door het eten van sinaasappels. Op verschillende plekken wordt er verder onderzoek gedaan naar deze bewering maar vooralsnog zonder definitief resultaat. Uit voorzorg zijn in bepaalde regio's de vruchten al preventief uit de schappen gehaald.",
+              "newsArticleSource": "~ Pretechnostan Post ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Piek uitbraak Olifantengriep in Zuid-Kropslavië",
+              "newsArticleMessage": "Olifantencijfers in Zuid-Kropslavië zijn de afgelopen weken met onvoorstelbare snelheid omhoog geschoten. Vooral in de grote steden zijn de besmettingscijfers schrikbarend. Het Zuid-Kropslavische ministerie van Welzijn rapporteert overvolle ziekenhuizen en geeft aan sporthalen en congrescentra in te willen zetten als opvang locaties voor patiënten.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Noord-Kropslavië ziet eerste resultaten van maatregelen tegen Olifantengriep",
+              "newsArticleMessage": "Als eerste getroffen land heeft Noord-Kropslavië in korte tijd een groot aantal verregaande maatregelen genomen om de verspreiding van het virus te bedwingen. Deze lijken nu hun eerste vruchten af te werpen. De snelheid waarmee het aantal besmettingen stijgt lijkt af te nemen. Of de huidige maatregelen voldoende zijn is momenteel nog niet te zeggen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19345797,
+            "infected": 16684,
+            "mutated": 334
+          }
+        },
+        {
+          "points": 5,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Onrust in de wetenschappelijke wereld",
+              "newsArticleMessage": "Samantha Kertam, voorzitter van Dikke Huidenbeweging, bood vanochtend haar excuses aan in een persconferentie. De persconferentie volgde na de ophef die voortkwam uit een verdiepend onderzoek naar de effecten van sinaasappels op de besmettingsgraad van de Olifantengriep. Aanleiding voor dit onderzoek waren de beweringen van de Dikke Huidenbeweging dat sinaasappels besmetting met de Olifantengriep zouden verhogen, deze uitspraken bleken gebaseerd op onvoldoende data en daarmee ongegrond. ",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": true
+            },
+            {
+              "newsArticleTitle": "Piek uitbraak Olifantengriep in Zuid-Kropslavië",
+              "newsArticleMessage": "Olifantencijfers in Zuid-Kropslavië zijn de afgelopen weken met onvoorstelbare snelheid omhoog geschoten. Vooral in de grote steden zijn de besmettingscijfers schrikbarend. Het Zuid-Kropslavische ministerie van Welzijn rapporteert overvolle ziekenhuizen en geeft aan sporthalen en congrescentra in te willen zetten als opvanglocaties voor patiënten.",
+              "newsArticleSource": "~ Degressia Dagblad ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Noord-Kropslavië ziet eerste resultaten van maatregelen tegen Olifantengriep",
+              "newsArticleMessage": "Als eerste getroffen land heeft Noord-Kropslavië in korte tijd een groot aantal verregaande maatregelen genomen om de verspreiding van het virus te bedwingen. Deze lijken nu hun eerste vruchten af te werpen. De snelheid waarmee het aantal besmettingen stijgt lijkt af te nemen. Of de huidige maatregelen voldoende zijn is momenteel nog niet te zeggen.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            }
+          ],
+          "infections": {
+            "healthy": 19352160,
+            "infected": 10422,
+            "mutated": 233
+          }
+        }
+      ]
+    }
+  },
+  {
+    "round": {
+      "roundNumber": {
+        "roundNumber": "Ronde 6: ",
+        "roundTitle": "Het eind in zicht"
+      },
+      "timer": 7,
+      "scenario": {
+        "scenarioTitle": "Verdere versoepelingen",
+        "scenarioText": "Het aantal nieuwe besmettingen is overduidelijk dalende in Digitanzanië. Is hiermee het einde van deze moeilijke periode in zicht? Een evaluatierapport van het overheidsbeleid van afgelopen week sprak lovend over het beleid tot nu toe. De overheid heeft hierna verdere versoepelingen aangekondigd. Waaronder het alom verafschuwde 3 meter afstand houden. Zij is ervan overtuigd dat eerdere maatregelen onverdeeld positief uit hebben gepakt. Ook nu lijken de cijfers in het voordeel van de voorgenomen maatregelen te spreken. Een enquête onder huisartsen wijst echter uit dat eerdere maatregelen niet onverdeeld positief uitpakten. Ook adviseert het Wereld Gezondheidsorgaan om vooral nog afstand te bewaren."
+      },
+      "bias": [
+        {
+          "char": "a",
+          "biasName": "Confabulation",
+          "biasDescription": "We wisselen soms echte en verbeelde herinneringen in. Waardoor we onbewust overdreven, opgeblazen en vertekende herinneringen over onszelf en de wereld voortbrengen.",
+          "biasExample": "Vol overtuiging vertel je aan je collega's hoe op het bedrijfsfeest van 2009 Sjaak van afdeling finance net iets teveel had gedronken. Niemand herinnert zich het, maar je bent zo overtuig(en)d, dat ze het ook niet tegenspreken.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "biasName": "Backfire effect",
+          "biasDescription": "We versterken onze eigen overtuigingen juist als we worden geconfronteerd met tegengesteld bewijs.",
+          "biasExample": "Neef Fred beweert op een verjaardagsfeestje dat zijn wijk aan het verloederen is. Op het moment dat je hem dalende criminaliteitscijfers laat zien in de afgelopen jaren schudt hij zijn hoofd. Dat zie je toch echt verkeerd. Dat is volgens hem alleen maar bewijs dat onderzoekers hun werk niet goed hebben gedaan.",
+          "points": 2
+        },
+        {
+          "char": "c",
+          "biasName": "Self-serving bias",
+          "biasDescription": "We verbuigen ons waarnemingsvermogen om ons zelfbeeld in stand te houden, of om onszelf juist in een overdreven positieve manier te zien.",
+          "biasExample": "Manager Kees vindt zichzelf een geweldig mensen-mens met tact en empathie. Als je zijn medewerkers om een beschrijving vraagt van zijn mensen-vaardigheden, dan zou je eerder vermoeden dat Kees een weekdier met tentakels is dat in de zee leeft.",
+          "points": 5
+        }
+      ],
+      "measureOption": [
+        {
+          "char": "a",
+          "answer": "De situatie in Digitanzanië is anders dan de rest van de wereld. We houden vast aan de koers en gaan meer versoepelingen doorvoeren.",
+          "points": 0
+        },
+        {
+          "char": "b",
+          "answer": "We zijn waakzaam en onderzoeken nog iets langer of vooral het afstand houden niet verlengd moet worden.",
+          "points": 5
+        },
+        {
+          "char": "c",
+          "answer": "We houden vast aan de versoepelingen van de afstand. Maar we herzien onze conclusies als dit beter blijkt te zijn voor de complete bevolking.",
+          "points": 2
+        }
+      ],
+      "canvas": [
+        {
+          "points": 1,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Olifantengriepcijfers stabiliseren internationaal",
+              "newsArticleMessage": "Na lange periode van onzekerheid lijken de eerste optimistische signalen te zien te zijn. Olifantengriepcijfers stijgen steeds minder snel. In enkele uitzonderingen is zelf een afname van het aantal actieve infecties waar te nemen. Ongetwijfeld is dit het effect van de genomen maatregelen en het intensiveren van de zorg.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Half werk is geen werk",
+              "newsArticleMessage": "Hoewel de cijfers lijken te stabiliseren ging het niet zonder slag of stoot voor Digitanzanië. Een eerder aangekondigd pakket met noodmaatregelen werd afgezwakt na veel protest van oppositiepartijen en burgers. Deze halve maatregelen leidden in eerste instantie tot een onverminderde, snelle stijging van het virus. Na een noodoverleg werd er toch besloten de zwaardere maatregelen door te voeren met veel onrust als gevolg. Op veel plekken in het land wordt er geprotesteerd tegen het ad hoc beleid van de regering.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": 19289323,
+            "infected": 70121,
+            "mutated": 3371
+          }
+        },
+        {
+          "points": 2,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Olifantengriepcijfers stabiliseren internationaal",
+              "newsArticleMessage": "Na lange periode van onzekerheid lijken de eerste optimistische signalen te zien te zijn. Olifantengriepcijfers stijgen steeds minder snel. In enkele uitzonderingen is zelf een afname van het aantal actieve infecties waar te nemen. Ongetwijfeld is dit het effect van de genomen maatregelen en het intensiveren van de zorg.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Onrust en ongenoegen",
+              "newsArticleMessage": "Er heerst veel onrust in Digitanzanië. Eerder kondigde de regering een pakket aan maatregelen af waar fel op werd gereageerd. Sindsdien zijn er meerdere aanpassingen gedaan om deze passend te maken op de lokale situatie in de verschillende provinciën. Ondanks ophef die de maatregelen veroorzaakten lijken ze wel effect te hebben. De curve met besmettingen in het land lijkt af te nemen. Op verschillende plekken gaan er al geluiden op voor een versoepeling van de noodmaatregelen.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": 19311409,
+            "infected": 49026,
+            "mutated": 2380
+          }
+        },
+        {
+          "points": 3,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Olifantengriepcijfers stabiliseren internationaal",
+              "newsArticleMessage": "Na lange periode van onzekerheid lijken de eerste optimistische signalen te zien te zijn. Olifantengriepcijfers stijgen steeds minder snel. In enkele uitzonderingen is zelfs een afname van het aantal actieve infecties waar te nemen. Ongetwijfeld is dit het effect van de genomen maatregelen en het intensiveren van de zorg.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Onrust en ongenoegen",
+              "newsArticleMessage": "Er heerst veel onrust in Digitanzanië. Eerder kondigde de regering een pakket aan maatregelen af waar fel op werd gereageerd. Sindsdien zijn er meerdere aanpassingen gedaan om deze passend te maken op de lokale situatie in de verschillende provinciën. Ondanks ophef die de maatregelen veroorzaakten lijken ze wel effect te hebben. De curve met besmettingen in het land lijkt af te nemen. Op verschillende plekken gaan er al geluiden op voor een versoepeling van de noodmaatregelen.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": 19327705,
+            "infected": 33469,
+            "mutated": 1641
+          }
+        },
+        {
+          "points": 4,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Olifantengriepcijfers stabiliseren internationaal",
+              "newsArticleMessage": "Na lange periode van onzekerheid lijken de eerste optimistische signalen te zien te zijn. Olifantengriepcijfers stijgen steeds minder snel. In enkele uitzonderingen is zelf een afname van het aantal actieve infecties waar te nemen. Ongetwijfeld is dit het effect van de genomen maatregelen en het intensiveren van de zorg.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "Onrust en ongenoegen",
+              "newsArticleMessage": "Er heerst veel onrust in Digitanzanië. Eerder kondigde de regering een pakket aan maatregelen af waar fel op werd gereageerd. Sindsdien zijn er meerdere aanpassingen gedaan om deze passend te maken op de lokale situatie in de verschillende provinciën. Ondanks ophef die de maatregelen veroorzaakten lijken ze wel effect te hebben. De curve met besmettingen in het land lijkt af te nemen. Op verschillende plekken gaan er al geluiden op voor een versoepeling van de noodmaatregelen.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": 19340479,
+            "infected": 21272,
+            "mutated": 1064
+          }
+        },
+        {
+          "points": 5,
+          "newsArticles": [
+            {
+              "newsArticleTitle": "Olifantengriepcijfers stabiliseren internationaal",
+              "newsArticleMessage": "Na lange periode van onzekerheid lijken de eerste optimistische signalen te zien te zijn. Olifantengriepcijfers stijgen steeds minder snel. In enkele uitzonderingen is zelf een afname van het aantal actieve infecties waar te nemen. Ongetwijfeld is dit het effect van de genomen maatregelen en het intensiveren van de zorg.",
+              "newsArticleSource": "~ Daily Digitanzanië ~",
+              "newsArticlePopup": false
+            },
+            {
+              "newsArticleTitle": "De daad bij het woord",
+              "newsArticleMessage": "Zoals beloofd zijn vandaag de eerste lichte versoepelingen van de Olifantengriep maatregelen zichtbaar in Digitanzanië. Het land volgde eerder Noord-Kropslavië in het nemen van omstreden en verregaande maatregelen met het gewenste resultaat als gevolg. De snelle stijging van de cijfers is de afgelopen periode afgenomen. Geluiden gaan zelfs op voor een verdere versoepeling.",
+              "newsArticleSource": "~ Eerlijk Engelse Eiland ~",
+              "newsArticlePopup": true
+            }
+          ],
+          "infections": {
+            "healthy": 19349659,
+            "infected": 12506,
+            "mutated": 650
+          }
+        }
+      ]
+    }
+  }
+]
