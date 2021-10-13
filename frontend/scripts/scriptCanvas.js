@@ -9,7 +9,7 @@ async function json(jsonFile) {
     console.log(jsonFile);
     // Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
-    countdown(data.timer);
+    //countdown(data.timer);
     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
     loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
@@ -192,23 +192,26 @@ function giveAnswer(e) {
     for (let i = 0; i < bias.length; i++) {
         if (bias[i].checked) {
             biasValue = bias[i].value;
+            bias[i].checked = false;
         }
     }
 
     for (let j = 0; j < measure.length; j++) {
         if (measure[j].checked) {
             measureValue = measure[j].value;
+            measure[j].checked = false;
         }
     }
 
     if (biasValue === undefined || measureValue === undefined) {
-        alert("U heeft slechts 1 antwoord ingevuld.")
+        alert("U heeft niet allebei de vragen ingevuld.")
     } else {
         nextRound(biasValue, measureValue);
     }
 }
 
 function nextRound(biasAnswer, measureAnswer) {
+
     round = round + 1;
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
     jsonName = "data/R" + round.toString();
