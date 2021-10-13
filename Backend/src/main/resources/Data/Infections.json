@@ -1,0 +1,9 @@
+[
+  {
+    "infections": {
+      "healthy": 0,
+      "infected": 0,
+      "mutated": 0
+    }
+  }
+]

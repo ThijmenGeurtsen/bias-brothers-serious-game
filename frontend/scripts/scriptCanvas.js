@@ -95,6 +95,10 @@ function questionTab(evt, questionName) {
     document.getElementById('question-tab')
 }
 
+function loadPopup() {
+
+}
+
 function loadBiasPopup(bias) {
     // Loop through to get all biasen in the pop up
     for (i = 0; i < bias.length; i++) {
@@ -233,13 +237,13 @@ function nextRound(biasAnswer, measureAnswer) {
 
 function allBiasen() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/biasen/Anchoring', true);
+    xhr.open('GET', 'http://localhost:4567/biasen', true);
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
 
 
-            document.getElementById('scenario-text').innerHTML = output.biasDescription;
+            loadBiasPopup(output);
         }
     }
 
