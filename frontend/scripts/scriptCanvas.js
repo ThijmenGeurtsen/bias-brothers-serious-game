@@ -23,7 +23,7 @@ async function json(jsonFile) {
     }
 
     // Will make the BIAS question default showable
-    document.getElementById("qBiasId").click();
+    document.getElementById("qBiasId").click();    
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
@@ -52,6 +52,14 @@ function loadBias(answerA, answerB, answerC) {
     document.getElementById("biasC").nextElementSibling.innerHTML = answerC;
 }
 
+// Checks if the bias question has been filled in. If true, access to the measure question is gained.
+function validateBias(){
+    if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked){
+        console.log("Checked");
+        return true;
+    }
+}
+
 // Adds eventlistener on question-bias-tab
 document.getElementById("qBiasId").addEventListener("click", clickBiasTab);
 
@@ -64,6 +72,10 @@ function clickBiasTab(e) {
 document.getElementById("qMeasureId").addEventListener("click", clickMeasureTab);
 
 function clickMeasureTab(e) {
+    if (!validateBias()){
+        alert("Vul eerst de bias vraag in.")
+        return;
+    }
     questionContent = document.getElementsByClassName("question-content");
     questionTab(e, "question-measure");
 }
