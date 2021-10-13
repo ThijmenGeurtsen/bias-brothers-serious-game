@@ -254,6 +254,6 @@ function buttonLogoutClick() {
 }
 
 // Start first canvas
-//json(jsonFile);
-allBiasen();
+json(jsonFile);
+//allBiasen();
 
