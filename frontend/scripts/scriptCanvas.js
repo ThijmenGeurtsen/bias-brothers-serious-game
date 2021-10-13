@@ -200,18 +200,20 @@ function giveAnswer(e) {
     let measure = document.getElementsByName('answer-measure');
     let biasValue;
     let measureValue;
+    let biasNumber;
+    let measureNumber;
 
     for (let i = 0; i < bias.length; i++) {
         if (bias[i].checked) {
             biasValue = bias[i].value;
-            bias[i].checked = false;
+            biasNumber = i;
         }
     }
 
     for (let j = 0; j < measure.length; j++) {
         if (measure[j].checked) {
             measureValue = measure[j].value;
-            measure[j].checked = false;
+            measureNumber = j;
         }
     }
 
@@ -219,6 +221,8 @@ function giveAnswer(e) {
         alert("U heeft niet allebei de vragen ingevuld.")
     } else {
         nextRound(biasValue, measureValue);
+        bias[biasNumber].checked = false;
+        measure[measureNumber].checked = false;
     }
 }
 
