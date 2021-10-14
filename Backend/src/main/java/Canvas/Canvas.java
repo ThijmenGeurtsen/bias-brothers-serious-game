@@ -4,16 +4,12 @@ public class Canvas {
 
     private int points;
     private NewsArticleCollection newsArticleCollection;
-    private UserInterfaceInfo userInterfaceInfo;
+    private Infections infections;
 
-    public Canvas(){
-
-    }
-
-    public Canvas(int points, NewsArticleCollection newsArticleCollection, UserInterfaceInfo userInterfaceInfo) {
+    public Canvas(int points, NewsArticleCollection newsArticleCollection, Infections infections) {
         this.points = points;
         this.newsArticleCollection = newsArticleCollection;
-        this.userInterfaceInfo = userInterfaceInfo;
+        this.infections = infections;
     }
 
     public int getPoints() {
@@ -32,11 +28,11 @@ public class Canvas {
         this.newsArticleCollection = newsArticleCollection;
     }
 
-    public UserInterfaceInfo getUserInterfaceInfo() {
-        return userInterfaceInfo;
+    public Infections getInfections() {
+        return infections;
     }
 
-    public void setUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo) {
-        this.userInterfaceInfo = userInterfaceInfo;
+    public void setInfections(Infections infections) {
+        this.infections = infections;
     }
 }
