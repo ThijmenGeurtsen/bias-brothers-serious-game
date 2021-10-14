@@ -6,7 +6,6 @@ let canvasNumber = 2;
 async function json(jsonFile) {
     const response = await fetch(jsonFile);
     const data = await response.json();
-    console.log(jsonFile);
     // Dit is voor elke ronde hetzelfde per canvas (in data)
     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
     //countdown(data.timer);
@@ -167,13 +166,6 @@ function openCloseModal(button, modal, index) {
     }
 }
 
-/* //--Creates old pop-up--\\
-function biasPopup(biasName) {
-    const popup = document.getElementById(biasName);
-    popup.classList.toggle("show");
-}
-*/
-
 // Code for the timer
 let timeoutHandle;
 
@@ -271,6 +263,29 @@ function nextRound(biasAnswer, measureAnswer) {
     console.log(round);
 }
 
+function allBiasen() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:4567/biasen', true);
+    xhr.onload = function () {
+        if (this.status == 200) {
+            const output = JSON.parse(this.responseText);
+
+
+            loadBiasPopup(output);
+        }
+    }
+
+    xhr.send();
+
+}
+
+// Button that brings you to the login page & alerts you goodbye
+function buttonLogoutClick() {
+    alert('Tot ziens ');
+    window.open('index.html', '_top')
+}
+
 // Start first canvas
 json(jsonFile);
+//allBiasen();
 

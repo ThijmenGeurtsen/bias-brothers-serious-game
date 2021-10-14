@@ -1,0 +1,39 @@
+{
+  "biasCollection": [
+    {
+      "Char": "",
+      "biasName": "hichem",
+      "biasDescription": "bla bla bla",
+      "biasExample": "bla bla bla",
+      "points": "100"
+    },
+    {
+      "Char": "",
+      "biasName": "amanda",
+      "biasDescription": "bla bla bla",
+      "biasExample": "bla bla bla",
+      "points": "100"
+    },
+    {
+      "Char": "",
+      "biasName": "thijmen",
+      "biasDescription": "bla bla bla",
+      "biasExample": "bla bla bla",
+      "points": "100"
+    },
+    {
+      "Char": "",
+      "biasName": "cas",
+      "biasDescription": "bla bla bla",
+      "biasExample": "bla bla bla",
+      "points": "100"
+    },
+    {
+      "Char": "",
+      "biasName": "hichem",
+      "biasDescription": "bla bla bla",
+      "biasExample": "bla bla bla",
+      "points": "100"
+    }
+  ]
+}
