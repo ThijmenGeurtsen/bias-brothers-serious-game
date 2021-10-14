@@ -1,12 +1,18 @@
 package main.java.Canvas;
 
+import java.util.ArrayList;
+
 public class Canvas {
 
     private int points;
-    private NewsArticleCollection newsArticleCollection;
+    private ArrayList<NewsArticle> newsArticleCollection = new ArrayList<NewsArticle>();
     private Infections infections;
 
-    public Canvas(int points, NewsArticleCollection newsArticleCollection, Infections infections) {
+    public Canvas() {
+
+    }
+
+    public Canvas(int points, ArrayList<NewsArticle> newsArticleCollection, Infections infections) {
         this.points = points;
         this.newsArticleCollection = newsArticleCollection;
         this.infections = infections;
@@ -20,11 +26,11 @@ public class Canvas {
         this.points = points;
     }
 
-    public NewsArticleCollection getNewsArticleCollection() {
+    public ArrayList<NewsArticle> getNewsArticleCollection() {
         return newsArticleCollection;
     }
 
-    public void setNewsArticleCollection(NewsArticleCollection newsArticleCollection) {
+    public void setNewsArticleCollection(ArrayList<NewsArticle> newsArticleCollection) {
         this.newsArticleCollection = newsArticleCollection;
     }
 
