@@ -17,13 +17,14 @@ async function json(jsonFile) {
     loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
     loadMap();
     loadBiasPopup(data.bias);
+    makeModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"));
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
         loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
     }
 
     // Will make the BIAS question default showable
-    document.getElementById("qBiasId").click();    
+    document.getElementById("qBiasId").click();
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
@@ -53,9 +54,9 @@ function loadBias(answerA, answerB, answerC) {
 }
 
 // Checks if the bias question has been filled in. If true, access to the measure question is gained.
-function validateBias(){
-    if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked){
-        console.log("Checked");
+function validateBias() {
+    if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked) {
+        //console.log("Checked");
         return true;
     }
 }
@@ -72,7 +73,7 @@ function clickBiasTab(e) {
 document.getElementById("qMeasureId").addEventListener("click", clickMeasureTab);
 
 function clickMeasureTab(e) {
-    if (!validateBias()){
+    if (!validateBias()) {
         alert("Vul eerst de bias vraag in.")
         return;
     }
@@ -104,33 +105,39 @@ function loadBiasPopup(bias) {
         let biasExample = bias[i].biasExample;
         let biasIndex = i + 1;
 
-        document.getElementById("bias-name-" + biasIndex).innerHTML = biasName;
-        document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
-        document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
+        makeModalTable(biasIndex, biasName, biasDescription, biasExample);
     }
-    // Get the biasModal
-    var biasModal = document.getElementById("biasModal");
+}
 
-    // Get the button that opens the biasModal
-    var biasButton = document.getElementById("questionmark-img");
+function makeModalTable(biasIndex, biasName, biasDescription, biasExample) {
+    document.getElementById("bias-name-" + biasIndex).innerHTML = biasName;
+    document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
+    document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
 
+    let table = document.createElement("table");
+    let tableRow = document.createElement("tr");
+    let tableColumn = document.createElement("th");
+
+}
+
+function makeModal(button, modal) {
     // Get the <closeModal> element that closeModals the biasModal
     var closeModal = document.getElementsByClassName("closeModal")[0];
 
     // When the user clicks on the button, open the biasModal
-    biasButton.onclick = function () {
-        biasModal.style.display = "block";
+    button.onclick = function () {
+        modal.style.display = "block";
     }
 
     // When the user clicks on <closeModal> (x), closeModal the biasModal
     closeModal.onclick = function () {
-        biasModal.style.display = "none";
+        modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the biasModal, closeModal it
     window.onclick = function (event) {
-        if (event.target === biasModal) {
-            biasModal.style.display = "none";
+        if (event.target === modal) {
+            modal.style.display = "none";
         }
     }
 }
@@ -193,7 +200,7 @@ function loadMap() {
 }
 
 document.getElementById("next").addEventListener
-("click", giveAnswer);
+    ("click", giveAnswer);
 
 function giveAnswer(e) {
     let bias = document.getElementsByName('answer-bias');
