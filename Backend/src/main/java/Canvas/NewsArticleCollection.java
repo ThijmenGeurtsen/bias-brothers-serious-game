@@ -8,7 +8,7 @@ public class NewsArticleCollection {
     private ArrayList<NewsArticle> newsArticleCollection ;
 
     public NewsArticleCollection(ArrayList<NewsArticle> newsArticleCollection) {
-        this.newsArticleCollection = newsArticleCollection;;
+        this.newsArticleCollection = newsArticleCollection;
     }
 
 
