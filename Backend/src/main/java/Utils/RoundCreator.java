@@ -41,35 +41,49 @@ public class RoundCreator {
 
         MeasureQuestionCollection measureQuestionCollection = new MeasureQuestionCollection(measureQuestionArray);
 
+        ArrayList<NewsArticle> newsArticleArrray = new ArrayList<NewsArticle>();
+
+        NewsArticleCollection newsArticleCollection1 = new NewsArticleCollection(newsArticleArrray);
+        NewsArticleCollection newsArticleCollection2 = new NewsArticleCollection(newsArticleArrray);
+        NewsArticleCollection newsArticleCollection3 = new NewsArticleCollection(newsArticleArrray);
+        NewsArticleCollection newsArticleCollection4 = new NewsArticleCollection(newsArticleArrray);
+        NewsArticleCollection newsArticleCollection5 = new NewsArticleCollection(newsArticleArrray);
+
+        Infections infections1 = new Infections(999, 999, 999);
+        Infections infections2 = new Infections(999, 999, 999);
+        Infections infections3 = new Infections(999, 999, 999);
+        Infections infections4 = new Infections(999, 999, 999);
+        Infections infections5 = new Infections(999, 999, 999);
+
 
         CanvasCollection canvasCollection = new CanvasCollection();
         // array van 5 canvassen
-        Canvas canvas1 = new Canvas();
+        Canvas canvas1 = new Canvas(99, newsArticleCollection1, infections1);
         canvas1.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas1.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvasCollection.add(canvas1);
 
 
-        Canvas canvas2 = new Canvas();
+        Canvas canvas2 = new Canvas(99,newsArticleCollection2, infections2);
         canvas2.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas2.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvasCollection.add(canvas2);
 
-        Canvas canvas3 = new Canvas();
+        Canvas canvas3 = new Canvas(99, newsArticleCollection3, infections3);
         canvas3.getNewsArticleCollection().add((new NewsArticle("Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep","Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.","~ Degressia Dagblad ~",false)));
         canvas3.getNewsArticleCollection().add((new NewsArticle("Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië","De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.","~ Daily Digitanzanië ~",true)));
         canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvasCollection.add(canvas3);
 
-        Canvas canvas4 = new Canvas();
+        Canvas canvas4 = new Canvas(99, newsArticleCollection4, infections4);
         canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvasCollection.add(canvas4);
 
-        Canvas canvas5 = new Canvas();
+        Canvas canvas5 = new Canvas(99, newsArticleCollection5, infections5);
         canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
