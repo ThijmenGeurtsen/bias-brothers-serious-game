@@ -16,6 +16,7 @@ async function json(jsonFile) {
     loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
     loadMap();
     loadBiasModals(data.bias);
+    allBiasen();
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
 
@@ -100,7 +101,6 @@ function questionTab(evt, questionName) {
 
 function loadBiasModals(bias) {
     makeTable(bias, document.getElementById('bias-table-div'));
-    makeTable(bias, document.getElementById("all-bias-div"));
 }
 
 function makeTable(list, div) {
@@ -269,9 +269,8 @@ function allBiasen() {
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
+            makeTable(output, document.getElementById("all-bias-div"));
 
-
-            loadBiasPopup(output);
         }
     }
 
@@ -287,5 +286,5 @@ function buttonLogoutClick() {
 
 // Start first canvas
 json(jsonFile);
-//allBiasen();
+
 
