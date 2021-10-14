@@ -42,20 +42,20 @@ public class DataHandler {
 //            e.printStackTrace();
 //        }
 
-            Bias bias1 = new Bias("", "hichem", "bla bla bla", "bla bla bla", "100");
-            Bias bias2 = new Bias("", "amanda", "bla bla bla", "bla bla bla", "100");
-            Bias bias3 = new Bias("", "thijmen", "bla bla bla", "bla bla bla", "100");
-            Bias bias4 = new Bias("", "cas", "bla bla bla", "bla bla bla", "100");
-            Bias bias5 = new Bias("", "hichem", "bla bla bla", "bla bla bla", "100");
+//            Bias bias1 = new Bias("", "hichem", "bla bla bla", "bla bla bla", "100");
+//            Bias bias2 = new Bias("", "amanda", "bla bla bla", "bla bla bla", "100");
+//            Bias bias3 = new Bias("", "thijmen", "bla bla bla", "bla bla bla", "100");
+//            Bias bias4 = new Bias("", "cas", "bla bla bla", "bla bla bla", "100");
+//            Bias bias5 = new Bias("", "hichem", "bla bla bla", "bla bla bla", "100");
+//
+//        BiasCollection biasCollection = new BiasCollection();
 
-        BiasCollection biasCollection = new BiasCollection();
-
-        biasCollection.addBias(bias1);
-        biasCollection.addBias(bias2);
-        biasCollection.addBias(bias3);
-        biasCollection.addBias(bias4);
-        biasCollection.addBias(bias5);
-
+//        biasCollection.addBias(bias1);
+//        biasCollection.addBias(bias2);
+//        biasCollection.addBias(bias3);
+//        biasCollection.addBias(bias4);
+//        biasCollection.addBias(bias5);
+//
 
 
 

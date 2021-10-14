@@ -1,11 +1,11 @@
 package main.java.Canvas;
 
-public class CanvasInfo {
+public class UserInterfaceInfo {
     private Infections infections;
     private NewsArticleCollection newsArticleCollection;
     private int points;
 
-    public CanvasInfo(Infections infections, NewsArticleCollection newsArticleCollection, int points) {
+    public UserInterfaceInfo(Infections infections, NewsArticleCollection newsArticleCollection, int points) {
         this.infections = infections;
         this.newsArticleCollection = newsArticleCollection;
         this.points = points;

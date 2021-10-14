@@ -2,14 +2,14 @@ package main.java.Canvas;
 
 public class Bias {
 
-    private String Char;
+    private char biasChar;
     private String biasName;
     private String biasDescription;
     private String biasExample;
-    private String points;
+    private int points;
 
-    public Bias(String Char, String biasName, String biasDescription, String biasExample, String points) {
-        this.Char = Char;
+    public Bias(char biasChar, String biasName, String biasDescription, String biasExample, int points) {
+        this.biasChar = biasChar;
         this.biasName = biasName;
         this.biasDescription = biasDescription;
         this.biasExample = biasExample;
@@ -17,11 +17,11 @@ public class Bias {
     }
 
     public String getChar() {
-        return Char;
+        return biasChar;
     }
 
     public void setChar(String aChar) {
-        Char = aChar;
+        biasChar = aChar;
     }
 
     public String getBiasName() {
