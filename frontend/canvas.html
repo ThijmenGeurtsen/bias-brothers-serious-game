@@ -23,7 +23,15 @@
             <div class="game-menu">
                 <button class="game-menu-button">Menu</button>
                 <nav class="game-menu-content">
-                    <a href="#">Bias omschrijvingen</a>
+                    <button id="allBiasesBtn">Bias omschrijvingen</button>
+                    <div id="allBiasesModal" class="modal">
+                        <div class="modal-content">
+                            <span class="closeModal">&times;</span>
+                            <div id="all-bias-div">
+                                <!-- Bias table gets inserted here -->
+                            </div>
+                        </div>
+                    </div>
                     <a onclick="buttonLogoutClick()">Uitloggen</a>
                 </nav>
             </div>

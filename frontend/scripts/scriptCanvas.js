@@ -16,8 +16,10 @@ async function json(jsonFile) {
     // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
     loadMap();
-    loadBiasPopup(data.bias);
-    makeModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"));
+    loadBiasModals(data.bias);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
+
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
         loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
@@ -97,26 +99,12 @@ function questionTab(evt, questionName) {
     document.getElementById('question-tab')
 }
 
-function loadBiasPopup(bias) {
-    // Loop through to get all biasen in the pop up
-    // for (i = 0; i < bias.length; i++) {
-    //     let biasName = bias[i].biasName;
-    //     let biasDescription = bias[i].biasDescription;
-    //     let biasExample = bias[i].biasExample;
-    //     let biasIndex = i + 1;
-
-    //     //makeModalTable(biasIndex, biasName, biasDescription, biasExample);
-    // }
-    makeTable(bias);
+function loadBiasModals(bias) {
+    makeTable(bias, document.getElementById('bias-table-div'));
+    makeTable(bias, document.getElementById("all-bias-div"));
 }
 
-function makeModalTable(biasIndex, biasName, biasDescription, biasExample) {
-    document.getElementById("bias-name-" + biasIndex).innerHTML = biasName;
-    document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
-    document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
-}
-
-function makeTable(list) {
+function makeTable(list, div) {
     let table = document.createElement("table");
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
@@ -125,7 +113,7 @@ function makeTable(list) {
     table.appendChild(tbody);
 
     // Adding the entire table to the body tag
-    document.getElementById('bias-table-div').appendChild(table);
+    div.appendChild(table);
 
     // Creating and adding data to first row of the table
     let row_1 = document.createElement('tr');
@@ -157,9 +145,9 @@ function makeTable(list) {
     }
 }
 
-function makeModal(button, modal) {
+function openCloseModal(button, modal, index) {
     // Get the <closeModal> element that closeModals the biasModal
-    var closeModal = document.getElementsByClassName("closeModal")[0];
+    var closeModal = document.getElementsByClassName("closeModal")[index];
 
     // When the user clicks on the button, open the biasModal
     button.onclick = function () {
