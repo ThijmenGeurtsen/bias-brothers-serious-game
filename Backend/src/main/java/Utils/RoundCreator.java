@@ -34,36 +34,39 @@ public class RoundCreator {
         MeasureQuestion measureQuestion2 = new MeasureQuestion('b', "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.", 0);
         MeasureQuestion measureQuestion3 = new MeasureQuestion('c', "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.", 2);
 
-        ArrayList<MeasureQuestion> measureQuestionCollection = new ArrayList<MeasureQuestion>();
+        ArrayList<MeasureQuestion> measureQuestionArray = new ArrayList<MeasureQuestion>();
         measureQuestionArray.add(measureQuestion1);
         measureQuestionArray.add(measureQuestion2);
         measureQuestionArray.add(measureQuestion3);
 
+        MeasureQuestionCollection measureQuestionCollection = new MeasureQuestionCollection(measureQuestionArray);
+
+
         CanvasCollection canvasCollection = new CanvasCollection();
         // array van 5 canvassen
         Canvas canvas1 = new Canvas();
-        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",false)));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvasCollection.add(canvas1);
 
+
         Canvas canvas2 = new Canvas();
-        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",false)));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvasCollection.add(canvas2);
 
-
         Canvas canvas3 = new Canvas();
-        canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep","Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.","~ Degressia Dagblad ~",false)));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië","De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.","~ Daily Digitanzanië ~",true)));
         canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
         canvasCollection.add(canvas3);
 
         Canvas canvas4 = new Canvas();
-        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
         canvasCollection.add(canvas4);
 
         Canvas canvas5 = new Canvas();
