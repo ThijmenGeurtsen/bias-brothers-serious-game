@@ -20,13 +20,21 @@
             <div class="timer-box">
                 <h2 id="timer"></h2><!-- Javascript timer -->
             </div>
-            <div class="game-menu">
-                <button class="game-menu-button">Menu</button>
-                <nav class="game-menu-content">
-                    <a onclick="allBiasen()">Bias omschrijvingen</a>
-                    <a onclick="buttonLogoutClick()">Uitloggen</a>
-                </nav>
+            <div class="headerButton">
+                <button id="allBiasesBtn">Alle bias omschrijvingen</button>
+                <div id="allBiasesModal" class="modal">
+                    <div class="modal-content" id="model-content-big">
+                        <span class="closeModal">&times;</span>
+                        <div id="all-bias-div">
+                            <!-- Bias table gets inserted here -->
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="headerButton">
+                <button onclick="buttonLogoutClick()">Uitloggen</button>
+            </div>
+
         </div>
         <div class="infection-box">
             <table class="infection-table">
@@ -53,11 +61,13 @@
                         <p class="newsfeed-text" id="message-1"></p>
                         <p class="newsfeed-paper" id="source-1"><I></I></p>
                     </li>
+                    <hr>
                     <li class="newsfeed-items">
                         <h4 class="newsfeed-title" id="title-2"></h4>
                         <p class="newsfeed-text" id="message-2"></p>
                         <p class="newsfeed-paper" id="source-2"><I></I></p>
                     </li>
+                    <hr>
                     <li class="newsfeed-items">
                         <h4 class="newsfeed-title" id="title-3"></h4>
                         <p class="newsfeed-text" id="message-3"></p>
@@ -103,35 +113,8 @@
                         <div id="biasModal" class="modal">
                             <div class="modal-content">
                                 <span class="closeModal">&times;</span>
-                                <div>
-                                    <table id="bias-table">
-                                        <tr>
-                                            <th>
-                                                <h3>Bias naam</h3>
-                                            </th>
-                                            <th>
-                                                <h3>Voorbeeld</h3>
-                                            </th>
-                                            <th>
-                                                <h3>Omschrijving</h3>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <td id="bias-name-1"></td>
-                                            <td id="bias-description-1"></td>
-                                            <td id="bias-example-1"></td>
-                                        </tr>
-                                        <tr id="bias-mid-row">
-                                            <td id="bias-name-2"></td>
-                                            <td id="bias-description-2"></td>
-                                            <td id="bias-example-2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="bias-name-3"></td>
-                                            <td id="bias-description-3"></td>
-                                            <td id="bias-example-3"></td>
-                                        </tr>
-                                    </table>
+                                <div id="bias-table-div">
+                                    <!-- Bias table gets inserted here -->
                                 </div>
                             </div>
                         </div>

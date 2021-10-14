@@ -15,14 +15,18 @@ async function json(jsonFile) {
     // Dit verschilt voor elke ronde per canvas (in data)
     loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
     loadMap();
-    loadBiasPopup(data.bias);
+    loadBiasModals(data.bias);
+    allBiasen();
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
+
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
         loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
     }
 
     // Will make the BIAS question default showable
-    document.getElementById("qBiasId").click();    
+    document.getElementById("qBiasId").click();
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
@@ -52,9 +56,9 @@ function loadBias(answerA, answerB, answerC) {
 }
 
 // Checks if the bias question has been filled in. If true, access to the measure question is gained.
-function validateBias(){
-    if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked){
-        console.log("Checked");
+function validateBias() {
+    if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked) {
+        //console.log("Checked");
         return true;
     }
 }
@@ -71,7 +75,7 @@ function clickBiasTab(e) {
 document.getElementById("qMeasureId").addEventListener("click", clickMeasureTab);
 
 function clickMeasureTab(e) {
-    if (!validateBias()){
+    if (!validateBias()) {
         alert("Vul eerst de bias vraag in.")
         return;
     }
@@ -95,47 +99,79 @@ function questionTab(evt, questionName) {
     document.getElementById('question-tab')
 }
 
-function loadPopup() {
-
+function loadBiasModals(bias) {
+    makeTable(bias, document.getElementById('bias-table-div'));
 }
 
-function loadBiasPopup(bias) {
-    // Loop through to get all biasen in the pop up
-    for (i = 0; i < bias.length; i++) {
-        let biasName = bias[i].biasName;
-        let biasDescription = bias[i].biasDescription;
-        let biasExample = bias[i].biasExample;
-        let biasIndex = i + 1;
+function makeTable(list, div) {
+    let table = document.createElement("table");
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
 
-        document.getElementById("bias-name-" + biasIndex).innerHTML = biasName;
-        document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
-        document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    // Adding the entire table to the body tag
+    div.appendChild(table);
+
+    // Creating and adding data to first row of the table
+    let row_1 = document.createElement('tr');
+    let heading_1 = document.createElement('th');
+    heading_1.innerHTML = "Bias naam";
+    let heading_2 = document.createElement('th');
+    heading_2.innerHTML = "Omschrijving";
+    let heading_3 = document.createElement('th');
+    heading_3.innerHTML = "Voorbeeld";
+
+    row_1.appendChild(heading_1);
+    row_1.appendChild(heading_2);
+    row_1.appendChild(heading_3);
+    thead.appendChild(row_1);
+
+    for (let i = 0; i < list.length; i++){
+        let row = document.createElement('tr')
+        let rowName = document.createElement('td');
+        rowName.innerHTML = list[i].biasName;
+        let rowDescription = document.createElement('td');
+        rowDescription.innerHTML = list[i].biasDescription;
+        let rowExample = document.createElement('td');
+        rowExample.innerHTML = list[i].biasExample;
+
+        row.appendChild(rowName);
+        row.appendChild(rowDescription);
+        row.appendChild(rowExample);
+        tbody.appendChild(row);
+
+        if (i % 2 == 0){
+            row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
+        }
     }
-    // Get the biasModal
-    var biasModal = document.getElementById("biasModal");
+}
 
-    // Get the button that opens the biasModal
-    var biasButton = document.getElementById("questionmark-img");
-
+function openCloseModal(button, modal, index) {
     // Get the <closeModal> element that closeModals the biasModal
-    var closeModal = document.getElementsByClassName("closeModal")[0];
+    var closeModal = document.getElementsByClassName("closeModal")[index];
 
     // When the user clicks on the button, open the biasModal
-    biasButton.onclick = function () {
-        biasModal.style.display = "block";
+    button.onclick = function () {
+        modal.style.display = "block";
     }
 
     // When the user clicks on <closeModal> (x), closeModal the biasModal
     closeModal.onclick = function () {
-        biasModal.style.display = "none";
+        modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the biasModal, closeModal it
-    window.onclick = function (event) {
-        if (event.target === biasModal) {
-            biasModal.style.display = "none";
+    window.addEventListener("click", function (event) {
+
+        if (event.target === modal) {
+
+            modal.style.display = "none";
+
         }
-    }
+
+    })
 }
 
 // Code for the timer
@@ -189,7 +225,7 @@ function loadMap() {
 }
 
 document.getElementById("next").addEventListener
-("click", giveAnswer);
+    ("click", giveAnswer);
 
 function giveAnswer(e) {
     let bias = document.getElementsByName('answer-bias');
@@ -241,9 +277,7 @@ function allBiasen() {
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
-
-
-            loadBiasPopup(output);
+            makeTable(output, document.getElementById("all-bias-div"));
         }
     }
 
@@ -259,5 +293,5 @@ function buttonLogoutClick() {
 
 // Start first canvas
 json(jsonFile);
-//allBiasen();
+
 
