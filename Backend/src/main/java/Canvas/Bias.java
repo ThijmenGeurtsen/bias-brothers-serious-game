@@ -16,11 +16,11 @@ public class Bias {
         this.points = points;
     }
 
-    public String getChar() {
+    public char getChar() {
         return biasChar;
     }
 
-    public void setChar(String aChar) {
+    public void setChar(char aChar) {
         biasChar = aChar;
     }
 
@@ -48,11 +48,11 @@ public class Bias {
         this.biasExample = biasExample;
     }
 
-    public String getPoints() {
+    public int getPoints() {
         return points;
     }
 
-    public void setPoints(String points) {
+    public void setPoints(int points) {
         this.points = points;
     }
 
