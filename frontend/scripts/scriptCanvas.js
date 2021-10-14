@@ -141,6 +141,10 @@ function makeTable(list, div) {
         row.appendChild(rowDescription);
         row.appendChild(rowExample);
         tbody.appendChild(row);
+
+        if (i % 2 == 0){
+            row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
+        }
     }
 }
 
