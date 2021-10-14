@@ -11,4 +11,8 @@ public class NewsArticleCollection {
         this.newsArticleCollection = newsArticleCollection;;
     }
 
+
+    public void add(NewsArticle newsArticle){
+        newsArticleCollection.add(newsArticle);
+    }
 }

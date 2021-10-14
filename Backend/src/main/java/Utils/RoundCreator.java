@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class RoundCreator {
 
     public static void createRoundJSON() {
+        String roundNumber = "Ronde 1: ";
+        String roundTitle = "De start";
         Timer timer = new Timer(7);
         Scenario scenario = new Scenario("Hamsterwoede!", "Met oplopende Olifantengriepcijfers op de horizon zijn inwoners van Engelse Eiland massaal begonnen met het inslaan van tampons. Deze zouden helpen de Olifantengriep uit de neus te houden en daarmee een infectie te voorkomen. De regering van Engelse Eiland verzoekt haar burgers dringend om te stoppen met hamsteren, en verzekert hen ervan dat de voorraden groot genoeg zijn om iedereen te kunnen bedienen. Over de effectiviteit van het tampongebruik als preventie van de Olifantengriep zijn door experts nog geen uitspraken gedaan. In Digitanzanië beginnen de eerste geluiden al op te gaan om spullen in te slaan. Wat moet de overheid doen?");
 
@@ -32,20 +34,46 @@ public class RoundCreator {
         MeasureQuestion measureQuestion2 = new MeasureQuestion('b', "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.", 0);
         MeasureQuestion measureQuestion3 = new MeasureQuestion('c', "We plaatsen een overzicht van de informatie over het virus en omschrijven welke soorten middelen infectie kunnen afremmen of tegenhouden.", 2);
 
-        ArrayList<MeasureQuestion> measureQuestionArray = new ArrayList<MeasureQuestion>();
+        ArrayList<MeasureQuestion> measureQuestionCollection = new ArrayList<MeasureQuestion>();
         measureQuestionArray.add(measureQuestion1);
         measureQuestionArray.add(measureQuestion2);
         measureQuestionArray.add(measureQuestion3);
 
-        MeasureQuestionCollection measureQuestionCollection = new MeasureQuestionCollection();
-
+        CanvasCollection canvasCollection = new CanvasCollection();
+        // array van 5 canvassen
         Canvas canvas1 = new Canvas();
-        NewsArticleCollection newsArticleCollection;
+        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvasCollection.add(canvas1);
+
+        Canvas canvas2 = new Canvas();
+        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvasCollection.add(canvas2);
 
 
+        Canvas canvas3 = new Canvas();
+        canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvasCollection.add(canvas3);
+
+        Canvas canvas4 = new Canvas();
+        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvasCollection.add(canvas4);
+
+        Canvas canvas5 = new Canvas();
+        canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
+        canvasCollection.add(canvas5);
 
 
-        Round round = new Round("1", "De start", timer, scenario, biasCollection, measureQuestionCollection, ;
+        Round round = new Round(roundNumber, roundTitle, timer, scenario, biasCollection, measureQuestionCollection, canvasCollection);
 
         try {
             Writer writer = new FileWriter("/home/yawgmoth/Dropbox/HU-ADSD/S2/Periode 3/bias-brothers-serious-game/Backend/src/main/test/test.json");
@@ -57,6 +85,7 @@ public class RoundCreator {
             System.out.println("profile list has exported to json");//   <---
         } catch (Exception e) {
             e.printStackTrace();
+
         }
 
     }
