@@ -159,11 +159,15 @@ function openCloseModal(button, modal, index) {
     }
 
     // When the user clicks anywhere outside of the biasModal, closeModal it
-    window.onclick = function (event) {
+    window.addEventListener("click", function (event) {
+
         if (event.target === modal) {
+
             modal.style.display = "none";
+
         }
-    }
+
+    })
 }
 
 // Code for the timer
@@ -270,7 +274,6 @@ function allBiasen() {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
             makeTable(output, document.getElementById("all-bias-div"));
-
         }
     }
 
