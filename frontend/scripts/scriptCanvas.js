@@ -99,25 +99,62 @@ function questionTab(evt, questionName) {
 
 function loadBiasPopup(bias) {
     // Loop through to get all biasen in the pop up
-    for (i = 0; i < bias.length; i++) {
-        let biasName = bias[i].biasName;
-        let biasDescription = bias[i].biasDescription;
-        let biasExample = bias[i].biasExample;
-        let biasIndex = i + 1;
+    // for (i = 0; i < bias.length; i++) {
+    //     let biasName = bias[i].biasName;
+    //     let biasDescription = bias[i].biasDescription;
+    //     let biasExample = bias[i].biasExample;
+    //     let biasIndex = i + 1;
 
-        makeModalTable(biasIndex, biasName, biasDescription, biasExample);
-    }
+    //     //makeModalTable(biasIndex, biasName, biasDescription, biasExample);
+    // }
+    makeTable(bias);
 }
 
 function makeModalTable(biasIndex, biasName, biasDescription, biasExample) {
     document.getElementById("bias-name-" + biasIndex).innerHTML = biasName;
     document.getElementById("bias-description-" + biasIndex).innerHTML = biasDescription;
     document.getElementById("bias-example-" + biasIndex).innerHTML = biasExample;
+}
 
+function makeTable(list) {
     let table = document.createElement("table");
-    let tableRow = document.createElement("tr");
-    let tableColumn = document.createElement("th");
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
 
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    // Adding the entire table to the body tag
+    document.getElementById('bias-table-div').appendChild(table);
+
+    // Creating and adding data to first row of the table
+    let row_1 = document.createElement('tr');
+    let heading_1 = document.createElement('th');
+    heading_1.innerHTML = "Bias naam";
+    let heading_2 = document.createElement('th');
+    heading_2.innerHTML = "Omschrijving";
+    let heading_3 = document.createElement('th');
+    heading_3.innerHTML = "Voorbeeld";
+
+    row_1.appendChild(heading_1);
+    row_1.appendChild(heading_2);
+    row_1.appendChild(heading_3);
+    thead.appendChild(row_1);
+
+    for (let i = 0; i < list.length; i++){
+        let row = document.createElement('tr')
+        let rowName = document.createElement('td');
+        rowName.innerHTML = list[i].biasName;
+        let rowDescription = document.createElement('td');
+        rowDescription.innerHTML = list[i].biasDescription;
+        let rowExample = document.createElement('td');
+        rowExample.innerHTML = list[i].biasExample;
+
+        row.appendChild(rowName);
+        row.appendChild(rowDescription);
+        row.appendChild(rowExample);
+        tbody.appendChild(row);
+    }
 }
 
 function makeModal(button, modal) {
