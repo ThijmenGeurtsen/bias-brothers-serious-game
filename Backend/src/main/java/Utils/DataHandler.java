@@ -4,29 +4,48 @@ import com.google.gson.Gson;
 import main.java.GameHandler.Round;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class DataHandler {
 
-    private static Round setupRoundaData() throws FileNotFoundException {
+    private static ArrayList<Round> setupRoundaData() throws FileNotFoundException {
         try {
             Gson gson = new Gson();
-            Reader reader = new FileReader("/home/yawgmoth/Dropbox/HU-ADSD/S2/Periode 3/bias-brothers-serious-game/Backend/src/main/test/test.json");
+
+            Reader reader1 = new FileReader("Backend/src/main/resources/data/Round1.json");
+            Reader reader2 = new FileReader("Backend/src/main/resources/data/Round2.json");
+            Reader reader3 = new FileReader("Backend/src/main/resources/data/Round3.json");
+            Reader reader4 = new FileReader("Backend/src/main/resources/data/Round4.json");
+            Reader reader5 = new FileReader("Backend/src/main/resources/data/Round5.json");
+
+            Round round1 = gson.fromJson(reader1, Round.class);
+            Round round2 = gson.fromJson(reader2, Round.class);
+            Round round3 = gson.fromJson(reader3, Round.class);
+            Round round4 = gson.fromJson(reader4, Round.class);
+            Round round5 = gson.fromJson(reader5, Round.class);
+
+            reader1.close();
+            reader2.close();
+            reader3.close();
+            reader4.close();
+            reader5.close();
+
+            ArrayList<Round> rounds = new ArrayList<Round>();
+            rounds.add(round1);
+            rounds.add(round2);
+            rounds.add(round3);
+            rounds.add(round4);
+            rounds.add(round5);
 
 
-            Round round = gson.fromJson(reader, Round.class);
-
-            reader.close();
-
-            System.out.println("Round has loaded");
-
-            return round;
+            return rounds;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public Round getRoundaData() throws FileNotFoundException {
+    public ArrayList<Round> getRoundsData() throws FileNotFoundException {
         return setupRoundaData();
     }
 
