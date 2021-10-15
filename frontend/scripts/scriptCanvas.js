@@ -17,6 +17,7 @@ async function json(jsonFile) {
     loadMap();
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
+
     loadBiasModals(data.bias);
     //allBiasen();
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
@@ -293,3 +294,19 @@ function countdown(minutes) {
 
 // Start first canvas
 json(jsonFile);
+
+function fetchRound() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:4567/round1', true);
+    xhr.onload = function () {
+        if (this.status == 200) {
+            const output = JSON.parse(this.responseText);
+            fetchBiases(output)
+        } else {
+            console.log("Niet gevonden")
+        }
+    }
+    xhr.send();
+}
+
+fetchRound();
