@@ -2,7 +2,9 @@ package main.java.Utils;
 
 import com.google.gson.Gson;
 import main.java.Canvas.Bias;
+import main.java.GameHandler.Round;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import static spark.Spark.*;
@@ -15,13 +17,13 @@ public class Endpoints {
         this.dataHandler = dataHandler;
     }
 
-    public void startServer() {
+    public void startServer() throws FileNotFoundException {
         final Gson gson = new Gson();
-//        ArrayList<Bias> biasCollection = dataHandler.getBiasCollection();
+        Round round = dataHandler.getRoundaData();
 
-//        get("/bias", (req, res) -> {
-//            return gson.toJson(biasCollection);
-//        });
+        get("/round1", (req, res) -> {
+            return gson.toJson(round);
+        });
 
         after((req, res) -> {
             res.status(200);
