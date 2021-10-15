@@ -1,78 +1,37 @@
 package main.java.Utils;
 
 import com.google.gson.Gson;
-import jdk.nashorn.internal.parser.JSONParser;
-import main.java.Canvas.Bias;
-import main.java.Canvas.BiasCollection;
-import main.java.Canvas.NewsArticleCollection;
+import main.java.GameHandler.Round;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Map;
 
 public class DataHandler {
 
-    private ArrayList<Bias> biasCollection = new ArrayList<Bias>();
+    private static Round setupRoundaData() throws FileNotFoundException {
+        try {
+            Gson gson = new Gson();
+            Reader reader = new FileReader("/home/yawgmoth/Dropbox/HU-ADSD/S2/Periode 3/bias-brothers-serious-game/Backend/src/main/test/test.json");
 
 
+            Round round = gson.fromJson(reader, Round.class);
 
+            reader.close();
 
-    public DataHandler() throws FileNotFoundException {
-        setupData();
-    }
+            System.out.println("Round has loaded");
 
-    private void setupData() throws FileNotFoundException {
-
-//        try {
-//            Gson gson = new Gson();
-//            Reader reader = Files.newBufferedReader(Paths.get("/home/yawgmoth/Dropbox/HU-ADSD/S2/Periode 3/SeriousGameBackend/TestBias.json"));
-//
-//            Map<?, ?> map = gson.fromJson(reader, Map.class);
-//
-//            for (Map.Entry<?, ?> entry : map.entrySet()) {
-//                System.out.println(entry.getKey() + "=" + entry.getValue());
-//            }
-//
-//            reader.close();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-//            Bias bias1 = new Bias("", "hichem", "bla bla bla", "bla bla bla", "100");
-//            Bias bias2 = new Bias("", "amanda", "bla bla bla", "bla bla bla", "100");
-//            Bias bias3 = new Bias("", "thijmen", "bla bla bla", "bla bla bla", "100");
-//            Bias bias4 = new Bias("", "cas", "bla bla bla", "bla bla bla", "100");
-//            Bias bias5 = new Bias("", "hichem", "bla bla bla", "bla bla bla", "100");
-//
-//        BiasCollection biasCollection = new BiasCollection();
-
-//        biasCollection.addBias(bias1);
-//        biasCollection.addBias(bias2);
-//        biasCollection.addBias(bias3);
-//        biasCollection.addBias(bias4);
-//        biasCollection.addBias(bias5);
-//
-
-
-
-            try {
-                Writer writer = new FileWriter("/home/yawgmoth/Dropbox/HU-ADSD/S2/Periode 3/SeriousGameBackend/TestBias.json");
-                Gson gson = new Gson();
-                // 1. Java object to JSON file
-                gson.toJson(biasCollection, writer);
-                writer.flush(); //flush data to file
-
-                System.out.println("profile list has exported to json");//   <---
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            return round;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
+        return null;
     }
+
+    public Round getRoundaData() throws FileNotFoundException {
+        return setupRoundaData();
+    }
+
+}
+
 
 //    public ArrayList<Bias> getBiasCollection() {
 //        return biasCollection;
