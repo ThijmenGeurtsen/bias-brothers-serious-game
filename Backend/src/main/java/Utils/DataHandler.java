@@ -1,6 +1,7 @@
 package main.java.Utils;
 
 import com.google.gson.Gson;
+import main.java.Canvas.Bias;
 import main.java.GameHandler.Round;
 
 import java.io.*;
@@ -24,11 +25,14 @@ public class DataHandler {
             Round round4 = gson.fromJson(reader4, Round.class);
             Round round5 = gson.fromJson(reader5, Round.class);
 
+
             reader1.close();
             reader2.close();
             reader3.close();
             reader4.close();
             reader5.close();
+
+
 
             ArrayList<Round> rounds = new ArrayList<Round>();
             rounds.add(round1);
@@ -45,9 +49,33 @@ public class DataHandler {
         return null;
     }
 
+    private static ArrayList<Bias> setupBiasListData() {
+        try {
+            Gson gson = new Gson();
+            Reader biasListReader = new FileReader("Backend/src/main/resources/data/BiasList.json");
+
+            ArrayList<Bias> biasList = gson.fromJson(biasListReader, ArrayList.class);
+
+            biasListReader.close();
+
+            return biasList;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Bias> getBiaslistData() throws FileNotFoundException {
+        return setupBiasListData();
+    }
+
+
     public ArrayList<Round> getRoundsData() throws FileNotFoundException {
         return setupRoundaData();
     }
+
+
 
 }
 
