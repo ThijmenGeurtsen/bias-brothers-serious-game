@@ -1,40 +1,19 @@
 .canvas-header {
     display: grid;
-    grid-template-columns: 0.25fr 2fr 0.5fr 0.25fr;
+    grid-template-columns: 0.25fr 1fr 0.25fr 0.5fr 0.25fr;
     grid-auto-rows: minmax(40px, auto);
 }
 
-.title-round {}
+.title-round-box {
+    align-self: center;
 
-.timer-box {}
-
-.game-menu-button {
-    width: 160px;
 }
 
-.game-menu-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.timer-box {
+    align-self: center;
+    justify-self: center;
 }
 
-.game-menu-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.game-menu-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.game-menu:hover .game-menu-content {
-    display: block;
-}
 
 .game-middle {
     background-color: #61ce70;
@@ -83,7 +62,7 @@
 .canvas-footer {
     display: grid;
     background-color: white;
-    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-columns: 0.5fr 0.5fr;
 }
 
 .scenario-box {
@@ -96,7 +75,7 @@
     overflow: hidden;
 }
 
-.question-box>li {
+.question-box > li {
     text-decoration: none;
 }
 
@@ -135,70 +114,6 @@
     padding: 6px 12px;
     border-top: none;
 }
-
-/*
-.popup {
-    position: absolute;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.popup .biasPopup {
-    visibility: hidden;
-    width: 200px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 15px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 25%;
-    margin-left: -100px;
-}
-
-        //  Popup arrow
-.popup .biasPopup::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
-
-   // Add animation (fade in the popup)
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-*/
 
 .submit-button {
     display: grid;
@@ -255,49 +170,56 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
 
-  /* Modal Content/Box */
-  .modal-content {
+/* Modal Content/Box */
+.modal-content {
     background-color: white;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
+}
 
-  /* The closeModal Button */
-  .closeModal {
+#model-content-big {
+    max-height: 600px;
+    overflow: scroll;
+}
+
+/* The closeModal Button */
+.closeModal {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
 
-  .closeModal:hover,
-  .closeModal:focus {
+.closeModal:hover,
+.closeModal:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-
-  #bias-mid-row {
-    background-color: rgba(175, 175, 175, 0.274);
-  }
-
-  #bias-table td {
-    padding: 15px;
-    text-align: left;
-  }
-
-  #bias-table th {
-    text-align: left;
-    padding: 15px;
 }
 
-  #bias-table {
+#bias-mid-row {
+    background-color: rgba(175, 175, 175, 0.274);
+}
+
+#bias-table-div table, #all-bias-div table {
+    text-align: left;
     border-spacing: 0px;
 }
 
+#bias-table-div table td, #all-bias-div table td {
+    padding: 15px;
+}
+
+#bias-table-div table tr, #all-bias-div table tr {
+    padding: 15px;
+}
+
+#bias-table-div table th, #all-bias-div table th {
+    padding: 15px;
+}
