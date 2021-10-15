@@ -48,6 +48,12 @@ public class Endpoints {
 
         System.out.println("Rounds have been loaded");
 
+        ArrayList<Bias> biasList = dataHandler.getBiaslistData();
+
+        System.out.println("Bias list has been loaded");
+
+
+
         get("/round1", (req, res) -> {
             return gson.toJson(round1);
         });
@@ -66,6 +72,10 @@ public class Endpoints {
 
         get("/round5", (req, res) -> {
             return gson.toJson(round5);
+        });
+
+        get("/biases", (req, res) -> {
+            return gson.toJson(biasList);
         });
 
         after((req, res) -> {
