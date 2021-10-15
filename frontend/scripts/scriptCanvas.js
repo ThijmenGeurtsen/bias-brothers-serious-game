@@ -237,7 +237,7 @@ function nextRound(biasAnswer, measureAnswer) {
 
 function allBiasen() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/biasen', true);
+    xhr.open('GET', 'http://localhost:4567/round1', true);
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
