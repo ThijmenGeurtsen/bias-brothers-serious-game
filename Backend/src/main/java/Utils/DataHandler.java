@@ -10,7 +10,7 @@ public class DataHandler {
     private static Round setupRoundaData() throws FileNotFoundException {
         try {
             Gson gson = new Gson();
-            Reader reader = new FileReader("/Users/casdewit/Documents/School/Semester2_BiasBrothers/03_Coding/bias-brothers-serious-game/Backend/src/main/test/test.json");
+            Reader reader = new FileReader("/home/yawgmoth/Dropbox/HU-ADSD/S2/Periode 3/bias-brothers-serious-game/Backend/src/main/test/test.json");
 
 
             Round round = gson.fromJson(reader, Round.class);
