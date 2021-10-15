@@ -3,29 +3,52 @@ let jsonName = "data/R" + round.toString();
 let jsonFile = jsonName + ".json";
 let canvasNumber = 2;
 
-async function json(jsonFile) {
-    const response = await fetch(jsonFile);
-    const data = await response.json();
-    // Dit is voor elke ronde hetzelfde per canvas (in data)
-    loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
-    //countdown(data.timer);
-    loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-    loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
-    loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
+// async function json(jsonFile) {
+//     const response = await fetch(jsonFile);
+//     const data = await response.json();
+//     // Dit is voor elke ronde hetzelfde per canvas (in data)
+//     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
+//     //countdown(data.timer);
+//     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
+//     loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
+//     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
+//     // Dit verschilt voor elke ronde per canvas (in data)
+//     loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
+//     loadMap();
+//     document.getElementById("all-bias-div").innerHTML = "";
+//     document.getElementById("bias-table-div").innerHTML = "";
+
+//     loadBiasModals(data.bias);
+//     //allBiasen();
+//     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
+//     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
+
+//     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
+//     for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
+//         loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
+//     }
+
+//     // Will make the BIAS question default showable
+//     document.getElementById("qBiasId").click();
+// }
+
+function loadGame(output){
+    loadTitleRound(output.roundNumber, output.roundTitle);
+    loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
+    loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
+    loadMeasure(output.measureQuestionCollection[0].measureAnswer, output.measureQuestionCollection[1].measureAnswer, output.measureQuestionCollection[2].measureAnswer);
     // Dit verschilt voor elke ronde per canvas (in data)
-    loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
-    loadMap();
+    loadInfections(output.canvasCollection[canvasNumber].infections.healthy, output.canvasCollection[canvasNumber].infections.infected, output.canvasCollection[canvasNumber].infections.mutated);
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
-
-    loadBiasModals(data.bias);
-    //allBiasen();
+    makeTable(output, document.getElementById("all-bias-div"));
+    loadBiasModals(output.biasCollection);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
-    for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
-        loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
+    for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
+        loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
 
     // Will make the BIAS question default showable
@@ -259,6 +282,26 @@ function allBiasen() {
     xhr.send();
 }
 
+function fetchRound() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:4567/round1', true);
+    xhr.onload = function () {
+        if (this.status == 200) {
+            const output = JSON.parse(this.responseText);
+            loadGame(output)
+        } else {
+            console.log("Niet gevonden")
+        }
+    }
+    xhr.send();
+}
+
+// Start first canvas
+//json(jsonFile);
+
+fetchRound();
+
+
 // Button that brings you to the login page & alerts you goodbye
 function buttonLogoutClick() {
     alert('Tot ziens ');
@@ -291,22 +334,3 @@ function countdown(minutes) {
     }
     tick();
 }
-
-// Start first canvas
-json(jsonFile);
-
-function fetchRound() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/round1', true);
-    xhr.onload = function () {
-        if (this.status == 200) {
-            const output = JSON.parse(this.responseText);
-            fetchBiases(output)
-        } else {
-            console.log("Niet gevonden")
-        }
-    }
-    xhr.send();
-}
-
-fetchRound();
