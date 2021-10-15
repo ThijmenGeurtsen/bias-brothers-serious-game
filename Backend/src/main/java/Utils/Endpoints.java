@@ -20,6 +20,7 @@ public class Endpoints {
 
     public void startServer() throws FileNotFoundException {
 
+        // Allow CORS//////////////////////////////////////////////////////////////////////////////
         Spark.options("/*", (request, response) -> {
             String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
             if (accessControlRequestHeaders != null) {
@@ -30,16 +31,41 @@ public class Endpoints {
                 response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
             }
             return "OK";
+
         });
         Spark.before((request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
         });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
 
         final Gson gson = new Gson();
-        Round round = dataHandler.getRoundaData();
+        Round round1 = dataHandler.getRoundsData().get(0);
+        Round round2 = dataHandler.getRoundsData().get(1);
+        Round round3 = dataHandler.getRoundsData().get(2);
+        Round round4 = dataHandler.getRoundsData().get(3);
+        Round round5 = dataHandler.getRoundsData().get(4);
+
+        System.out.println("Rounds have been loaded");
 
         get("/round1", (req, res) -> {
-            return gson.toJson(round);
+            return gson.toJson(round1);
+        });
+
+        get("/round2", (req, res) -> {
+            return gson.toJson(round2);
+        });
+
+        get("/round3", (req, res) -> {
+            return gson.toJson(round3);
+        });
+
+        get("/round4", (req, res) -> {
+            return gson.toJson(round4);
+        });
+
+        get("/round5", (req, res) -> {
+            return gson.toJson(round5);
         });
 
         after((req, res) -> {
