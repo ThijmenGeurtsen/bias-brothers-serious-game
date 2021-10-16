@@ -3,35 +3,6 @@ let endpointName = "round" + round.toString();
 //let jsonFile = endpointName + ".json";
 let canvasNumber = 2;
 
-// async function json(jsonFile) {
-//     const response = await fetch(jsonFile);
-//     const data = await response.json();
-//     // Dit is voor elke ronde hetzelfde per canvas (in data)
-//     loadTitleRound(data.titleRound.roundNumber, data.titleRound.title);
-//     //countdown(data.timer);
-//     loadScenario(data.scenario.scenarioTitle, data.scenario.scenarioText);
-//     loadBias(data.bias[0].biasName, data.bias[1].biasName, data.bias[2].biasName);
-//     loadMeasure(data.measureOption[0].answer, data.measureOption[1].answer, data.measureOption[2].answer)
-//     // Dit verschilt voor elke ronde per canvas (in data)
-//     loadInfections(data.canvas[canvasNumber].infections.healthy, data.canvas[canvasNumber].infections.infected, data.canvas[canvasNumber].infections.mutated);
-//     loadMap();
-//     document.getElementById("all-bias-div").innerHTML = "";
-//     document.getElementById("bias-table-div").innerHTML = "";
-
-//     loadBiasModals(data.bias);
-//     //allBiasen();
-//     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
-//     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
-
-//     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
-//     for (let i = 0; i < data.canvas[canvasNumber].newsArticles.length; i++) {
-//         loadNewsfeed(i, data.canvas[canvasNumber].newsArticles[i].newsArticleTitle, data.canvas[canvasNumber].newsArticles[i].newsArticleMessage, data.canvas[canvasNumber].newsArticles[i].newsArticleSource, data.canvas[canvasNumber].newsArticles[i].newsArticlePopup);
-//     }
-
-//     // Will make the BIAS question default showable
-//     document.getElementById("qBiasId").click();
-// }
-
 function loadGame(output){
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
@@ -41,7 +12,7 @@ function loadGame(output){
     loadInfections(output.canvasCollection[canvasNumber].infections.healthy, output.canvasCollection[canvasNumber].infections.infected, output.canvasCollection[canvasNumber].infections.mutated);
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
-    makeTable(output, document.getElementById("all-bias-div"));
+    allBiasen();
     loadBiasModals(output.biasCollection);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
