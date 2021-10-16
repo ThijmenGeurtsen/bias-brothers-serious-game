@@ -1,6 +1,6 @@
 let round = 1;
-let jsonName = "data/R" + round.toString();
-let jsonFile = jsonName + ".json";
+let endpointName = "round" + round.toString();
+//let jsonFile = endpointName + ".json";
 let canvasNumber = 2;
 
 // async function json(jsonFile) {
@@ -260,10 +260,11 @@ function giveAnswer(e) {
 function nextRound(biasAnswer, measureAnswer) {
     round = round + 1;
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    jsonName = "data/R" + round.toString();
-    jsonFile = jsonName + ".json";
+    endpointName = "round" + round.toString();
+    //jsonFile = endpointName + ".json";
 
-    json(jsonFile, newCanvasNumber);
+    //json(jsonFile, newCanvasNumber);
+    fetchRound();
     console.log(biasAnswer);
     console.log(measureAnswer);
     console.log(round);
@@ -272,7 +273,7 @@ function nextRound(biasAnswer, measureAnswer) {
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
 function allBiasen() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/biasen', true);
+    xhr.open('GET', 'http://localhost:4567/biases', true);
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
@@ -284,7 +285,7 @@ function allBiasen() {
 
 function fetchRound() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/round1', true);
+    xhr.open('GET', 'http://localhost:4567/' + endpointName, true);
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
