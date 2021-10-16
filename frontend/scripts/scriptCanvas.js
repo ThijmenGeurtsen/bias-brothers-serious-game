@@ -1,6 +1,5 @@
 let round = 1;
 let endpointName = "round" + round.toString();
-//let jsonFile = endpointName + ".json";
 let canvasNumber = 2;
 
 function loadGame(output){
@@ -229,16 +228,13 @@ function giveAnswer(e) {
 
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
-    round = round + 1;
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
+    round = round + 1;
     endpointName = "round" + round.toString();
-    //jsonFile = endpointName + ".json";
-
-    //json(jsonFile, newCanvasNumber);
+    
+    console.log(newCanvasNumber);
+    canvasNumber = newCanvasNumber;
     fetchRound();
-    console.log(biasAnswer);
-    console.log(measureAnswer);
-    console.log(round);
 }
 
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
@@ -269,8 +265,6 @@ function fetchRound() {
 }
 
 // Start first canvas
-//json(jsonFile);
-
 fetchRound();
 
 
