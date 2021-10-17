@@ -2,7 +2,7 @@ let round = 1;
 let endpointName = "round" + round.toString();
 let canvasNumber = 2;
 
-function loadGame(output){
+function loadGame(output) {
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -231,7 +231,7 @@ function nextRound(biasAnswer, measureAnswer) {
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
     round = round + 1;
     endpointName = "round" + round.toString();
-    
+
     console.log(newCanvasNumber);
     canvasNumber = newCanvasNumber;
     fetchRound();
