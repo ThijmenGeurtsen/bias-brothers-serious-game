@@ -12,7 +12,7 @@ function loadGame(output) {
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
     allBiasen();
-    countdown(1);
+    countdown(7);
     loadBiasModals(output.biasCollection);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
@@ -233,7 +233,7 @@ function nextRound(biasAnswer, measureAnswer) {
     round = round + 1;
     endpointName = "round" + round.toString();
 
-    console.log(newCanvasNumber);
+    //console.log(newCanvasNumber);
     canvasNumber = newCanvasNumber;
     fetchRound();
 }
@@ -284,9 +284,17 @@ function countdown(minutes) {
     clearInterval(timeoutHandle);
 
     function tick() {
-        if (seconds <= 1){
-            alert("De tijd van de ronde is voorbij. Sluit deze melding om verder te gaan.")
-            nextRound("a", "a");
+        if (seconds <= 1) {
+            alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
+            round = round + 1;
+            endpointName = "round" + round.toString();
+            if (canvasNumber > 0){
+                canvasNumber = canvasNumber - 1;
+            } else {
+                canvasNumber = 0;
+            }
+            //console.log(canvasNumber);
+            fetchRound();
         }
         var counter = document.getElementById("timer");
         var current_minutes = mins - 1
