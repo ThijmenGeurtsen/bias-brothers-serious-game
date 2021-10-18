@@ -12,6 +12,7 @@ function loadGame(output) {
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
     allBiasen();
+    countdown(7);
     loadBiasModals(output.biasCollection);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
@@ -280,6 +281,7 @@ let timeoutHandle;
 function countdown(minutes) {
     let seconds = 60;
     let mins = minutes;
+    clearInterval(timeoutHandle);
 
     function tick() {
         var counter = document.getElementById("timer");
