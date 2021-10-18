@@ -73,7 +73,7 @@
                     <appName>hu-seriousgame</appName>
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
-                        <web>java -jar ./target/hu-seriousgame-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar ./target/Backend-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
