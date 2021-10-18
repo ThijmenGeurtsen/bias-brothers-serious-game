@@ -59,7 +59,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>com.team3.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
