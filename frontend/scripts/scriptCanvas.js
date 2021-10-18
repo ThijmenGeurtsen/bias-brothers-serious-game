@@ -280,6 +280,9 @@ function countdown(minutes) {
     clearInterval(timeoutHandle);
 
     function tick() {
+        if (mins == 1){
+            document.getElementById("timer").style.backgroundColor = "red";
+        }
         if (seconds <= 1 && mins == 1) {
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
