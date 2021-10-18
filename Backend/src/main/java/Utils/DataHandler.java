@@ -18,12 +18,14 @@ public class DataHandler {
             Reader reader3 = new FileReader("Backend/src/main/resources/data/Round3.json");
             Reader reader4 = new FileReader("Backend/src/main/resources/data/Round4.json");
             Reader reader5 = new FileReader("Backend/src/main/resources/data/Round5.json");
+            Reader reader6 = new FileReader("Backend/src/main/resources/data/Round6.json");
 
             Round round1 = gson.fromJson(reader1, Round.class);
             Round round2 = gson.fromJson(reader2, Round.class);
             Round round3 = gson.fromJson(reader3, Round.class);
             Round round4 = gson.fromJson(reader4, Round.class);
             Round round5 = gson.fromJson(reader5, Round.class);
+            Round round6 = gson.fromJson(reader6, Round.class);
 
 
             reader1.close();
@@ -31,6 +33,7 @@ public class DataHandler {
             reader3.close();
             reader4.close();
             reader5.close();
+            reader6.close();
 
 
 
@@ -40,6 +43,7 @@ public class DataHandler {
             rounds.add(round3);
             rounds.add(round4);
             rounds.add(round5);
+            rounds.add(round6);
 
 
             return rounds;

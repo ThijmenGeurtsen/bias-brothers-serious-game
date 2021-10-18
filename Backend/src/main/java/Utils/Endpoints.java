@@ -45,6 +45,7 @@ public class Endpoints {
         Round round3 = dataHandler.getRoundsData().get(2);
         Round round4 = dataHandler.getRoundsData().get(3);
         Round round5 = dataHandler.getRoundsData().get(4);
+        Round round6 = dataHandler.getRoundsData().get(5);
 
         System.out.println("Rounds have been loaded");
 
@@ -72,6 +73,10 @@ public class Endpoints {
 
         get("/round5", (req, res) -> {
             return gson.toJson(round5);
+        });
+
+        get("/round6", (req, res) -> {
+            return gson.toJson(round6);
         });
 
         get("/biases", (req, res) -> {
