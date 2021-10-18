@@ -189,10 +189,6 @@ function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPop
     let popup = boolPopup;
 }
 
-// Hopefully load in the new map & animation etc.
-function loadMap() {
-}
-
 // Checks if both questions have been filled in.
 document.getElementById("next").addEventListener
     ("click", giveAnswer);
