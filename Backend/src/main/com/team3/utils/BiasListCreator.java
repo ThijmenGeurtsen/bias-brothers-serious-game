@@ -1,7 +1,7 @@
-package main.java.Utils;
+package com.team3.utils;
 
+import com.team3.canvas.Bias;
 import com.google.gson.Gson;
-import main.java.Canvas.Bias;
 
 import java.io.FileWriter;
 import java.io.Writer;

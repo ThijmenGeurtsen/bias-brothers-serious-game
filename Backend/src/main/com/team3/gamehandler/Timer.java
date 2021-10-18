@@ -1,4 +1,4 @@
-package main.java.GameHandler;
+package com.team3.gamehandler;
 
 public class Timer {
     private int minutes;

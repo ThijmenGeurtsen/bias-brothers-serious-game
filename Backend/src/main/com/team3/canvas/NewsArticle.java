@@ -1,4 +1,4 @@
-package main.java.Canvas;
+package com.team3.canvas;
 
 public class NewsArticle {
 

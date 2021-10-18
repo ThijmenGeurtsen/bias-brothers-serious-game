@@ -1,6 +1,8 @@
-package main.java.GameHandler;
+package com.team3.gamehandler;
 
-import main.java.Canvas.*;
+import com.team3.canvas.Bias;
+import com.team3.canvas.Canvas;
+import com.team3.canvas.Scenario;
 
 import java.util.ArrayList;
 

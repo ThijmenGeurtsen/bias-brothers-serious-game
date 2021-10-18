@@ -1,10 +1,12 @@
-package main.java.Utils;
+package com.team3.utils;
 
+import com.team3.canvas.*;
 import com.google.gson.Gson;
-import main.java.Canvas.*;
-import main.java.GameHandler.MeasureQuestion;
-import main.java.GameHandler.Round;
-import main.java.GameHandler.Timer;
+
+import com.team3.gamehandler.MeasureQuestion;
+import com.team3.gamehandler.Timer;
+import com.team3.gamehandler.Round;
+
 
 import java.io.FileWriter;
 import java.io.Writer;
@@ -40,39 +42,39 @@ public class RoundCreator {
         ArrayList<Canvas> canvasCollection = new ArrayList<Canvas>();
         // array van 5 canvassen
         Canvas canvas1 = new Canvas();
-        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas1.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas1.setInfections(new Infections(999,999, 999));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas1.getNewsArticleCollection().add((new NewsArticle("", "", "", true)));
+        canvas1.setInfections(new Infections(999, 999, 999));
         canvasCollection.add(canvas1);
 
 
         Canvas canvas2 = new Canvas();
-        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas2.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas2.setInfections(new Infections(999,999, 999));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas2.getNewsArticleCollection().add((new NewsArticle("", "", "", true)));
+        canvas2.setInfections(new Infections(999, 999, 999));
         canvasCollection.add(canvas2);
 
         Canvas canvas3 = new Canvas();
-        canvas3.getNewsArticleCollection().add((new NewsArticle("Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep","Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.","~ Degressia Dagblad ~",false)));
-        canvas3.getNewsArticleCollection().add((new NewsArticle("Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië","De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.","~ Daily Digitanzanië ~",true)));
-        canvas3.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas3.setInfections(new Infections(999,999, 999));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("Experts maken zich zorgen over stijgende aantal besmettingen Olifantengriep", "Veel blijft nog onbekend over de onlangs ontdekte Olifantengriep. Vooralsnog lijkt Noord-Kropslavië het enige land dat getroffen is. Inzichten in de verspreiding en werking van het virus blijven nog uit. Authoriteiten in Degressia zijn begonnen met de eerste maatregelen om het land voor te bereiden op een uitbraak.", "~ Degressia Dagblad ~", false)));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("Een nieuw en potentieel levensbedreigend virus is gevonden in Noord-Kropslavië", "De afgelopen dagen zijn er steeds meer gevallen bekend geworden van een nieuw en mogelijk levensbedreigend virus in Noord-Kropslavië. Genaamd de olifantengriep vanwege de gezichtsmutatie die het laatste stadium van besmetting met dit virus met zich mee brengt: een permanente verandering van de neus in een slurf. Epidemiologen en virologen zijn druk bezig met een onderzoek om het virus tegen te gaan.", "~ Daily Digitanzanië ~", true)));
+        canvas3.getNewsArticleCollection().add((new NewsArticle("", "", "", true)));
+        canvas3.setInfections(new Infections(999, 999, 999));
         canvasCollection.add(canvas3);
 
         Canvas canvas4 = new Canvas();
-        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas4.getNewsArticleCollection().add((new NewsArticle("","","",false)));
-        canvas4.setInfections(new Infections(999,999, 999));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas4.getNewsArticleCollection().add((new NewsArticle("", "", "", false)));
+        canvas4.setInfections(new Infections(999, 999, 999));
         canvasCollection.add(canvas4);
 
         Canvas canvas5 = new Canvas();
-        canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas5.getNewsArticleCollection().add((new NewsArticle("","","",true)));
-        canvas5.setInfections(new Infections(999,999, 999));
+        canvas5.getNewsArticleCollection().add((new NewsArticle("", "", "", true)));
+        canvas5.getNewsArticleCollection().add((new NewsArticle("", "", "", true)));
+        canvas5.getNewsArticleCollection().add((new NewsArticle("", "", "", true)));
+        canvas5.setInfections(new Infections(999, 999, 999));
         canvasCollection.add(canvas5);
 
 

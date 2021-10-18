@@ -1,10 +1,7 @@
-package main.java;
+package com.team3;
 
-import main.java.Utils.BiasListCreator;
-import main.java.Utils.DataHandler;
-import main.java.Utils.Endpoints;
-import main.java.Utils.RoundCreator;
-import spark.Spark;
+import com.team3.utils.Endpoints;
+import com.team3.utils.DataHandler;
 
 import java.io.FileNotFoundException;
 
