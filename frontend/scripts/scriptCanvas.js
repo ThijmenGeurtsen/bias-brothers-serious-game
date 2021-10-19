@@ -41,9 +41,10 @@ function loadRoundWarningModals() {
         if (event.target === this.document.getElementById("roundModal")) {
             document.getElementById("roundModal").style.display = "none";
             countdown(8);
+            return;
         }
-    })
-    if (round > 1 && document.getElementById("roundModal").style.display == "block"){
+    });
+    if (round > 1 && document.getElementById("roundModal").style.display == "block") {
         setTimeout(function () {
             document.getElementById("roundModal").style.display = "none";
             countdown(8);
