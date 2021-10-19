@@ -58,6 +58,9 @@ function loadBias(answerA, answerB, answerC) {
 function validateBias() {
     if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked) {
         //console.log("Checked");
+        document.getElementById("qMeasureId").onclick = function(){
+            document.getElementById("warningModal").style.display = "none";
+        }
         return true;
     }
 }
