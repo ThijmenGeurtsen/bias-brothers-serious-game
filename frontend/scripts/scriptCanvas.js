@@ -42,7 +42,6 @@ function loadRoundWarningModals() {
             document.getElementById("roundModal").style.display = "none";
             countdown(8);
             this.clearTimeout(a);
-            return;
         }
     });
     if (round > 1 && document.getElementById("roundModal").style.display == "block") {
