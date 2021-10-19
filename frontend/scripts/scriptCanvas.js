@@ -3,6 +3,7 @@ let endpointName = "round" + round.toString();
 let canvasNumber = 2;
 
 function loadGame(output) {
+    clearInterval(timeoutHandle);
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -12,16 +13,26 @@ function loadGame(output) {
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
     allBiasen();
-    countdown(8);
     loadBiasModals(output.biasCollection);
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
-    if (round > 1){
-        document.getElementById("warning-message").innerHTML = "Welkom in ronde " + round;
+    if (round > 1) {
+        document.getElementById("warning-message").innerHTML = "Welkom in ronde " + round + ".\n Klik buiten deze melding om verder te gaan.";
         document.getElementById("warningModal").style.display = "block";
+
+    } else {
+        document.getElementById("warning-message").innerHTML = "Welkom bij de Serious Game" + ".\n Klik buiten deze melding om verder te gaan.";
+        document.getElementById("warningModal").style.display = "block";
+
     }
+    window.addEventListener("click", function (event) {
+        if (event.target === this.document.getElementById("warningModal")) {
+            document.getElementById("warningModal").style.display = "none";
+            countdown(8);
+        }
+    })
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
@@ -62,7 +73,7 @@ function loadBias(answerA, answerB, answerC) {
 function validateBias() {
     if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked) {
         //console.log("Checked");
-        document.getElementById("qMeasureId").onclick = function(){
+        document.getElementById("qMeasureId").onclick = function () {
             document.getElementById("warningModal").style.display = "none";
         }
         return true;
@@ -231,7 +242,7 @@ function giveAnswer(e) {
         nextRound(biasValue, measureValue);
         bias[biasNumber].checked = false;
         measure[measureNumber].checked = false;
-        document.getElementById("next").onclick = function(){
+        document.getElementById("next").onclick = function () {
             document.getElementById("warningModal").style.display = "none";
         }
     }
@@ -295,14 +306,14 @@ function countdown(minutes) {
     document.getElementById("timer").style.backgroundColor = "#61ce70";
 
     function tick() {
-        if (mins == 1){
+        if (mins == 1) {
             document.getElementById("timer").style.backgroundColor = "red";
         }
         if (seconds <= 1 && mins == 1) {
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
             endpointName = "round" + round.toString();
-            if (canvasNumber > 0){
+            if (canvasNumber > 0) {
                 canvasNumber = canvasNumber - 1;
             } else {
                 canvasNumber = 0;
