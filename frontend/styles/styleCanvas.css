@@ -223,3 +223,7 @@
 #bias-table-div table th, #all-bias-div table th {
     padding: 15px;
 }
+
+#warning-message {
+    text-align: center;
+}

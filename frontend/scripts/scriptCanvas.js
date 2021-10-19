@@ -14,8 +14,10 @@ function loadGame(output) {
     allBiasen();
     countdown(8);
     loadBiasModals(output.biasCollection);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
+    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
@@ -56,6 +58,9 @@ function loadBias(answerA, answerB, answerC) {
 function validateBias() {
     if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked) {
         //console.log("Checked");
+        document.getElementById("qMeasureId").onclick = function(){
+            document.getElementById("warningModal").style.display = "none";
+        }
         return true;
     }
 }
@@ -73,7 +78,8 @@ document.getElementById("qMeasureId").addEventListener("click", clickMeasureTab)
 
 function clickMeasureTab(e) {
     if (!validateBias()) {
-        alert("Vul eerst de bias vraag in.")
+        //alert("Vul eerst de bias vraag in.")
+        document.getElementById("warning-message").innerHTML = "Vul eerst de biasvraag in.";
         return;
     }
     questionContent = document.getElementsByClassName("question-content");
@@ -215,11 +221,15 @@ function giveAnswer(e) {
     }
 
     if (biasValue === undefined || measureValue === undefined) {
-        alert("U heeft niet allebei de vragen ingevuld.")
+        //alert("U heeft niet allebei de vragen ingevuld.")
+        document.getElementById("warning-message").innerHTML = "U heeft niet allebei de vragen ingevuld.";
     } else {
         nextRound(biasValue, measureValue);
         bias[biasNumber].checked = false;
         measure[measureNumber].checked = false;
+        document.getElementById("next").onclick = function(){
+            document.getElementById("warningModal").style.display = "none";
+        }
     }
 }
 
