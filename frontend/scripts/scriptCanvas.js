@@ -24,38 +24,6 @@ function loadGame(output) {
     document.getElementById("qBiasId").click();
 }
 
-function loadRoundWarningModals() {
-    clearInterval(timeoutHandle);
-    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
-    if (round > 1) {
-        document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
-        document.getElementById("roundModal").style.display = "block";
-    } else {
-        document.getElementById("round-message").innerHTML = "Welkom bij de Serious Game!" + "\n Klik buiten deze melding om het spel te starten.";
-        document.getElementById("roundModal").style.display = "block";
-    }
-    document.getElementsByClassName("closeModal")[1].onclick = function () {
-        document.getElementById("roundModal").style.display = "none";
-        countdown(8);
-    }
-    window.addEventListener("click", function (event) {
-        if (event.target === this.document.getElementById("roundModal")) {
-            document.getElementById("roundModal").style.display = "none";
-            countdown(8);
-            this.clearTimeout(a);
-        }
-    });
-    if (round > 1 && document.getElementById("roundModal").style.display == "block") {
-        var a = setTimeout(function () {
-            document.getElementById("roundModal").style.display = "none";
-            countdown(8);
-        }, 5000);
-    }
-}
-
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
 // Changes the title to what is send into the function
 function loadTitleRound(round, title) {
@@ -180,6 +148,39 @@ function makeTable(list, div) {
         if (i % 2 == 0) {
             row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
         }
+    }
+}
+
+// Loads all modals
+function loadRoundWarningModals() {
+    clearInterval(timeoutHandle);
+    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
+    if (round > 1) {
+        document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
+        document.getElementById("roundModal").style.display = "block";
+    } else {
+        document.getElementById("round-message").innerHTML = "Welkom bij de Serious Game!" + "\n Klik buiten deze melding om het spel te starten.";
+        document.getElementById("roundModal").style.display = "block";
+    }
+    document.getElementsByClassName("closeModal")[1].onclick = function () {
+        document.getElementById("roundModal").style.display = "none";
+        countdown(8);
+    }
+    window.addEventListener("click", function (event) {
+        if (event.target === this.document.getElementById("roundModal")) {
+            document.getElementById("roundModal").style.display = "none";
+            countdown(8);
+            this.clearTimeout(a);
+        }
+    });
+    if (round > 1 && document.getElementById("roundModal").style.display == "block") {
+        var a = setTimeout(function () {
+            document.getElementById("roundModal").style.display = "none";
+            countdown(8);
+        }, 5000);
     }
 }
 
