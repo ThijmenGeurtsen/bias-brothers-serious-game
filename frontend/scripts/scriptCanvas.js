@@ -227,6 +227,9 @@ function giveAnswer(e) {
         nextRound(biasValue, measureValue);
         bias[biasNumber].checked = false;
         measure[measureNumber].checked = false;
+        document.getElementById("next").onclick = function(){
+            document.getElementById("warningModal").style.display = "none";
+        }
     }
 }
 
