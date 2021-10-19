@@ -27,9 +27,9 @@ function loadGame(output) {
 function loadRoundWarningModals() {
     clearInterval(timeoutHandle);
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
     if (round > 1) {
         document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
         document.getElementById("roundModal").style.display = "block";
