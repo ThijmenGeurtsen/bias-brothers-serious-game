@@ -12,7 +12,7 @@ function loadGame(output) {
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
     allBiasen();
-    countdown(7);
+    countdown(8);
     loadBiasModals(output.biasCollection);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 1);
