@@ -3,7 +3,6 @@ let endpointName = "round" + round.toString();
 let canvasNumber = 2;
 
 function loadGame(output) {
-    clearInterval(timeoutHandle);
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -12,27 +11,9 @@ function loadGame(output) {
     loadInfections(output.canvasCollection[canvasNumber].infections.healthy, output.canvasCollection[canvasNumber].infections.infected, output.canvasCollection[canvasNumber].infections.mutated);
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
-    allBiasen();
+    fetchBiases();
     loadBiasModals(output.biasCollection);
-    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
-    if (round > 1) {
-        document.getElementById("warning-message").innerHTML = "Welkom in ronde " + round + ".\n Klik buiten deze melding om verder te gaan.";
-        document.getElementById("warningModal").style.display = "block";
-
-    } else {
-        document.getElementById("warning-message").innerHTML = "Welkom bij de Serious Game" + ".\n Klik buiten deze melding om verder te gaan.";
-        document.getElementById("warningModal").style.display = "block";
-
-    }
-    window.addEventListener("click", function (event) {
-        if (event.target === this.document.getElementById("warningModal")) {
-            document.getElementById("warningModal").style.display = "none";
-            countdown(8);
-        }
-    })
+    loadRoundWarningModals();
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
@@ -41,6 +22,27 @@ function loadGame(output) {
 
     // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
+}
+
+function loadRoundWarningModals() {
+    clearInterval(timeoutHandle);
+    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
+    if (round > 1) {
+        document.getElementById("warning-message").innerHTML = "Welkom in ronde " + round + ".\n Klik buiten deze melding om verder te gaan.";
+        document.getElementById("warningModal").style.display = "block";
+    } else {
+        document.getElementById("warning-message").innerHTML = "Welkom bij de Serious Game" + ".\n Klik buiten deze melding om verder te gaan.";
+        document.getElementById("warningModal").style.display = "block";
+    }
+    window.addEventListener("click", function (event) {
+        if (event.target === this.document.getElementById("warningModal")) {
+            document.getElementById("warningModal").style.display = "none";
+            countdown(8);
+        }
+    })
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
@@ -260,7 +262,7 @@ function nextRound(biasAnswer, measureAnswer) {
 }
 
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
-function allBiasen() {
+function fetchBiases() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:4567/biases', true);
     xhr.onload = function () {
