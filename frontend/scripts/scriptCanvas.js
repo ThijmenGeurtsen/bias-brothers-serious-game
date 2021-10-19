@@ -11,13 +11,9 @@ function loadGame(output) {
     loadInfections(output.canvasCollection[canvasNumber].infections.healthy, output.canvasCollection[canvasNumber].infections.infected, output.canvasCollection[canvasNumber].infections.mutated);
     document.getElementById("all-bias-div").innerHTML = "";
     document.getElementById("bias-table-div").innerHTML = "";
-    allBiasen();
-    countdown(8);
+    fetchBiases();
     loadBiasModals(output.biasCollection);
-    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
+    loadRoundWarningModals();
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
@@ -58,7 +54,7 @@ function loadBias(answerA, answerB, answerC) {
 function validateBias() {
     if (document.getElementById("biasA").checked || document.getElementById("biasB").checked || document.getElementById("biasC").checked) {
         //console.log("Checked");
-        document.getElementById("qMeasureId").onclick = function(){
+        document.getElementById("qMeasureId").onclick = function () {
             document.getElementById("warningModal").style.display = "none";
         }
         return true;
@@ -155,6 +151,39 @@ function makeTable(list, div) {
     }
 }
 
+// Loads all modals
+function loadRoundWarningModals() {
+    clearInterval(timeoutHandle);
+    openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
+    if (round > 1) {
+        document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
+        document.getElementById("roundModal").style.display = "block";
+    } else {
+        document.getElementById("round-message").innerHTML = "Welkom bij de Serious Game!" + "\n Klik buiten deze melding om het spel te starten.";
+        document.getElementById("roundModal").style.display = "block";
+    }
+    document.getElementsByClassName("closeModal")[1].onclick = function () {
+        document.getElementById("roundModal").style.display = "none";
+        countdown(8);
+    }
+    window.addEventListener("click", function (event) {
+        if (event.target === this.document.getElementById("roundModal")) {
+            document.getElementById("roundModal").style.display = "none";
+            countdown(8);
+            this.clearTimeout(a);
+        }
+    });
+    if (round > 1 && document.getElementById("roundModal").style.display == "block") {
+        var a = setTimeout(function () {
+            document.getElementById("roundModal").style.display = "none";
+            countdown(8);
+        }, 5000);
+    }
+}
+
 // Function to set up modals so that it can open and close
 function openCloseModal(button, modal, index) {
     // Get the <closeModal> element that closeModals the biasModal
@@ -227,7 +256,7 @@ function giveAnswer(e) {
         nextRound(biasValue, measureValue);
         bias[biasNumber].checked = false;
         measure[measureNumber].checked = false;
-        document.getElementById("next").onclick = function(){
+        document.getElementById("next").onclick = function () {
             document.getElementById("warningModal").style.display = "none";
         }
     }
@@ -245,7 +274,7 @@ function nextRound(biasAnswer, measureAnswer) {
 }
 
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
-function allBiasen() {
+function fetchBiases() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:4567/biases', true);
     xhr.onload = function () {
@@ -291,14 +320,14 @@ function countdown(minutes) {
     document.getElementById("timer").style.backgroundColor = "#61ce70";
 
     function tick() {
-        if (mins == 1){
+        if (mins == 1) {
             document.getElementById("timer").style.backgroundColor = "red";
         }
         if (seconds <= 1 && mins == 1) {
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
             endpointName = "round" + round.toString();
-            if (canvasNumber > 0){
+            if (canvasNumber > 0) {
                 canvasNumber = canvasNumber - 1;
             } else {
                 canvasNumber = 0;
