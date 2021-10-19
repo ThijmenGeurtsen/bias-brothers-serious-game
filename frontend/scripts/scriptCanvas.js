@@ -37,6 +37,10 @@ function loadRoundWarningModals() {
         document.getElementById("round-message").innerHTML = "Welkom bij de Serious Game!" + "\n Klik buiten deze melding om het spel te starten.";
         document.getElementById("roundModal").style.display = "block";
     }
+    document.getElementsByClassName("closeModal")[1].onclick = function () {
+        document.getElementById("roundModal").style.display = "none";
+        countdown(8);
+    }
     window.addEventListener("click", function (event) {
         if (event.target === this.document.getElementById("roundModal")) {
             document.getElementById("roundModal").style.display = "none";
