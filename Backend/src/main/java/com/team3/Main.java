@@ -8,18 +8,8 @@ import java.io.FileNotFoundException;
 
 public class Main {
 
-    static int getHerokuAssignedPort() {
-        ProcessBuilder processBuilder = new ProcessBuilder();
-        if (processBuilder.environment().get("PORT") != null) {
-
-            return Integer.parseInt(processBuilder.environment().get("PORT"));
-        }
-        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
-    }
-
     public static void main(String[] args) {
         try {
-            getHerokuAssignedPort();
 
             //"http://localhost:4567/"
             DataHandler dataHandler = new DataHandler();
