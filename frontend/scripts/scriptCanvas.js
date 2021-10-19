@@ -278,6 +278,7 @@ function countdown(minutes) {
     let seconds = 60;
     let mins = minutes;
     clearInterval(timeoutHandle);
+    document.getElementById("timer").style.backgroundColor = "#61ce70";
 
     function tick() {
         if (mins == 1){
