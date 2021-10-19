@@ -18,6 +18,10 @@ function loadGame(output) {
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 1);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 2);
+    if (round > 1){
+        document.getElementById("warning-message").innerHTML = "Welkom in ronde " + round;
+        document.getElementById("warningModal").style.display = "block";
+    }
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
