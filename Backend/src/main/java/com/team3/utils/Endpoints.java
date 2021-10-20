@@ -54,7 +54,9 @@ public class Endpoints {
         System.out.println("Bias list has been loaded");
 
 
-
+        //////////////////////////////////////////
+        port(5000); // port amazon for endpoints
+        /////////////////////////////////////////
         get("/round1", (req, res) -> {
             return gson.toJson(round1);
         });
