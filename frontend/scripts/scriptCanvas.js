@@ -288,7 +288,7 @@ function fetchBiases() {
 
 function fetchRound() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/' + endpointName, true);
+    xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/' + endpointName, true);
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
