@@ -276,7 +276,7 @@ function nextRound(biasAnswer, measureAnswer) {
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
 function fetchBiases() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4567/biases', true);
+    xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/biases', true);
     xhr.onload = function () {
         if (this.status == 200) {
             const output = JSON.parse(this.responseText);
