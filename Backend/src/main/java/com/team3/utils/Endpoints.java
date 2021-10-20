@@ -12,13 +12,18 @@ import static spark.Spark.*;
 
 public class Endpoints {
 
+
     private DataHandler dataHandler;
+
 
     public Endpoints(DataHandler dataHandler) {
         this.dataHandler = dataHandler;
     }
 
     public void startServer() throws FileNotFoundException {
+        //////////////////////////////////////////
+        port(5000); // port amazon for endpoints
+        /////////////////////////////////////////
 
         // Allow CORS//////////////////////////////////////////////////////////////////////////////
         Spark.options("/*", (request, response) -> {
@@ -54,9 +59,6 @@ public class Endpoints {
         System.out.println("Bias list has been loaded");
 
 
-        //////////////////////////////////////////
-        port(8080); // port amazon for endpoints
-        /////////////////////////////////////////
         get("/round1", (req, res) -> {
             return gson.toJson(round1);
         });
