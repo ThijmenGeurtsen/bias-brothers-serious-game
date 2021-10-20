@@ -55,7 +55,7 @@ public class Endpoints {
 
 
         //////////////////////////////////////////
-        port(5000); // port amazon for endpoints
+        port(8080); // port amazon for endpoints
         /////////////////////////////////////////
         get("/round1", (req, res) -> {
             return gson.toJson(round1);
