@@ -9,16 +9,28 @@ import java.util.ArrayList;
 
 public class DataHandler {
 
-    private static ArrayList<Round> setupRoundaData() throws FileNotFoundException {
+    private ArrayList<Round> setupRoundaData() throws FileNotFoundException {
         try {
-            Gson gson = new Gson();
+            Gson gson = new Gson();;
 
-            Reader reader1 = new FileReader("Backend/src/main/resources/data/Round1.json");
-            Reader reader2 = new FileReader("Backend/src/main/resources/data/Round2.json");
-            Reader reader3 = new FileReader("Backend/src/main/resources/data/Round3.json");
-            Reader reader4 = new FileReader("Backend/src/main/resources/data/Round4.json");
-            Reader reader5 = new FileReader("Backend/src/main/resources/data/Round5.json");
-            Reader reader6 = new FileReader("Backend/src/main/resources/data/Round6.json");
+            InputStream round1JSON = getClass().getResourceAsStream("/data/Round1.json");
+            BufferedReader reader1 = new BufferedReader(new InputStreamReader(round1JSON));
+
+            InputStream round2JSON = getClass().getResourceAsStream("/data/Round2.json");
+            BufferedReader reader2 = new BufferedReader(new InputStreamReader(round2JSON));
+
+            InputStream round3JSON = getClass().getResourceAsStream("/data/Round3.json");
+            BufferedReader reader3 = new BufferedReader(new InputStreamReader(round3JSON));
+
+            InputStream round4JSON = getClass().getResourceAsStream("/data/Round4.json");
+            BufferedReader reader4 = new BufferedReader(new InputStreamReader(round4JSON));
+
+            InputStream round5JSON = getClass().getResourceAsStream("/data/Round5.json");
+            BufferedReader reader5 = new BufferedReader(new InputStreamReader(round5JSON));
+
+            InputStream round6JSON = getClass().getResourceAsStream("/data/Round6.json");
+            BufferedReader reader6 = new BufferedReader(new InputStreamReader(round6JSON));
+
 
             Round round1 = gson.fromJson(reader1, Round.class);
             Round round2 = gson.fromJson(reader2, Round.class);
@@ -56,7 +68,7 @@ public class DataHandler {
     private static ArrayList<Bias> setupBiasListData() {
         try {
             Gson gson = new Gson();
-            Reader biasListReader = new FileReader("Backend/src/main/resources/data/BiasList.json");
+            Reader biasListReader = new FileReader("data/BiasList.json");
 
             ArrayList<Bias> biasList = gson.fromJson(biasListReader, ArrayList.class);
 
