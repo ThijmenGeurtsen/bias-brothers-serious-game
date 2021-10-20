@@ -12,13 +12,18 @@ import static spark.Spark.*;
 
 public class Endpoints {
 
+
     private DataHandler dataHandler;
+
 
     public Endpoints(DataHandler dataHandler) {
         this.dataHandler = dataHandler;
     }
 
     public void startServer() throws FileNotFoundException {
+        //////////////////////////////////////////
+        port(5000); // port amazon for endpoints
+        /////////////////////////////////////////
 
         // Allow CORS//////////////////////////////////////////////////////////////////////////////
         Spark.options("/*", (request, response) -> {
@@ -33,8 +38,11 @@ public class Endpoints {
             return "OK";
 
         });
+
         Spark.before((request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
+
+            get("/", (req, res) -> "Serious Game");
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,7 +60,6 @@ public class Endpoints {
         ArrayList<Bias> biasList = dataHandler.getBiaslistData();
 
         System.out.println("Bias list has been loaded");
-
 
 
         get("/round1", (req, res) -> {
