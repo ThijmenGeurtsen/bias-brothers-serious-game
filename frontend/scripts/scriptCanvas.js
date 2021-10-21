@@ -166,22 +166,25 @@ function loadRoundWarningModals() {
         document.getElementById("roundModal").style.display = "block";
     }
     document.getElementsByClassName("closeModal")[1].onclick = function () {
-        document.getElementById("roundModal").style.display = "none";
-        countdown(8);
+        clearTimer();
     }
     window.addEventListener("click", function (event) {
         if (event.target === this.document.getElementById("roundModal")) {
-            document.getElementById("roundModal").style.display = "none";
-            countdown(8);
+            clearTimer();
             this.clearTimeout(a);
         }
     });
     if (round > 1 && document.getElementById("roundModal").style.display == "block") {
         var a = setTimeout(function () {
-            document.getElementById("roundModal").style.display = "none";
-            countdown(8);
+            clearTimer();
         }, 5000);
     }
+}
+
+function clearTimer(){
+    document.getElementById("roundModal").style.display = "none";
+    document.getElementById("timer").style.backgroundColor = "#61ce70";
+    countdown(8);
 }
 
 // Function to set up modals so that it can open and close
@@ -317,7 +320,6 @@ function countdown(minutes) {
     let seconds = 60;
     let mins = minutes;
     clearInterval(timeoutHandle);
-    //document.getElementById("timer").style.backgroundColor = "#61ce70";
 
     function tick() {
         if (mins == 1) {
@@ -327,7 +329,8 @@ function countdown(minutes) {
             document.getElementById("timer").style.animation = "blink 800ms infinite";
         }
         if (seconds <= 1 && mins == 1) {
-            alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
+        document.getElementById("timer").style.backgroundColor = "#61ce70";
+        alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
             endpointName = "round" + round.toString();
             if (canvasNumber > 0) {
