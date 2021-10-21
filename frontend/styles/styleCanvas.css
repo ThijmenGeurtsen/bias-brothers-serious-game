@@ -14,8 +14,6 @@
     justify-self: center;
 }
 
-
-
 @keyframes blink{
     to {
         background: transparent;
@@ -189,7 +187,17 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    animation: fadeIn 1s;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to{ 
+        opacity: 1;
+    }
+  }
 
 #model-content-big {
     max-height: 600px;
@@ -209,6 +217,7 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+
 }
 
 #bias-mid-row {
