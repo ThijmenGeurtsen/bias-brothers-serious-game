@@ -65,10 +65,12 @@ public class DataHandler {
         return null;
     }
 
-    private static ArrayList<Bias> setupBiasListData() {
+    private ArrayList<Bias> setupBiasListData() {
         try {
             Gson gson = new Gson();
-            Reader biasListReader = new FileReader("data/BiasList.json");
+
+            InputStream round6JSON = getClass().getResourceAsStream("/data/BiasList.json");
+            BufferedReader biasListReader = new BufferedReader(new InputStreamReader(round6JSON));
 
             ArrayList<Bias> biasList = gson.fromJson(biasListReader, ArrayList.class);
 
