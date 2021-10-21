@@ -15,6 +15,14 @@
 }
 
 
+
+@keyframes blink{
+    to {
+        background: transparent;
+    }
+}
+
+
 .game-middle {
     background-color: #61ce70;
     display: grid;

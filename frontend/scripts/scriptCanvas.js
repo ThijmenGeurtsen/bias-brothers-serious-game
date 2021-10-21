@@ -315,7 +315,7 @@ let timeoutHandle;
 // Changes the timer to the given minutes
 function countdown(minutes) {
     let seconds = 60;
-    let mins = 1;
+    let mins = minutes;
     clearInterval(timeoutHandle);
     //document.getElementById("timer").style.backgroundColor = "#61ce70";
 
@@ -323,7 +323,8 @@ function countdown(minutes) {
         if (mins == 1) {
             document.getElementById("timer").style.backgroundColor = "red";
             document.getElementById("timer").style.borderRadius = "50%" ;
-            document.getElementById("timer").style.padding = "5px";
+            document.getElementById("timer").style.padding = "10px";
+            document.getElementById("timer").style.animation = "blink 800ms infinite";
         }
         if (seconds <= 1 && mins == 1) {
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
