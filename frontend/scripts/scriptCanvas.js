@@ -315,13 +315,15 @@ let timeoutHandle;
 // Changes the timer to the given minutes
 function countdown(minutes) {
     let seconds = 60;
-    let mins = minutes;
+    let mins = 1;
     clearInterval(timeoutHandle);
-    document.getElementById("timer").style.backgroundColor = "#61ce70";
+    //document.getElementById("timer").style.backgroundColor = "#61ce70";
 
     function tick() {
         if (mins == 1) {
             document.getElementById("timer").style.backgroundColor = "red";
+            document.getElementById("timer").style.borderRadius = "50%" ;
+            document.getElementById("timer").style.padding = "5px";
         }
         if (seconds <= 1 && mins == 1) {
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
