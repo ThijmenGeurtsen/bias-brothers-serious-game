@@ -22,9 +22,11 @@
 
 
 .game-middle {
+    position: relative;
     background-color: #61ce70;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr auto;
+    position: relative;
     grid-row: auto;
     scrollbar-shadow-color: darkmagenta;
 }
@@ -42,10 +44,17 @@
     width: 100%;
 }
 
-.newsfeed {
+#newsfeed {
+    position: absolute;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
     background-color: white;
-    max-height: 400px;
+    padding-left: 5px;
+    height: 400px;
     overflow: scroll;
+    display: none;
 }
 
 .newsfeed-title {

@@ -369,3 +369,12 @@ function countdown(minutes) {
     }
     tick();
 }
+
+window.addEventListener("click", function (event) {
+    if (event.target === this.document.getElementById("newsfeedButton")) {
+        document.getElementById('newsfeed').style.display = "block";
+    }
+    else{
+        document.getElementById('newsfeed').style.display = "none";
+    }
+})
