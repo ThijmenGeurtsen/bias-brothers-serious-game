@@ -184,7 +184,7 @@ function loadRoundWarningModals() {
 function clearTimer(){
     document.getElementById("roundModal").style.display = "none";
     document.getElementById("timer").style.backgroundColor = "#61ce70";
-    countdown(2);
+    countdown(8);
 }
 
 // Function to set up modals so that it can open and close
