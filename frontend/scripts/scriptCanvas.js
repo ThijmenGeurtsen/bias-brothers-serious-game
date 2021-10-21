@@ -273,6 +273,13 @@ function nextRound(biasAnswer, measureAnswer) {
 
     //console.log(newCanvasNumber);
     canvasNumber = newCanvasNumber;
+
+    let img = "images/tempMap/R" + round + "C" + canvasNumber + ".png";
+    console.log(img);
+
+    //Will change the map for the next round
+    document.getElementById("map-img").src=img;
+
     fetchRound();
 }
 
