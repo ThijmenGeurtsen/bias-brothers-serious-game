@@ -2,6 +2,7 @@ package com.team3.utils;
 
 import spark.utils.IOUtils;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -12,7 +13,8 @@ public class APIUTILS {
         try {
             // create URL and fetch data from HTTP connection
             URL url = new URL("http://localhost:4567/" + path);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            //test code below if this makes it possible to make the connection https
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             connection.setRequestMethod(method);
             connection.setDoOutput(true);
             connection.connect();
