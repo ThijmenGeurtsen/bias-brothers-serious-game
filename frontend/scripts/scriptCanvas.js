@@ -20,6 +20,12 @@ function loadGame(output) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
 
+    let canvasNumberCorrection = canvasNumber + 1
+    let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
+    console.log(img);
+    //Will change the map for the next round
+    document.getElementById("map-img").src=img;
+
     // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
 }
@@ -274,11 +280,8 @@ function nextRound(biasAnswer, measureAnswer) {
     //console.log(newCanvasNumber);
     canvasNumber = newCanvasNumber;
 
-    let img = "images/tempMap/R" + round + "C" + canvasNumber + ".png";
-    console.log(img);
 
-    //Will change the map for the next round
-    document.getElementById("map-img").src=img;
+   
 
     fetchRound();
 }
