@@ -24,7 +24,7 @@ function loadGame(output) {
     let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
     console.log(img);
     //Will change the map for the next round
-    document.getElementById("map-img").src=img;
+    document.getElementById("map-img").src = img;
 
     // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
@@ -159,6 +159,7 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
+    clearInterval(this.x);
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
@@ -186,10 +187,10 @@ function loadRoundWarningModals() {
     }
 }
 
-function clearTimer(){
+function clearTimer() {
     document.getElementById("roundModal").style.display = "none";
     document.getElementById("timer").style.backgroundColor = "#61ce70";
-    countdown(8);
+    countdown(2);
 }
 
 // Function to set up modals so that it can open and close
@@ -280,7 +281,7 @@ function nextRound(biasAnswer, measureAnswer) {
     canvasNumber = newCanvasNumber;
 
 
-   
+
 
     fetchRound();
 }
@@ -341,13 +342,17 @@ function countdown(minutes) {
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+        document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
         // If the count down is finished, write some text 
-        if (distance < 1) {
-            document.getElementById("timer").style.backgroundColor = "red";
+        if (distance < 60000) {
+            timerBlink();
+        } else {
+            document.getElementById("timer").style.backgroundColor = "#61ce70";
         }
-        if (distance < 0) {
+        if (distance < 1000) {
+            clearInterval(x);
+            document.getElementById("timer").style.backgroundColor = "#61ce70";
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
             endpointName = "round" + round.toString();
@@ -365,7 +370,14 @@ window.addEventListener("click", function (event) {
     if (event.target === this.document.getElementById("newsfeedButton")) {
         document.getElementById('newsfeed').style.display = "block";
     }
-    else{
+    else {
         document.getElementById('newsfeed').style.display = "none";
     }
 })
+
+function timerBlink() {
+    document.getElementById("timer").style.backgroundColor = "red";
+    document.getElementById("timer").style.borderRadius = "50%";
+    document.getElementById("timer").style.padding = "10px";
+    document.getElementById("timer").style.animation = "blink 1000ms infinite";
+}
