@@ -24,9 +24,6 @@
     position: relative;
     display: grid;
     grid-template-columns: 2fr auto;
-    position: relative;
-    grid-row: auto;
-    scrollbar-shadow-color: darkmagenta;
 }
 
 .map {
@@ -40,6 +37,8 @@
     min-height: 410px;
     min-width: 750px;
     width: 100%;
+    cursor: grab;
+    overflow: auto;
 }
 
 #newsfeed {
@@ -233,7 +232,7 @@
 
 #bias-table-div table, #all-bias-div table {
     text-align: left;
-    border-spacing: 0px;
+    border-spacing: 0;
 }
 
 #bias-table-div table td, #all-bias-div table td {

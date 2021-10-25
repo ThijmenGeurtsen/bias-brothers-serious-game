@@ -153,7 +153,7 @@ function makeTable(list, div) {
         tbody.appendChild(row);
 
         // Gives a grey color to a row if the number is uneven
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
             row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
         }
     }
@@ -161,7 +161,6 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
-    clearInterval(x);
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
@@ -182,7 +181,7 @@ function loadRoundWarningModals() {
             this.clearTimeout(a);
         }
     });
-    if (round > 1 && document.getElementById("roundModal").style.display == "block") {
+    if (round > 1 && document.getElementById("roundModal").style.display === "block") {
         var a = setTimeout(function () {
             clearTimer();
         }, 5000);
@@ -290,7 +289,7 @@ function fetchBiases() {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/biases', true);
     xhr.onload = function () {
-        if (this.status == 200) {
+        if (this.status === 200) {
             const output = JSON.parse(this.responseText);
             makeTable(output, document.getElementById("all-bias-div"));
         }
@@ -302,7 +301,7 @@ function fetchRound() {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/' + endpointName, true);
     xhr.onload = function () {
-        if (this.status == 200) {
+        if (this.status === 200) {
             const output = JSON.parse(this.responseText);
             loadGame(output)
         } else {
@@ -314,7 +313,6 @@ function fetchRound() {
 
 // Start first canvas
 fetchRound();
-
 
 // Button that brings you to the login page & alerts you goodbye
 function buttonLogoutClick() {
