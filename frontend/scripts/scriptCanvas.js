@@ -165,10 +165,14 @@ function loadRoundWarningModals() {
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
-    if (round > 1) {
-        document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
-        document.getElementById("roundModal").style.display = "block";
-    }
+
+    document.getElementById("scenario-box").style.display = 'none';
+    document.getElementById("question-box").style.display = 'none';
+    document.getElementById("infection-box").style.display = 'none';
+
+    document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
+    document.getElementById("roundModal").style.display = "block";
+
 
     document.getElementsByClassName("closeModal")[1].onclick = function () {
         clearTimer();
@@ -190,6 +194,15 @@ function clearTimer() {
     clearInterval(x);
     document.getElementById("roundModal").style.display = "none";
     document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+
+    document.getElementById("scenario-box").style.display = 'block';
+    document.getElementById("question-box").style.display = 'block';
+    document.getElementById("infection-box").style.display = 'block';
+
+    document.getElementById("canvas-footer").style.animation = "fadeIn 3s";
+    document.getElementById("game-container").style.animation = "fadeIn 3s"
+    document.getElementById("scenario-box").style.animation = "fadeIn 2s";
+    document.getElementById("question-box").style.animation = "fadeIn 2s";
     countdown(timerValue);
 }
 
@@ -363,7 +376,7 @@ function countdown(minutes) {
 }
 
 window.addEventListener("click", function (event) {
-    if (event.target === this.document.getElementById("newsfeedButton")) {
+    if (event.target === this.document.getElementById("newsfeed-button")) {
         document.getElementById('newsfeed').style.display = "block";
     }
     else {

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<div class="game-container">
+<div id="game-container">
     <div id="warningModal" class="modal">
         <div class="modal-content">
             <span class="closeModal">&times;</span>
@@ -47,14 +47,14 @@
                 </div>
             </div>
         </div>
-        <div class="header-button">
+        <div class="newsfeed" >
             <button id="newsfeed-button">Newsfeed</button>
         </div>
         <div id="logout-button">
             <button onclick="buttonLogoutClick()"><img src="images/logout.png" alt="Uitloggen."></button>
         </div>
     </div>
-<div class="infection-box">
+<div id="infection-box">
     <table class="infection-table">
         <tr>
             <th>Gezonde bevolking:</th>
@@ -97,13 +97,13 @@
         </ul>
     </div>
 </div>
-<div class="canvas-footer">
-    <div class="scenario-box">
+<div id="canvas-footer">
+    <div id="scenario-box">
         <h3 id="scenario-title"></h3>
         <p id="scenario-text">
         </p>
     </div>
-    <div class="question-box">
+    <div id="question-box">
         <div class="question-tab">
             <button id="qBiasId" class="question-tab-link">Bias
                 vraag
