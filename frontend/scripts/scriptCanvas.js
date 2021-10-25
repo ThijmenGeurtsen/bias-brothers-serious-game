@@ -161,7 +161,7 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
-    clearInterval(this.x);
+    clearInterval(x);
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
@@ -190,6 +190,7 @@ function loadRoundWarningModals() {
 }
 
 function clearTimer() {
+    clearInterval(x);
     document.getElementById("roundModal").style.display = "none";
     document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
     countdown(timerValue);
@@ -321,13 +322,14 @@ function buttonLogoutClick() {
     window.open('index.html', '_top')
 }
 
+let x;
 // Changes the timer to the given minutes
 function countdown(minutes) {
     // Set the current date and add 8 minutes to it 
     var countDownDate = new Date().getTime() + minutes * 60000;
 
     // Update the count down every 1 second
-    var x = setInterval(function () {
+    x = setInterval(function () {
 
         // Get today's date and time
         var now = new Date().getTime();
