@@ -1,6 +1,7 @@
 let round = 1;
 let endpointName = "round" + round.toString();
 let canvasNumber = 2;
+let timerValue;
 
 function loadGame(output) {
     loadTitleRound(output.roundNumber, output.roundTitle);
@@ -13,6 +14,7 @@ function loadGame(output) {
     document.getElementById("bias-table-div").innerHTML = "";
     fetchBiases();
     loadBiasModals(output.biasCollection);
+    timerValue = output.timer.minutes;
     loadRoundWarningModals();
 
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
@@ -190,7 +192,7 @@ function loadRoundWarningModals() {
 function clearTimer() {
     document.getElementById("roundModal").style.display = "none";
     document.getElementById("timer").style.backgroundColor = "#61ce70";
-    countdown(2);
+    countdown(timerValue);
 }
 
 // Function to set up modals so that it can open and close
@@ -279,10 +281,6 @@ function nextRound(biasAnswer, measureAnswer) {
 
     //console.log(newCanvasNumber);
     canvasNumber = newCanvasNumber;
-
-
-
-
     fetchRound();
 }
 
@@ -346,7 +344,7 @@ function countdown(minutes) {
 
         // If the count down is finished, write some text 
         if (distance < 60000) {
-            timerBlink();
+            timerRedBlink();
         } else {
             document.getElementById("timer").style.backgroundColor = "#61ce70";
         }
@@ -375,7 +373,7 @@ window.addEventListener("click", function (event) {
     }
 })
 
-function timerBlink() {
+function timerRedBlink() {
     document.getElementById("timer").style.backgroundColor = "red";
     document.getElementById("timer").style.borderRadius = "50%";
     document.getElementById("timer").style.padding = "10px";
