@@ -11,13 +11,6 @@ body {
     line-height: 1.2em;
 }
 
-.game-container {
-    width: 100%;
-    max-width: 1000px;
-    height: 100%;
-    margin: auto;
-}
-
 a {
     cursor: pointer;
 }

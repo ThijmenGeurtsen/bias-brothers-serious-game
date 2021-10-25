@@ -168,10 +168,8 @@ function loadRoundWarningModals() {
     if (round > 1) {
         document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
         document.getElementById("roundModal").style.display = "block";
-    } else {
-        document.getElementById("round-message").innerHTML = "Welkom bij de Serious Game!" + "\n Klik buiten deze melding om het spel te starten.";
-        document.getElementById("roundModal").style.display = "block";
     }
+
     document.getElementsByClassName("closeModal")[1].onclick = function () {
         clearTimer();
     }
@@ -317,7 +315,7 @@ fetchRound();
 // Button that brings you to the login page & alerts you goodbye
 function buttonLogoutClick() {
     alert('Tot ziens ');
-    window.open('canvas.html', '_top')
+    window.open('index.html', '_top')
 }
 
 let x;
