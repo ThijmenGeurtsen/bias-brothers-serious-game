@@ -191,7 +191,7 @@ function loadRoundWarningModals() {
 
 function clearTimer() {
     document.getElementById("roundModal").style.display = "none";
-    document.getElementById("timer").style.backgroundColor = "#61ce70";
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
     countdown(timerValue);
 }
 
@@ -346,11 +346,11 @@ function countdown(minutes) {
         if (distance < 60000) {
             timerRedBlink();
         } else {
-            document.getElementById("timer").style.backgroundColor = "#61ce70";
+            //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
         }
         if (distance < 1000) {
             clearInterval(x);
-            document.getElementById("timer").style.backgroundColor = "#61ce70";
+            //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
             endpointName = "round" + round.toString();

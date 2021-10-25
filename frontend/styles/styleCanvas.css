@@ -20,10 +20,8 @@
     }
 }
 
-
 .game-middle {
     position: relative;
-    background-color: #61ce70;
     display: grid;
     grid-template-columns: 2fr auto;
     position: relative;
@@ -35,7 +33,7 @@
     max-height: 400px;
     width: 100%;
     overflow: scroll;
-    background-color: white;
+    margin: auto;
 }
 
 #map-img {

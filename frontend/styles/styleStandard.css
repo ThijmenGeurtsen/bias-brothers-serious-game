@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #61ce70;
+    background-color: rgba(97, 206, 112, 0.62);
     color: #555;
     font-family: Calibri, sans-serif;
     font-size: 16px;
@@ -13,7 +13,9 @@ body {
 
 .game-container {
     width: 100%;
+    max-width: 1000px;
     height: 100%;
+    margin: auto;
 }
 
 a {
