@@ -159,7 +159,6 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
-    clearInterval(timeoutHandle);
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
@@ -323,28 +322,33 @@ function buttonLogoutClick() {
     window.open('index.html', '_top')
 }
 
-// Code for the timer
-let timeoutHandle;
 // Changes the timer to the given minutes
 function countdown(minutes) {
-    let seconds = 60;
-    let mins = minutes;
-    clearInterval(timeoutHandle);
+    // Set the current date and add 8 minutes to it 
+    var countDownDate = new Date().getTime() + minutes * 60000;
 
-    function tick() {
-        if (mins == 1) {
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+
+        // If the count down is finished, write some text 
+        if (distance < 1) {
             document.getElementById("timer").style.backgroundColor = "red";
-            document.getElementById("timer").style.borderRadius = "50%" ;
-            document.getElementById("timer").style.padding = "10px";
-            document.getElementById("timer").style.animation = "blink 800ms infinite";
         }
-        else{
-            document.getElementById("timer").style.backgroundColor = "#61ce70";
-
-        }
-        if (seconds <= 1 && mins == 1) {
-        //document.getElementById("timer").style.backgroundColor = "#61ce70";
-        alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
+        if (distance < 0) {
+            alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             round = round + 1;
             endpointName = "round" + round.toString();
             if (canvasNumber > 0) {
@@ -352,25 +356,9 @@ function countdown(minutes) {
             } else {
                 canvasNumber = 0;
             }
-            //console.log(canvasNumber);
             fetchRound();
         }
-        var counter = document.getElementById("timer");
-        var current_minutes = mins - 1
-        seconds--;
-        counter.innerHTML =
-            current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if (seconds > 0) {
-            timeoutHandle = setTimeout(tick, 1000);
-        } else {
-            if (mins > 1) {
-                setTimeout(function () {
-                    countdown(mins - 1);
-                }, 1000);
-            }
-        }
-    }
-    tick();
+    }, 1000);
 }
 
 window.addEventListener("click", function (event) {
