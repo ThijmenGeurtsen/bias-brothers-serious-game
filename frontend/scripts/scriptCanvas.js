@@ -199,7 +199,7 @@ function clearTimer() {
 // Function to set up modals so that it can open and close
 function openCloseModal(button, modal, index) {
     // Get the <closeModal> element that closeModals the biasModal
-    var closeModal = document.getElementsByClassName("closeModal")[index];
+    let closeModal = document.getElementsByClassName("closeModal")[index];
 
     // When the user clicks on the button, open the biasModal
     button.onclick = function () {
@@ -287,7 +287,7 @@ function nextRound(biasAnswer, measureAnswer) {
 
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
 function fetchBiases() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/biases', true);
     xhr.onload = function () {
         if (this.status == 200) {
@@ -299,7 +299,7 @@ function fetchBiases() {
 }
 
 function fetchRound() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/' + endpointName, true);
     xhr.onload = function () {
         if (this.status == 200) {
@@ -326,20 +326,20 @@ let x;
 // Changes the timer to the given minutes
 function countdown(minutes) {
     // Set the current date and add 8 minutes to it 
-    var countDownDate = new Date().getTime() + minutes * 60000;
+    let countDownDate = new Date().getTime() + minutes * 60000;
 
     // Update the count down every 1 second
     x = setInterval(function () {
 
         // Get today's date and time
-        var now = new Date().getTime();
+        let now = new Date().getTime();
 
         // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+        let distance = countDownDate - now;
 
         // Time calculations for days, hours, minutes and seconds
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
         document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
