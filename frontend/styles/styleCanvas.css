@@ -1,6 +1,6 @@
 .canvas-header {
     display: grid;
-    grid-template-columns: 0.25fr 1fr 0.25fr 0.5fr 0.25fr;
+    grid-template-columns: 0.4fr 2fr 0.2fr 0.2fr 0.1fr 0.1fr;
     grid-auto-rows: minmax(40px, auto);
 }
 
@@ -18,6 +18,23 @@
     to {
         background: transparent;
     }
+}
+
+.bias-button button{
+    padding: 1px 5px 0 ;
+    margin-right: 0;
+}
+
+#logout-button img{
+width: 100%;
+}
+
+#logout-button button{
+    min-width: 50px;
+    max-width: 50px;
+    padding: 5px 5px 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .game-middle {
