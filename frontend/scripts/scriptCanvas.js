@@ -41,10 +41,6 @@ function popupNewsfeed(newsArticleCollection) {
             break;
         }
     }
-    document.getElementById("newsfeed-modal").style.display = "block";
-    document.getElementsByClassName("closePopup")[0].onclick = function() {
-        document.getElementById("newsfeed-modal").style.display = "none";
-    }
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
@@ -218,6 +214,19 @@ function clearTimer() {
     document.getElementById("game-container").style.animation = "fadeIn 3s"
     document.getElementById("scenario-box").style.animation = "fadeIn 2s";
     document.getElementById("question-box").style.animation = "fadeIn 2s";
+
+    document.getElementById("newsfeed-modal").style.display = "block";
+    document.getElementsByClassName("closePopup")[0].onclick = function() {
+        document.getElementById("newsfeed-modal").style.display = "none";
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target === this.document.getElementById("newsfeed-modal")) {
+            document.getElementById("newsfeed-modal").style.display = "none";
+
+        }
+    });
+
     countdown(timerValue);
 }
 
