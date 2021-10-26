@@ -2,7 +2,9 @@ document.getElementById("login-button").addEventListener("click", buttonLoginCli
 
 // Button that brings you to the game page & alerts you welcome
 function buttonLoginClick() {
+    let input = document.getElementById("name").value;
+    sessionStorage.setItem("name", input);
     window.open("welcome.html", '_top');
+
 }
 
-const name = document.querySelector('#name');

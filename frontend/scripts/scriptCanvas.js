@@ -24,7 +24,6 @@ function loadGame(output) {
 
     let canvasNumberCorrection = canvasNumber + 1
     let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
-    console.log(img);
     //Will change the map for the next round
     document.getElementById("map-img").src = img;
 

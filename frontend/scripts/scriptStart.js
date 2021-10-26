@@ -1,7 +1,7 @@
-//name does not get in yet
+let input = sessionStorage.getItem('name');
 
 document.getElementById("welcome-text").innerHTML = "Welkom " +
-    name + ", bij de Serious Game!";
+    input + ", bij de Serious Game!";
 
 document.getElementById("welcome-button").addEventListener("click", startGame);
 
