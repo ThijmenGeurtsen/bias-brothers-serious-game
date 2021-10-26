@@ -27,9 +27,25 @@ function loadGame(output) {
     console.log(img);
     //Will change the map for the next round
     document.getElementById("map-img").src = img;
-
+    popupNewsfeed(output.canvasCollection[canvasNumber].newsArticleCollection);
     // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
+}
+
+function popupNewsfeed(newsArticleCollection) {
+    document.getElementById("newsfeed-modal").style.display = "none";
+    for (let i = 0; i < newsArticleCollection.length; i++) {
+        if (newsArticleCollection[i].newsArticlePopup == true) {
+            document.getElementById("popup-title").innerHTML = newsArticleCollection[i].newsArticleTitle;
+            document.getElementById("popup-text").innerHTML = newsArticleCollection[i].newsArticleMessage;
+            document.getElementById("popup-paper").innerHTML = newsArticleCollection[i].newsArticleSource;
+            break;
+        }
+    }
+    document.getElementById("newsfeed-modal").style.display = "block";
+    document.getElementsByClassName("closePopup")[0].onclick = function() {
+        document.getElementById("newsfeed-modal").style.display = "none";
+    }
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
