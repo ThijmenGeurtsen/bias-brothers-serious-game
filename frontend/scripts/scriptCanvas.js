@@ -1,9 +1,10 @@
-let round = 1;
-let endpointName = "round" + round.toString();
-let canvasNumber = 2;
 let timerValue;
 
 function loadGame(output) {
+    let canvasNumber = sessionStorage.getItem("canvasNumber");
+    let round = sessionStorage.getItem("round");
+    console.log("Round: " + round);
+    console.log("CanvasNumber: " + canvasNumber);
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -22,7 +23,7 @@ function loadGame(output) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
 
-    let canvasNumberCorrection = canvasNumber + 1
+    let canvasNumberCorrection = parseInt(canvasNumber) + 1
     let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
     //Will change the map for the next round
     document.getElementById("map-img").src = img;
@@ -172,6 +173,7 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
+    let round = sessionStorage.getItem("round");
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
@@ -310,12 +312,14 @@ function giveAnswer(e) {
 
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
+    let round = parseInt(sessionStorage.getItem("round"));
+    let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    round = round + 1;
-    endpointName = "round" + round.toString();
-
-    //console.log(newCanvasNumber);
+    sessionStorage.setItem("round", round + 1);
+    sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     canvasNumber = newCanvasNumber;
+    sessionStorage.setItem("canvasNumber", newCanvasNumber);
+    console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
     fetchRound();
 }
 
@@ -334,6 +338,7 @@ function fetchBiases() {
 
 function fetchRound() {
     let xhr = new XMLHttpRequest();
+    let endpointName = sessionStorage.getItem("endpointName");
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/' + endpointName, true);
     xhr.onload = function () {
         if (this.status === 200) {
