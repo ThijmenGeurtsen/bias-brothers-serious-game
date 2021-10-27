@@ -216,7 +216,7 @@ function clearTimer() {
     document.getElementById("question-box").style.animation = "fadeIn 2s";
 
     document.getElementById("newsfeed-modal").style.display = "block";
-    document.getElementsByClassName("closePopup")[0].onclick = function() {
+    document.getElementsByClassName("closePopup")[0].onclick = function () {
         document.getElementById("newsfeed-modal").style.display = "none";
     }
 
@@ -401,7 +401,11 @@ function countdown(minutes) {
 
 window.addEventListener("click", function (event) {
     if (event.target === this.document.getElementById("newsfeed-button")) {
-        document.getElementById('newsfeed').style.display = "block";
+        if (document.getElementById('newsfeed').style.display == "block") {
+            document.getElementById('newsfeed').style.display = "none"
+        } else {
+            document.getElementById('newsfeed').style.display = "block";
+        }
     }
     else {
         document.getElementById('newsfeed').style.display = "none";
