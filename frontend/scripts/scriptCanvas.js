@@ -318,6 +318,7 @@ function nextRound(biasAnswer, measureAnswer) {
     canvasNumber = newCanvasNumber;
     sessionStorage.setItem("canvasNumber", newCanvasNumber);
     console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
+    sessionStorage.setItem("timerValue", 420000);
     fetchRound();
 }
 
