@@ -1,8 +1,14 @@
 let timerValue;
+let canvasPoints;
+let biasCollection;
+let measureQuestionCollection;
 
 function loadGame(output) {
     let canvasNumber = sessionStorage.getItem("canvasNumber");
     let round = sessionStorage.getItem("round");
+    biasCollection = output.biasCollection;
+    measureQuestionCollection = output.measureQuestionCollection;
+    canvasPoints = output.canvasCollection[canvasNumber].points;
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -310,6 +316,8 @@ function giveAnswer(e) {
 
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
+    let roundPoints = countRoundPoints(biasAnswer, measureAnswer);
+    console.log("Roundpoints: " + roundPoints);
     let round = parseInt(sessionStorage.getItem("round"));
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
@@ -317,9 +325,32 @@ function nextRound(biasAnswer, measureAnswer) {
     sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     canvasNumber = newCanvasNumber;
     sessionStorage.setItem("canvasNumber", newCanvasNumber);
-    console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
+    //console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
     sessionStorage.setItem("timerValue", 420000);
+
+    let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
+    sessionStorage.setItem("totalPoints", newTotalPoints);
+    console.log("Total points: " + sessionStorage.getItem("totalPoints"));
     fetchRound();
+}
+
+function countRoundPoints(biasAnswer, measureAnswer) {
+    let biasPoints;
+    let measurePoints;
+
+    for (let i = 0; i < biasCollection.length; i++) {
+        if (biasCollection[i].biasChar == biasAnswer) {
+            biasPoints = biasCollection[i].points;
+        }
+    }
+
+    for (let i = 0; i < measureQuestionCollection.length; i++) {
+        if (measureQuestionCollection[i].measureChar == measureAnswer) {
+            measurePoints = measureQuestionCollection[i].measurePoints;
+        }
+    }
+    console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
+    return biasPoints + measurePoints + canvasPoints;
 }
 
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
