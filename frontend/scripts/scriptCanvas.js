@@ -1,9 +1,8 @@
-let round = 1;
-let endpointName = "round" + round.toString();
-let canvasNumber = 2;
 let timerValue;
 
 function loadGame(output) {
+    let canvasNumber = sessionStorage.getItem("canvasNumber");
+    let round = sessionStorage.getItem("round");
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -14,15 +13,15 @@ function loadGame(output) {
     document.getElementById("bias-table-div").innerHTML = "";
     fetchBiases();
     loadBiasModals(output.biasCollection);
-    timerValue = output.timer.minutes;
+    //timerValue = output.timer.minutes;
     loadRoundWarningModals();
-
+    timerValue = parseInt(sessionStorage.getItem("timerValue"));
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
 
-    let canvasNumberCorrection = canvasNumber + 1
+    let canvasNumberCorrection = parseInt(canvasNumber) + 1
     let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
     //Will change the map for the next round
     document.getElementById("map-img").src = img;
@@ -172,6 +171,7 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
+    let round = sessionStorage.getItem("round");
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
@@ -216,7 +216,7 @@ function clearTimer() {
     document.getElementById("question-box").style.animation = "fadeIn 2s";
 
     document.getElementById("newsfeed-modal").style.display = "block";
-    document.getElementsByClassName("closePopup")[0].onclick = function() {
+    document.getElementsByClassName("closePopup")[0].onclick = function () {
         document.getElementById("newsfeed-modal").style.display = "none";
     }
 
@@ -310,12 +310,15 @@ function giveAnswer(e) {
 
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
+    let round = parseInt(sessionStorage.getItem("round"));
+    let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    round = round + 1;
-    endpointName = "round" + round.toString();
-
-    //console.log(newCanvasNumber);
+    sessionStorage.setItem("round", round + 1);
+    sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     canvasNumber = newCanvasNumber;
+    sessionStorage.setItem("canvasNumber", newCanvasNumber);
+    console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
+    sessionStorage.setItem("timerValue", 420000);
     fetchRound();
 }
 
@@ -334,6 +337,7 @@ function fetchBiases() {
 
 function fetchRound() {
     let xhr = new XMLHttpRequest();
+    let endpointName = sessionStorage.getItem("endpointName");
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/' + endpointName, true);
     xhr.onload = function () {
         if (this.status === 200) {
@@ -357,9 +361,9 @@ function buttonLogoutClick() {
 
 let x;
 // Changes the timer to the given minutes
-function countdown(minutes) {
+function countdown(milliseconds) {
     // Set the current date and add 8 minutes to it 
-    let countDownDate = new Date().getTime() + minutes * 60000;
+    let countDownDate = new Date().getTime() + milliseconds;
 
     // Update the count down every 1 second
     x = setInterval(function () {
@@ -369,12 +373,12 @@ function countdown(minutes) {
 
         // Find the distance between now and the count down date
         let distance = countDownDate - now;
-
         // Time calculations for days, hours, minutes and seconds
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the element with id="demo"
+        sessionStorage.setItem("timerValue", distance)
+        // Display the result in the element with id="timer"
         document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
         // If the count down is finished, write some text 
@@ -387,13 +391,18 @@ function countdown(minutes) {
             clearInterval(x);
             //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
             alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
-            round = round + 1;
-            endpointName = "round" + round.toString();
+            let round = parseInt(sessionStorage.getItem("round"));
+            let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
+            sessionStorage.setItem("round", round + 1);
+            sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
             if (canvasNumber > 0) {
                 canvasNumber = canvasNumber - 1;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
             } else {
                 canvasNumber = 0;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
             }
+            sessionStorage.setItem("timerValue", 420000);
             fetchRound();
         }
     }, 1000);
@@ -401,7 +410,11 @@ function countdown(minutes) {
 
 window.addEventListener("click", function (event) {
     if (event.target === this.document.getElementById("newsfeed-button")) {
-        document.getElementById('newsfeed').style.display = "block";
+        if (document.getElementById('newsfeed').style.display == "block") {
+            document.getElementById('newsfeed').style.display = "none"
+        } else {
+            document.getElementById('newsfeed').style.display = "block";
+        }
     }
     else {
         document.getElementById('newsfeed').style.display = "none";

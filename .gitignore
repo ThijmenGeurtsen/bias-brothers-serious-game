@@ -4,3 +4,6 @@ out
 *.iml
 .vscode/
 Backend/target
+Backend/.classpath
+Backend/.project
+Backend/.settings/
