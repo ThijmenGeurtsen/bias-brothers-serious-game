@@ -240,6 +240,12 @@ width: 100%;
     overflow: scroll;
 }
 
+#model-content-big2 {
+    max-height: 600px;
+    width: 80%;
+    overflow: scroll;
+}
+
 /* The closeModal Button */
 .closeModal {
     color: #aaa;

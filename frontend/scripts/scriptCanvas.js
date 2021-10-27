@@ -13,9 +13,9 @@ function loadGame(output) {
     document.getElementById("bias-table-div").innerHTML = "";
     fetchBiases();
     loadBiasModals(output.biasCollection);
-    timerValue = output.timer.minutes;
+    //timerValue = output.timer.minutes;
     loadRoundWarningModals();
-
+    timerValue = parseInt(sessionStorage.getItem("timerValue"));
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
@@ -377,7 +377,8 @@ function countdown(minutes) {
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the element with id="demo"
+        sessionStorage.setItem("timerValue", minutes)
+        // Display the result in the element with id="timer"
         document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
         // If the count down is finished, write some text 
@@ -401,6 +402,7 @@ function countdown(minutes) {
                 canvasNumber = 0;
                 sessionStorage.setItem("canvasNumber", canvasNumber);
             }
+            sessionStorage.setItem("timerValue", 7);
             fetchRound();
         }
     }, 1000);
