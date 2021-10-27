@@ -48,42 +48,19 @@ public class Endpoints {
 
 
         final Gson gson = new Gson();
-        Round round1 = dataHandler.getRoundsData().get(0);
-        Round round2 = dataHandler.getRoundsData().get(1);
-        Round round3 = dataHandler.getRoundsData().get(2);
-        Round round4 = dataHandler.getRoundsData().get(3);
-        Round round5 = dataHandler.getRoundsData().get(4);
-        Round round6 = dataHandler.getRoundsData().get(5);
-
-        System.out.println("Rounds have been loaded");
 
         ArrayList<Bias> biasList = dataHandler.getBiaslistData();
 
         System.out.println("Bias list has been loaded");
 
 
-        get("/round1", (req, res) -> {
-            return gson.toJson(round1);
-        });
+        get("/round/:number", (req, res) -> {
+            int roundNumber = Integer.parseInt(req.params(":number"));
+            Round round = dataHandler.getRoundsData().get(roundNumber - 1);
 
-        get("/round2", (req, res) -> {
-            return gson.toJson(round2);
-        });
+            System.out.println("Round " + roundNumber + " has been loaded");
 
-        get("/round3", (req, res) -> {
-            return gson.toJson(round3);
-        });
-
-        get("/round4", (req, res) -> {
-            return gson.toJson(round4);
-        });
-
-        get("/round5", (req, res) -> {
-            return gson.toJson(round5);
-        });
-
-        get("/round6", (req, res) -> {
-            return gson.toJson(round6);
+            return gson.toJson(round);
         });
 
         get("/biases", (req, res) -> {
