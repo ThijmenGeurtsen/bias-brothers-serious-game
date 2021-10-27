@@ -360,9 +360,9 @@ function buttonLogoutClick() {
 
 let x;
 // Changes the timer to the given minutes
-function countdown(minutes) {
+function countdown(milliseconds) {
     // Set the current date and add 8 minutes to it 
-    let countDownDate = new Date().getTime() + minutes * 60000;
+    let countDownDate = new Date().getTime() + milliseconds;
 
     // Update the count down every 1 second
     x = setInterval(function () {
@@ -372,12 +372,11 @@ function countdown(minutes) {
 
         // Find the distance between now and the count down date
         let distance = countDownDate - now;
-
         // Time calculations for days, hours, minutes and seconds
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        sessionStorage.setItem("timerValue", minutes)
+        sessionStorage.setItem("timerValue", distance)
         // Display the result in the element with id="timer"
         document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
@@ -402,7 +401,7 @@ function countdown(minutes) {
                 canvasNumber = 0;
                 sessionStorage.setItem("canvasNumber", canvasNumber);
             }
-            sessionStorage.setItem("timerValue", 7);
+            sessionStorage.setItem("timerValue", 420000);
             fetchRound();
         }
     }, 1000);

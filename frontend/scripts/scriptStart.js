@@ -2,7 +2,7 @@ let input = sessionStorage.getItem('name');
 sessionStorage.setItem("round", 1);
 sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
 sessionStorage.setItem("canvasNumber", 2);
-sessionStorage.setItem("timerValue", 7);
+sessionStorage.setItem("timerValue", 420000);
 document.getElementById("welcome-text").innerHTML = "Welkom " +
     input + ", bij de Serious Game!";
 
