@@ -2,8 +2,22 @@ let timerValue;
 let canvasPoints;
 let biasCollection;
 let measureQuestionCollection;
+let newRound = 1;
+var isReload = false;
 
 function loadGame(output) {
+    timerValue = parseInt(sessionStorage.getItem("timerValue"));
+    //detect if page gets reloaded
+    isReload = true;
+    if (sessionStorage.getItem("oldCanvasNumber") != sessionStorage.getItem("canvasNumber")){
+        sessionStorage.setItem("oldCanvasNumber", sessionStorage.getItem("canvasNumber"));
+        isReload = false;
+    }
+    // set new timer value when page gets reloaded
+    if (isReload == false){
+        timerValue = output.timer.minutes*60000;
+    }
+    
     let canvasNumber = sessionStorage.getItem("canvasNumber");
     let round = sessionStorage.getItem("round");
     biasCollection = output.biasCollection;
@@ -19,14 +33,14 @@ function loadGame(output) {
     document.getElementById("bias-table-div").innerHTML = "";
     fetchBiases();
     loadBiasModals(output.biasCollection);
-    //timerValue = output.timer.minutes;
     loadRoundWarningModals();
-    timerValue = parseInt(sessionStorage.getItem("timerValue"));
+    
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
 
+    
     let canvasNumberCorrection = parseInt(canvasNumber) + 1
     let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
     //Will change the map for the next round
@@ -325,12 +339,11 @@ function nextRound(biasAnswer, measureAnswer) {
     sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     canvasNumber = newCanvasNumber;
     sessionStorage.setItem("canvasNumber", newCanvasNumber);
-    //console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
-    sessionStorage.setItem("timerValue", 420000);
 
     let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
     sessionStorage.setItem("totalPoints", newTotalPoints);
     console.log("Total points: " + sessionStorage.getItem("totalPoints"));
+    sessionStorage.setItem("timerValue", timerValue);
     fetchRound();
 }
 
@@ -433,7 +446,7 @@ function countdown(milliseconds) {
                 canvasNumber = 0;
                 sessionStorage.setItem("canvasNumber", canvasNumber);
             }
-            sessionStorage.setItem("timerValue", 420000);
+            sessionStorage.setItem("timerValue", timerValue);
             fetchRound();
         }
     }, 1000);
