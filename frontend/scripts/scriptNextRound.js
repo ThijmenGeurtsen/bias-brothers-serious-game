@@ -1,6 +1,6 @@
 // Checks if both questions have been filled in.
 document.getElementById("next").addEventListener
-("click", giveAnswer);
+    ("click", giveAnswer);
 function giveAnswer(e) {
     let bias = document.getElementsByName('answer-bias');
     let measure = document.getElementsByName('answer-measure');
