@@ -16,7 +16,7 @@ function loadGame(output) {
     if (isReload == false){
         timerValue = output.timer.minutes*60000;
     }
-    
+
     let canvasNumber = sessionStorage.getItem("canvasNumber");
     let round = sessionStorage.getItem("round");
     biasCollection = output.biasCollection;
@@ -33,31 +33,18 @@ function loadGame(output) {
     fetchBiases();
     loadBiasModals(output.biasCollection);
     loadRoundWarningModals();
-    
+
     // Newsfeed goes in a loop to get ALL articles needed for the canvas (can be 2 or 3)
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
-    
+
     let canvasNumberCorrection = parseInt(canvasNumber) + 1
-    let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
     //Will change the map for the next round
-    document.getElementById("map-img").src = img;
+    document.getElementById("map-img").src = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
     popupNewsfeed(output.canvasCollection[canvasNumber].newsArticleCollection);
     // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
-}
-
-function popupNewsfeed(newsArticleCollection) {
-    document.getElementById("newsfeed-modal").style.display = "none";
-    for (let i = 0; i < newsArticleCollection.length; i++) {
-        if (newsArticleCollection[i].newsArticlePopup == true) {
-            document.getElementById("popup-title").innerHTML = newsArticleCollection[i].newsArticleTitle;
-            document.getElementById("popup-text").innerHTML = newsArticleCollection[i].newsArticleMessage;
-            document.getElementById("popup-paper").innerHTML = newsArticleCollection[i].newsArticleSource;
-            break;
-        }
-    }
 }
 
 // THESE ITEMS SHOW ALL THE SAME FOR EVERY CANVAS
