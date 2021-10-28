@@ -45,10 +45,6 @@ function nextRound(biasAnswer, measureAnswer) {
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
     round = round + 1;
-    if (round === 7) {
-        window.open("scorePage.html", '_top');
-        return;
-    }
     sessionStorage.setItem("round", round);
     sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     sessionStorage.setItem("canvasNumber", newCanvasNumber);
@@ -57,6 +53,10 @@ function nextRound(biasAnswer, measureAnswer) {
     sessionStorage.setItem("totalPoints", newTotalPoints);
     console.log("Total points: " + sessionStorage.getItem("totalPoints"));
     sessionStorage.setItem("timerValue", timerValue);
+    if (round === 7) {
+        window.open("scorePage.html", '_top');
+        return;
+    }
     fetchRound();
 }
 

@@ -1,0 +1,11 @@
+#score-header {
+    grid-template-columns: 0.55fr 0.63fr 0.05fr;
+}
+
+.score-middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px;
+    grid-auto-rows: minmax(50px, auto);
+    
+}

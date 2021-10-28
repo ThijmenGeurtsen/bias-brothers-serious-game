@@ -1,1 +1,1 @@
-document.getElementById("score").innerHTML = "Het totaal aantal gescoorde punten is: " + sessionStorage.getItem("totalPoints");
+document.getElementById("score").innerHTML = sessionStorage.getItem("totalPoints");

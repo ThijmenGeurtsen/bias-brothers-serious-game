@@ -6,31 +6,31 @@
     <title>Scorepage</title>
     <link rel="stylesheet" type="text/css" href="styles/styleStandard.css" />
     <link rel="stylesheet" type="text/css" href="styles/styleCanvas.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleScore.css">
 </head>
 
 <body>
-    <div id="game-container">
-        <div class="canvas-header">
+    <div class="game-container">
+        <div class="canvas-header" id="score-header">
             <div class="logo">
                 <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers" />
             </div>
             <div class="title-round-box">
-                <h2 id="title-round">Gescoord aantal punten</h2>
-            </div>
-            <div class="timer-box">
-            </div>
-            <div class="bias-button">
-
-            </div>
-            <div class="newsfeed">
-
+                <h2 id="title-round">Scorebord</h2>
             </div>
             <div id="logout-button">
                 <button onclick="buttonLogoutClick()"><img src="images/logout.png" alt="Uitloggen."></button>
             </div>
         </div>
-        <div class="game-middle">
-            <h2 id="score"></h2>
+        <div class="score-middle">
+            <div>
+                <h2>Totaal aantal haalbare punten:</h2>
+            </div>
+            <div>
+                <h2>82</h2>
+            </div>
+            <div><h2>Totaal aantal gescoorde punten:</h2></div>
+            <div><h2 id="score"></h2></div>
         </div>
     </div>
     <script src="scripts/scriptCanvas.js"></script>

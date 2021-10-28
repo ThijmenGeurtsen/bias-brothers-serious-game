@@ -84,5 +84,6 @@ function loadInfections(healthy, infected, mutated) {
 // Button that brings you to the login page & alerts you goodbye
 function buttonLogoutClick() {
     alert('Tot ziens ');
+    sessionStorage.clear;
     window.open('index.html', '_top')
 }
