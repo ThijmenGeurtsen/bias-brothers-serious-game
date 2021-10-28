@@ -33,7 +33,7 @@ function fetchMeasure(round, canvasNumber, measureAnswer) {
     xhr.onload = function () {
         if (this.status === 200) {
             const output = JSON.parse(this.responseText);
-            loadGame(output)
+            return output;
         } else {
             console.log("Niet gevonden")
         }
