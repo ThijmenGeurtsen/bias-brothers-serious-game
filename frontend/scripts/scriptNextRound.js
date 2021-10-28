@@ -36,16 +36,40 @@ function giveAnswer(e) {
     }
 }
 
+
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
+    let roundPoints = countRoundPoints(biasAnswer, measureAnswer);
+    console.log("Roundpoints: " + roundPoints);
     let round = parseInt(sessionStorage.getItem("round"));
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
     sessionStorage.setItem("round", round + 1);
     sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
-    canvasNumber = newCanvasNumber;
     sessionStorage.setItem("canvasNumber", newCanvasNumber);
-    console.log("New round: " + sessionStorage.getItem("round") + " New canvasnumber: " + sessionStorage.getItem("canvasNumber") + " New endpointname: " + sessionStorage.getItem("endpointName"));
-    sessionStorage.setItem("timerValue", 420000);
+
+    let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
+    sessionStorage.setItem("totalPoints", newTotalPoints);
+    console.log("Total points: " + sessionStorage.getItem("totalPoints"));
+    sessionStorage.setItem("timerValue", timerValue);
     fetchRound();
+}
+
+function countRoundPoints(biasAnswer, measureAnswer) {
+    let biasPoints;
+    let measurePoints;
+
+    for (let i = 0; i < biasCollection.length; i++) {
+        if (biasCollection[i].biasChar === biasAnswer) {
+            biasPoints = biasCollection[i].points;
+        }
+    }
+
+    for (let i = 0; i < measureQuestionCollection.length; i++) {
+        if (measureQuestionCollection[i].measureChar === measureAnswer) {
+            measurePoints = measureQuestionCollection[i].measurePoints;
+        }
+    }
+    console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
+    return biasPoints + measurePoints + canvasPoints;
 }

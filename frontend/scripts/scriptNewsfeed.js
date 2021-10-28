@@ -11,12 +11,11 @@ function popupNewsfeed(newsArticleCollection) {
 }
 
 // Changes the articles max of 3 (CHECK IF WE COULD DO MORE)
-function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource, boolPopup) {
+function loadNewsfeed(articleNumber, newsTitle, newsMessage, newsSource) {
     articleNumber++;
     document.getElementById("title-" + articleNumber).innerHTML = newsTitle;
     document.getElementById("message-" + articleNumber).innerHTML = newsMessage;
     document.getElementById("source-" + articleNumber).innerHTML = newsSource;
-    let popup = boolPopup;
 }
 
 window.addEventListener("click", function (event) {
