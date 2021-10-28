@@ -44,7 +44,12 @@ function nextRound(biasAnswer, measureAnswer) {
     let round = parseInt(sessionStorage.getItem("round"));
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    sessionStorage.setItem("round", round + 1);
+    round = round + 1;
+    if (round === 7) {
+        window.open("scorePage.html", '_top');
+        return;
+    }
+    sessionStorage.setItem("round", round);
     sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     sessionStorage.setItem("canvasNumber", newCanvasNumber);
 
