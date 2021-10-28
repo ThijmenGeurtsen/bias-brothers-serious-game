@@ -2,7 +2,6 @@ let timerValue;
 let canvasPoints;
 let biasCollection;
 let measureQuestionCollection;
-let newRound = 1;
 var isReload = false;
 
 function loadGame(output) {
@@ -39,7 +38,6 @@ function loadGame(output) {
     for (let i = 0; i < output.canvasCollection[canvasNumber].newsArticleCollection.length; i++) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
-
     
     let canvasNumberCorrection = parseInt(canvasNumber) + 1
     let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
@@ -203,7 +201,6 @@ function loadRoundWarningModals() {
 
     document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
     document.getElementById("roundModal").style.display = "block";
-
 
     document.getElementsByClassName("closeModal")[1].onclick = function () {
         clearTimer();
