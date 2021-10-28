@@ -4,16 +4,11 @@
 }
 
 body {
-    background-color: #61ce70;
+    background-color: rgba(97, 206, 112, 0.62);
     color: #555;
     font-family: Calibri, sans-serif;
     font-size: 16px;
     line-height: 1.2em;
-}
-
-.game-container {
-    width: 100%;
-    height: 100%;
 }
 
 a {

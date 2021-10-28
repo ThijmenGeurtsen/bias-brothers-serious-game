@@ -1,8 +1,27 @@
-let round = 1;
-let endpointName = "round" + round.toString();
-let canvasNumber = 2;
+let timerValue;
+let canvasPoints;
+let biasCollection;
+let measureQuestionCollection;
+var isReload = false;
 
 function loadGame(output) {
+    timerValue = parseInt(sessionStorage.getItem("timerValue"));
+    //detect if page gets reloaded
+    isReload = true;
+    if (sessionStorage.getItem("oldCanvasNumber") != sessionStorage.getItem("canvasNumber")){
+        sessionStorage.setItem("oldCanvasNumber", sessionStorage.getItem("canvasNumber"));
+        isReload = false;
+    }
+    // set new timer value when page gets reloaded
+    if (isReload == false){
+        timerValue = output.timer.minutes*60000;
+    }
+
+    let canvasNumber = sessionStorage.getItem("canvasNumber");
+    let round = sessionStorage.getItem("round");
+    biasCollection = output.biasCollection;
+    measureQuestionCollection = output.measureQuestionCollection;
+    canvasPoints = output.canvasCollection[canvasNumber].points;
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
@@ -20,12 +39,10 @@ function loadGame(output) {
         loadNewsfeed(i, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleTitle, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleMessage, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticleSource, output.canvasCollection[canvasNumber].newsArticleCollection[i].newsArticlePopup);
     }
 
-    let canvasNumberCorrection = canvasNumber + 1
-    let img = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
-    console.log(img);
+    let canvasNumberCorrection = parseInt(canvasNumber) + 1
     //Will change the map for the next round
-    document.getElementById("map-img").src=img;
-
+    document.getElementById("map-img").src = "images/tempMap/R" + round + "C" + canvasNumberCorrection + ".png";
+    popupNewsfeed(output.canvasCollection[canvasNumber].newsArticleCollection);
     // Will make the BIAS question default showable
     document.getElementById("qBiasId").click();
 }
@@ -151,7 +168,7 @@ function makeTable(list, div) {
         tbody.appendChild(row);
 
         // Gives a grey color to a row if the number is uneven
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
             row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
         }
     }
@@ -159,18 +176,19 @@ function makeTable(list, div) {
 
 // Loads all modals
 function loadRoundWarningModals() {
-    clearInterval(timeoutHandle);
+    let round = sessionStorage.getItem("round");
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
-    if (round > 1) {
-        document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
-        document.getElementById("roundModal").style.display = "block";
-    } else {
-        document.getElementById("round-message").innerHTML = "Welkom bij de Serious Game!" + "\n Klik buiten deze melding om het spel te starten.";
-        document.getElementById("roundModal").style.display = "block";
-    }
+
+    document.getElementById("scenario-box").style.display = 'none';
+    document.getElementById("question-box").style.display = 'none';
+    document.getElementById("infection-box").style.display = 'none';
+
+    document.getElementById("round-message").innerHTML = "Welkom in ronde " + round + ".\n Maak je snel klaar voor de start!";
+    document.getElementById("roundModal").style.display = "block";
+
     document.getElementsByClassName("closeModal")[1].onclick = function () {
         clearTimer();
     }
@@ -180,23 +198,46 @@ function loadRoundWarningModals() {
             this.clearTimeout(a);
         }
     });
-    if (round > 1 && document.getElementById("roundModal").style.display == "block") {
+    if (round > 1 && document.getElementById("roundModal").style.display === "block") {
         var a = setTimeout(function () {
             clearTimer();
         }, 5000);
     }
 }
 
-function clearTimer(){
+function clearTimer() {
+    clearInterval(x);
     document.getElementById("roundModal").style.display = "none";
-    document.getElementById("timer").style.backgroundColor = "#61ce70";
-    countdown(8);
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+
+    document.getElementById("scenario-box").style.display = 'block';
+    document.getElementById("question-box").style.display = 'block';
+    document.getElementById("infection-box").style.display = 'block';
+
+    document.getElementById("canvas-footer").style.animation = "fadeIn 3s";
+    document.getElementById("game-container").style.animation = "fadeIn 3s"
+    document.getElementById("scenario-box").style.animation = "fadeIn 2s";
+    document.getElementById("question-box").style.animation = "fadeIn 2s";
+
+    document.getElementById("newsfeed-modal").style.display = "block";
+    document.getElementsByClassName("closePopup")[0].onclick = function () {
+        document.getElementById("newsfeed-modal").style.display = "none";
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target === this.document.getElementById("newsfeed-modal")) {
+            document.getElementById("newsfeed-modal").style.display = "none";
+
+        }
+    });
+
+    countdown(timerValue);
 }
 
 // Function to set up modals so that it can open and close
 function openCloseModal(button, modal, index) {
     // Get the <closeModal> element that closeModals the biasModal
-    var closeModal = document.getElementsByClassName("closeModal")[index];
+    let closeModal = document.getElementsByClassName("closeModal")[index];
 
     // When the user clicks on the button, open the biasModal
     button.onclick = function () {
@@ -273,25 +314,48 @@ function giveAnswer(e) {
 
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
+    let roundPoints = countRoundPoints(biasAnswer, measureAnswer);
+    console.log("Roundpoints: " + roundPoints);
+    let round = parseInt(sessionStorage.getItem("round"));
+    let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    round = round + 1;
-    endpointName = "round" + round.toString();
-
-    //console.log(newCanvasNumber);
+    sessionStorage.setItem("round", round + 1);
+    sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
     canvasNumber = newCanvasNumber;
+    sessionStorage.setItem("canvasNumber", newCanvasNumber);
 
-
-   
-
+    let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
+    sessionStorage.setItem("totalPoints", newTotalPoints);
+    console.log("Total points: " + sessionStorage.getItem("totalPoints"));
+    sessionStorage.setItem("timerValue", timerValue);
     fetchRound();
+}
+
+function countRoundPoints(biasAnswer, measureAnswer) {
+    let biasPoints;
+    let measurePoints;
+
+    for (let i = 0; i < biasCollection.length; i++) {
+        if (biasCollection[i].biasChar == biasAnswer) {
+            biasPoints = biasCollection[i].points;
+        }
+    }
+
+    for (let i = 0; i < measureQuestionCollection.length; i++) {
+        if (measureQuestionCollection[i].measureChar == measureAnswer) {
+            measurePoints = measureQuestionCollection[i].measurePoints;
+        }
+    }
+    console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
+    return biasPoints + measurePoints + canvasPoints;
 }
 
 // Gets all the biases from the backend with an http request. Backend started with intelliJ.
 function fetchBiases() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/biases', true);
     xhr.onload = function () {
-        if (this.status == 200) {
+        if (this.status === 200) {
             const output = JSON.parse(this.responseText);
             makeTable(output, document.getElementById("all-bias-div"));
         }
@@ -300,10 +364,11 @@ function fetchBiases() {
 }
 
 function fetchRound() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
+    let endpointName = sessionStorage.getItem("endpointName");
     xhr.open('GET', 'http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/' + endpointName, true);
     xhr.onload = function () {
-        if (this.status == 200) {
+        if (this.status === 200) {
             const output = JSON.parse(this.responseText);
             loadGame(output)
         } else {
@@ -316,68 +381,77 @@ function fetchRound() {
 // Start first canvas
 fetchRound();
 
-
 // Button that brings you to the login page & alerts you goodbye
 function buttonLogoutClick() {
     alert('Tot ziens ');
     window.open('index.html', '_top')
 }
 
-// Code for the timer
-let timeoutHandle;
+let x;
 // Changes the timer to the given minutes
-function countdown(minutes) {
-    let seconds = 60;
-    let mins = minutes;
-    clearInterval(timeoutHandle);
+function countdown(milliseconds) {
+    // Set the current date and add 8 minutes to it 
+    let countDownDate = new Date().getTime() + milliseconds;
 
-    function tick() {
-        if (mins == 1) {
-            document.getElementById("timer").style.backgroundColor = "red";
-            document.getElementById("timer").style.borderRadius = "50%" ;
-            document.getElementById("timer").style.padding = "10px";
-            document.getElementById("timer").style.animation = "blink 800ms infinite";
-        }
-        else{
-            document.getElementById("timer").style.backgroundColor = "#61ce70";
+    // Update the count down every 1 second
+    x = setInterval(function () {
 
+        // Get today's date and time
+        let now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        let distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        sessionStorage.setItem("timerValue", distance)
+        // Display the result in the element with id="timer"
+        document.getElementById("timer").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+        // If the count down is finished, write some text 
+        if (distance < 60000) {
+            timerRedBlink();
+        } else {
+            //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
         }
-        if (seconds <= 1 && mins == 1) {
-        //document.getElementById("timer").style.backgroundColor = "#61ce70";
-        alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
-            round = round + 1;
-            endpointName = "round" + round.toString();
+        if (distance < 1000) {
+            clearInterval(x);
+            //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
+            alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
+            let round = parseInt(sessionStorage.getItem("round"));
+            let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
+            sessionStorage.setItem("round", round + 1);
+            sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
             if (canvasNumber > 0) {
                 canvasNumber = canvasNumber - 1;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
             } else {
                 canvasNumber = 0;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
             }
-            //console.log(canvasNumber);
+            sessionStorage.setItem("timerValue", timerValue);
             fetchRound();
         }
-        var counter = document.getElementById("timer");
-        var current_minutes = mins - 1
-        seconds--;
-        counter.innerHTML =
-            current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-        if (seconds > 0) {
-            timeoutHandle = setTimeout(tick, 1000);
-        } else {
-            if (mins > 1) {
-                setTimeout(function () {
-                    countdown(mins - 1);
-                }, 1000);
-            }
-        }
-    }
-    tick();
+    }, 1000);
 }
 
 window.addEventListener("click", function (event) {
-    if (event.target === this.document.getElementById("newsfeedButton")) {
-        document.getElementById('newsfeed').style.display = "block";
+    if (event.target === this.document.getElementById("newsfeed-button")) {
+        if (document.getElementById('newsfeed').style.display == "block") {
+            document.getElementById('newsfeed').style.display = "none"
+        } else {
+            document.getElementById('newsfeed').style.display = "block";
+        }
     }
-    else{
+    else {
         document.getElementById('newsfeed').style.display = "none";
     }
 })
+
+function timerRedBlink() {
+    document.getElementById("timer").style.backgroundColor = "red";
+    document.getElementById("timer").style.borderRadius = "50%";
+    document.getElementById("timer").style.padding = "10px";
+    document.getElementById("timer").style.animation = "blink 1000ms infinite";
+}
