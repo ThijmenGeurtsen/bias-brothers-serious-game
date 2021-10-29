@@ -8,3 +8,9 @@ function buttonLoginClick() {
 
 }
 
+document.getElementById("form").addEventListener("keyup", function (event){
+    if (event.which === 13){
+        event.preventDefault();
+        buttonLoginClick();
+    }
+});
