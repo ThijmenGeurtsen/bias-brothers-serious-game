@@ -29,20 +29,9 @@ function countdown(milliseconds) {
         if (distance < 1000) {
             clearInterval(x);
             //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
-            alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
-            let round = parseInt(sessionStorage.getItem("round"));
-            let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
-            sessionStorage.setItem("round", round + 1);
-            sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
-            if (canvasNumber > 0) {
-                canvasNumber = canvasNumber - 1;
-                sessionStorage.setItem("canvasNumber", canvasNumber);
-            } else {
-                canvasNumber = 0;
-                sessionStorage.setItem("canvasNumber", canvasNumber);
-            }
-            sessionStorage.setItem("timerValue", 420000);
-            fetchRound();
+            //alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
+            loadTimerModal();
+            
         }
     }, 1000);
 }

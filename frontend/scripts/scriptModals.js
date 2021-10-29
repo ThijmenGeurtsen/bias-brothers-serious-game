@@ -4,7 +4,7 @@ function loadRoundWarningModals() {
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 4);
 
     document.getElementById("scenario-box").style.display = 'none';
     document.getElementById("question-box").style.display = 'none';
@@ -103,5 +103,28 @@ function makeTable(list, div) {
         if (i % 2 === 0) {
             row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
         }
+    }
+}
+
+function loadTimerModal() {
+    document.getElementById("timer").innerHTML = "";
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+    document.getElementById("timer-message").innerHTML = "De rondetijd is voorbij. Sluit deze melding om verder te gaan.";
+    document.getElementById("timerModal").style.display = "block";
+    document.getElementsByClassName("closePopup")[1].onclick = function () {
+        document.getElementById("timerModal").style.display = "none";
+        let round = parseInt(sessionStorage.getItem("round"));
+            let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
+            sessionStorage.setItem("round", round + 1);
+            sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
+            if (canvasNumber > 0) {
+                canvasNumber = canvasNumber - 1;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
+            } else {
+                canvasNumber = 0;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
+            }
+            sessionStorage.setItem("timerValue", 420000);
+            fetchRound();
     }
 }
