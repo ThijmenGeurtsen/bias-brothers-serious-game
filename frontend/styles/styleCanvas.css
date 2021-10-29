@@ -59,7 +59,7 @@ width: 100%;
 }
 
 #map-img {
-    min-height: 410px;
+    min-height: 400px;
     min-width: 750px;
     width: 100%;
     cursor: grab;
@@ -136,18 +136,18 @@ width: 100%;
     transition: 0.3s;
     font-size: 14px;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), #61ce70;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), var(--bg-color);
     border: 2px solid rgba(66, 133, 75, 0.71);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0;
 }
 
 .question-tab button:hover {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), #61ce70;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), var(--bg-color);
 }
 
 .question-tab button.active {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), #61ce70;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), var(--bg-color);
 }
 
 .question-content {

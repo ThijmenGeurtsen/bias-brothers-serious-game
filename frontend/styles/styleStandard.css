@@ -3,8 +3,12 @@
     padding: 0;
 }
 
+:root{
+    --bg-color: rgba(97, 206, 112, 0.8);
+}
+
 body {
-    background-color: #3fce7fcb;
+    background-color: var(--bg-color);
     color: #555;
     font-family: Calibri, sans-serif;
     font-size: 16px;
@@ -22,14 +26,14 @@ button {
     padding: 10px;
     cursor: pointer;
 
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), #61ce70;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), var(--bg-color);
     border: 2px solid rgba(66, 133, 75, 0.71);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 13px;
 }
 
 button:hover {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), #61ce70;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), var(--bg-color);
 }
 
 table {
@@ -68,7 +72,7 @@ table {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border: 2px solid lightgrey;
-    background: #61ce70;
+    background: var(--bg-color);
 }
 
 /* Handle on hover */
