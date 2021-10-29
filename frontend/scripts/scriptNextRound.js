@@ -57,6 +57,8 @@ function nextRound(biasAnswer, measureAnswer) {
         window.open("scorePage.html", '_top');
         return;
     }
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "";
     fetchRound();
 }
 
