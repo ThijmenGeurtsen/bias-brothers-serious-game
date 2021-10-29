@@ -193,6 +193,10 @@ function loadInformationModal(div) {
     row_1_information.appendChild(measure_11);
 
     thead.appendChild(row_1_information);
+
+    // per land 3 rijen aan informatie met 11 metingen max
+
+
 /*
     // Looping through all information that is passed in
     for (let i = 0; i < list.length; i++) {
