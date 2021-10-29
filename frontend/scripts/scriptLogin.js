@@ -5,11 +5,10 @@ function buttonLoginClick() {
     let input = document.getElementById("name").value;
     sessionStorage.setItem("name", input);
     window.open("welcome.html", '_top');
-
 }
 
-document.getElementById("form").addEventListener("keyup", function (event){
-    if (event.which === 13){
+document.getElementById("form").addEventListener('keypress', function (event){
+    if (event.which.valueOf() === 13){
         event.preventDefault();
         buttonLoginClick();
     }
