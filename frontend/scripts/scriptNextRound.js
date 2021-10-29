@@ -57,6 +57,9 @@ function nextRound(biasAnswer, measureAnswer) {
         window.open("scorePage.html", '_top');
         return;
     }
+    clearInterval(x);
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+    document.getElementById("timer").innerHTML = "";
     fetchRound();
 }
 
