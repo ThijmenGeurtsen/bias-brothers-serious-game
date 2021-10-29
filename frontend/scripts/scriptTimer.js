@@ -29,9 +29,7 @@ function countdown(milliseconds) {
         if (distance < 1000) {
             clearInterval(x);
             //document.getElementById("timer").style.backgroundColor = "rgba(97, 206, 112, 0.62)";
-            //alert("De rondetijd is voorbij. Sluit deze melding om verder te gaan.")
             loadTimerModal();
-            
         }
     }, 1000);
 }

@@ -5,6 +5,7 @@ let measureQuestionCollection;
 var isReload = false;
 
 function loadGame(output) {
+    console.log(sessionStorage.getItem("totalPoints"));
     timerValue = parseInt(sessionStorage.getItem("timerValue"));
     //detect if page gets reloaded
     isReload = true;

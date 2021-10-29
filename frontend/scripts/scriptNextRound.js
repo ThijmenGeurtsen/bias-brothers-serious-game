@@ -58,6 +58,7 @@ function nextRound(biasAnswer, measureAnswer) {
         return;
     }
     clearInterval(x);
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
     document.getElementById("timer").innerHTML = "";
     fetchRound();
 }

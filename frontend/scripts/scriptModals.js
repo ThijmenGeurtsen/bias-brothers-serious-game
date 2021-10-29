@@ -117,6 +117,8 @@ function loadTimerModal() {
             let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
             sessionStorage.setItem("round", round + 1);
             sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
+            let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + canvasPoints;
+            sessionStorage.setItem("totalPoints", newTotalPoints);
             if (canvasNumber > 0) {
                 canvasNumber = canvasNumber - 1;
                 sessionStorage.setItem("canvasNumber", canvasNumber);
