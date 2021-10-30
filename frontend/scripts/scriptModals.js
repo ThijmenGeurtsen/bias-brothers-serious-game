@@ -126,7 +126,6 @@ function loadTimerModal() {
                 canvasNumber = 0;
                 sessionStorage.setItem("canvasNumber", canvasNumber);
             }
-            sessionStorage.setItem("timerValue", 420000);
             fetchRound();
     }
 }
