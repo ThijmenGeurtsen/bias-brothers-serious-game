@@ -5,6 +5,7 @@ function loadRoundWarningModals() {
     openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"),5);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 3);
+    openCloseModal(document.getElementById("informationBtn"), document.getElementById("informationModal"), 2)
     loadInformationModal(document.getElementById("information-table"));
 
 
