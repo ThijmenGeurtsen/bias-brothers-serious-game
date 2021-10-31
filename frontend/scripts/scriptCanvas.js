@@ -5,6 +5,7 @@ let measureQuestionCollection;
 var isReload = false;
 
 function loadGame(output) {
+    //console.log(parseInt(sessionStorage.getItem("canvasNumber")) + 1);
     timerValue = parseInt(sessionStorage.getItem("timerValue"));
     //detect if page gets reloaded
     isReload = true;
@@ -17,7 +18,7 @@ function loadGame(output) {
         timerValue = output.timer.minutes * 60000;
     }
 
-    let canvasNumber = sessionStorage.getItem("canvasNumber");
+    let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let round = sessionStorage.getItem("round");
     biasCollection = output.biasCollection;
     measureQuestionCollection = output.measureQuestionCollection;

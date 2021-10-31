@@ -6,6 +6,11 @@ function fetchBiases() {
         if (this.status === 200) {
             const output = JSON.parse(this.responseText);
             makeTable(output, document.getElementById("all-bias-div"));
+        } else {
+            if (this.status === 500) {
+                console.log("500 status");
+                fetchBiases();
+            }
         }
     }
     xhr.send();
@@ -22,7 +27,10 @@ function fetchRound() {
             const output = JSON.parse(this.responseText);
             loadGame(output)
         } else {
-            console.log("Niet gevonden")
+            if (this.status === 500) {
+                console.log("500 status");
+                fetchRound();
+            }
         }
     }
     xhr.send();
@@ -36,8 +44,10 @@ function fetchMeasure(round, canvasNumber, measureAnswer) {
             const output = JSON.parse(this.responseText);
             sessionStorage.setItem("canvasNumber", output)
         } else {
-            console.log("Niet gevonden")
-        }
+            if (this.status === 500) {
+                console.log("500 status");
+                fetchMeasure(round, canvasNumber, measureAnswer);
+            }        }
     }
     xhr.send();
 }
