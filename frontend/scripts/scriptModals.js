@@ -42,7 +42,6 @@ function loadRoundWarningModals() {
 
 function checkCanvas(iframe){
     let canvasNumer = parseInt(sessionStorage.getItem("canvasNumber")) + 1;
-    console.log(canvasNumer);
 
     iframe.setAttribute(SameSite="Lax", "iframe");
 
