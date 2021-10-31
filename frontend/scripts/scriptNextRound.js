@@ -1,7 +1,7 @@
 // Checks if both questions have been filled in.
 document.getElementById("next").addEventListener
     ("click", giveAnswer);
-function giveAnswer(e) {
+function giveAnswer() {
     let bias = document.getElementsByName('answer-bias');
     let measure = document.getElementsByName('answer-measure');
     let biasValue;
@@ -40,23 +40,24 @@ function giveAnswer(e) {
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
     let roundPoints = countRoundPoints(biasAnswer, measureAnswer);
-    console.log("Roundpoints: " + roundPoints);
+    //console.log("Roundpoints: " + roundPoints);
     let round = parseInt(sessionStorage.getItem("round"));
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
-    let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    round = round + 1;
-    sessionStorage.setItem("round", round);
-    sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
-    sessionStorage.setItem("canvasNumber", newCanvasNumber);
+    fetchMeasure(round, canvasNumber, measureAnswer);
+    sessionStorage.setItem("round", round + 1);
+    sessionStorage.setItem("endpointName", "round/" + sessionStorage.getItem("round").toString());
 
     let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
     sessionStorage.setItem("totalPoints", newTotalPoints);
-    console.log("Total points: " + sessionStorage.getItem("totalPoints"));
+    //console.log("Total points: " + sessionStorage.getItem("totalPoints"));
     sessionStorage.setItem("timerValue", timerValue);
-    if (round === 7) {
+    if (round === 6) {
         window.open("scorePage.html", '_top');
         return;
     }
+    clearInterval(x);
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+    document.getElementById("timer").innerHTML = "";
     fetchRound();
 }
 
@@ -75,6 +76,6 @@ function countRoundPoints(biasAnswer, measureAnswer) {
             measurePoints = measureQuestionCollection[i].measurePoints;
         }
     }
-    console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
+    //console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
     return biasPoints + measurePoints + canvasPoints;
 }

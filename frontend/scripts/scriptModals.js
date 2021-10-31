@@ -2,9 +2,19 @@
 function loadRoundWarningModals() {
     let round = sessionStorage.getItem("round");
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 5);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 3);
+    openCloseModal(document.getElementById("informationBtn"), document.getElementById("informationModal"), 2)
+
+    if (parseInt(round) === 4) {
+        document.getElementById("informationBtn").style.display = "grid";
+        let iframe = document.getElementById("iframe");
+        checkCanvas(iframe);
+        document.getElementById("information-table").appendChild(iframe);
+    } else {
+        document.getElementById("informationBtn").style.display = "none";
+    }
 
     document.getElementById("scenario-box").style.display = 'none';
     document.getElementById("question-box").style.display = 'none';
@@ -30,6 +40,26 @@ function loadRoundWarningModals() {
     }
 }
 
+function checkCanvas(iframe){
+    let canvasNumer = parseInt(sessionStorage.getItem("canvasNumber")) + 1;
+
+    iframe.setAttribute(SameSite="Lax", "iframe");
+
+    switch (canvasNumer) {
+        case 1:
+            return iframe.src = "round4/Canvas 1.html";
+        case 2:
+            return iframe.src = "round4/Canvas 2.html";
+        case 3:
+            return iframe.src = "round4/Canvas 3.html";
+        case 4:
+            return iframe.src = "round4/Canvas 4.html";
+        case 5:
+            return iframe.src = "round4/Canvas 5.html";
+
+    }
+}
+
 // Function to set up modals so that it can open and close
 function openCloseModal(button, modal, index) {
     // Get the <closeModal> element that closeModals the biasModal
@@ -38,6 +68,7 @@ function openCloseModal(button, modal, index) {
     // When the user clicks on the button, open the biasModal
     button.onclick = function () {
         modal.style.display = "block";
+
     }
 
     // When the user clicks on <closeModal> (x), the modal will close
@@ -49,6 +80,7 @@ function openCloseModal(button, modal, index) {
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
+
         }
     })
 }
@@ -103,5 +135,29 @@ function makeTable(list, div) {
         if (i % 2 === 0) {
             row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
         }
+    }
+}
+
+function loadTimerModal() {
+    document.getElementById("timer").innerHTML = "";
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+    document.getElementById("timer-message").innerHTML = "De rondetijd is voorbij. Sluit deze melding om verder te gaan.";
+    document.getElementById("timerModal").style.display = "block";
+    document.getElementsByClassName("closePopup")[1].onclick = function () {
+        document.getElementById("timerModal").style.display = "none";
+        let round = parseInt(sessionStorage.getItem("round"));
+        let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
+        sessionStorage.setItem("round", round + 1);
+        sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
+        let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + canvasPoints;
+        sessionStorage.setItem("totalPoints", newTotalPoints);
+        if (canvasNumber > 0) {
+            canvasNumber = canvasNumber - 1;
+            sessionStorage.setItem("canvasNumber", canvasNumber);
+        } else {
+            canvasNumber = 0;
+            sessionStorage.setItem("canvasNumber", canvasNumber);
+        }
+        fetchRound();
     }
 }

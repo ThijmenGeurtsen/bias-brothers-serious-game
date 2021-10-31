@@ -5,6 +5,9 @@ function buttonLoginClick() {
     let input = document.getElementById("name").value;
     sessionStorage.setItem("name", input);
     window.open("welcome.html", '_top');
-
 }
 
+document.getElementById("form").addEventListener('submit', function (event){
+    event.preventDefault();
+    buttonLoginClick();
+});

@@ -2,6 +2,7 @@ package com.team3.utils;
 
 import com.google.gson.Gson;
 import com.team3.canvas.Bias;
+import com.team3.gamehandler.MeasureQuestionHandler;
 import com.team3.gamehandler.Round;
 import spark.Spark;
 
@@ -53,15 +54,24 @@ public class Endpoints {
             int roundNumber = Integer.parseInt(req.params(":number"));
             Round round = dataHandler.getRoundsData().get(roundNumber - 1);
 
-            System.out.println("Round " + roundNumber + " has been loaded");
+            //System.out.println("Round " + roundNumber + " has been loaded");
 
             return gson.toJson(round);
         });
 
+        get("/measure/:round/:canvasnumber/:measureanswer", (req, res) -> {
+            int round = Integer.parseInt(req.params(":round"));
+            int canvasNumber = Integer.parseInt(req.params(":canvasnumber"));
+            char measureAnswer = req.params(":measureanswer").charAt(0);
+
+            int result = MeasureQuestionHandler.checkAnswer(round, canvasNumber, measureAnswer);
+
+            return gson.toJson(result);
+        });
 
         get("/biases", (req, res) -> {
             ArrayList<Bias> biasList = dataHandler.getBiaslistData();
-            System.out.println("Bias list has been loaded");
+            //System.out.println("Bias list has been loaded");
 
             return gson.toJson(biasList);
         });
