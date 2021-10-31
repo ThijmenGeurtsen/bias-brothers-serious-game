@@ -18,10 +18,10 @@ function fetchBiases() {
 
 function fetchRound() {
     //http://seriousgame-env.eba-rqt9ruwy.eu-west-2.elasticbeanstalk.com/
-    //http://localhost:5000/round/
+    //http://localhost:5000/
     let xhr = new XMLHttpRequest();
-    let endpointName = sessionStorage.getItem("round");
-    xhr.open('GET', 'http://localhost:5000/round/' + endpointName, true);
+    let endpointName = sessionStorage.getItem("endpointName");
+    xhr.open('GET', 'http://localhost:5000/' + endpointName, true);
     xhr.onload = function () {
         if (this.status === 200) {
             const output = JSON.parse(this.responseText);
