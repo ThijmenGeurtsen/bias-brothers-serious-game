@@ -6,13 +6,6 @@
     animation: fadeIn 4s;
 }
 
-#container {
-    display: grid;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
 .canvas-header {
     display: grid;
     grid-template-columns: 0.4fr 2fr 0.3fr 0.2fr 0.1fr 0.1fr;
@@ -171,20 +164,29 @@ width: 100%;
     width: 100%;
 }
 
-.question-bias-list li label {
+
+.question-bias-list li label, .question-measure-list li label {
     cursor: pointer;
 }
 
-.question-measure-list li label {
+.question-bias-list li input, .question-measure-list li input{
     cursor: pointer;
 }
 
-.question-bias-list li input {
-    cursor: pointer;
+.flex-wrap {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 5px;
 }
 
-.question-measure-list li input {
-    cursor: pointer;
+.measure-list-item, .bias-list-item{
+    margin-left: 20px;
+}
+
+.measure-list-item input[type=radio], .question-bias-list input[type=radio] {
+    margin-right: 10px;
+    margin-left: 5px;
 }
 
 /* Tooltip container */
@@ -307,15 +309,8 @@ width: 100%;
     border-spacing: 0;
 }
 
-#bias-table-div table td, #all-bias-div table td {
-    padding: 15px;
-}
-
-#bias-table-div table tr, #all-bias-div table tr {
-    padding: 15px;
-}
-
-#bias-table-div table th, #all-bias-div table th {
+#bias-table-div table td, #bias-table-div table tr, #bias-table-div table th,
+#all-bias-div table td, #all-bias-div table tr, #all-bias-div table th {
     padding: 15px;
 }
 
