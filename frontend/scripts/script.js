@@ -40,7 +40,7 @@ function checkAnswer(round, canvasNumber, measureAnswer) {
                     return 4;
             }
         }
-// ROUND 3
+        // ROUND 3
     } else if (round === 3) {
         if (canvasNumber === 0) {
             switch (measureAnswer) {

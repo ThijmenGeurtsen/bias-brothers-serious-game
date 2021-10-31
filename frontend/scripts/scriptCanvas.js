@@ -8,13 +8,13 @@ function loadGame(output) {
     timerValue = parseInt(sessionStorage.getItem("timerValue"));
     //detect if page gets reloaded
     isReload = true;
-    if (sessionStorage.getItem("oldCanvasNumber") !== sessionStorage.getItem("canvasNumber")){
+    if (sessionStorage.getItem("oldCanvasNumber") !== sessionStorage.getItem("canvasNumber")) {
         sessionStorage.setItem("oldCanvasNumber", sessionStorage.getItem("canvasNumber"));
         isReload = false;
     }
     // set new timer value when page gets reloaded
-    if (isReload === false){
-        timerValue = output.timer.minutes*60000;
+    if (isReload === false) {
+        timerValue = output.timer.minutes * 60000;
     }
 
     let canvasNumber = sessionStorage.getItem("canvasNumber");
@@ -84,5 +84,13 @@ function loadInfections(healthy, infected, mutated) {
 // Button that brings you to the login page & alerts you goodbye
 function buttonLogoutClick() {
     alert('Tot ziens ');
+    sessionStorage.clear();
     window.open('index.html', '_top')
+}
+
+// Called on body load of canvas.html. When pressing the backbutton from the scorepage buttonLogoutClick gets called
+function resetGame() {
+    if (sessionStorage.getItem("round") >= 7) {
+        buttonLogoutClick();
+    }
 }

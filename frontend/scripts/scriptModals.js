@@ -2,9 +2,12 @@
 function loadRoundWarningModals() {
     let round = sessionStorage.getItem("round");
     openCloseModal(document.getElementById("next"), document.getElementById("warningModal"), 0);
-    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 1);
-    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 2);
-    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"), 3);
+    openCloseModal(document.getElementById("qMeasureId"), document.getElementById("warningModal"), 0);
+    openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"),5);
+    openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 3);
+    openCloseModal(document.getElementById("informationBtn"), document.getElementById("informationModal"), 2)
+    loadInformationModal(document.getElementById("information-table"));
+
 
     document.getElementById("scenario-box").style.display = 'none';
     document.getElementById("question-box").style.display = 'none';
@@ -38,17 +41,20 @@ function openCloseModal(button, modal, index) {
     // When the user clicks on the button, open the biasModal
     button.onclick = function () {
         modal.style.display = "block";
+
     }
 
     // When the user clicks on <closeModal> (x), the modal will close
     closeModal.onclick = function () {
         modal.style.display = "none";
+        console.log(index);
     }
 
     // When the user clicks anywhere outside of the biasModal, the modal will close
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
+
         }
     })
 }
@@ -56,6 +62,15 @@ function openCloseModal(button, modal, index) {
 // Loads the biases in the questionmark button below
 function loadBiasModals(bias) {
     makeTable(bias, document.getElementById('bias-table-div'));
+}
+
+// Loads the information for round 4
+function loadInformationModal(){
+    //places iframe in modal
+
+    //adds button to get acces to this modal
+
+    //makes sure this only happens in round 4
 }
 
 // Creates both bias tables in HTML
@@ -103,5 +118,29 @@ function makeTable(list, div) {
         if (i % 2 === 0) {
             row.style.backgroundColor = 'rgba(128, 128, 128, 0.212)';
         }
+    }
+}
+
+function loadTimerModal() {
+    document.getElementById("timer").innerHTML = "";
+    document.getElementById("timer").style.backgroundColor = "rgba(97,206,112,0)";
+    document.getElementById("timer-message").innerHTML = "De rondetijd is voorbij. Sluit deze melding om verder te gaan.";
+    document.getElementById("timerModal").style.display = "block";
+    document.getElementsByClassName("closePopup")[1].onclick = function () {
+        document.getElementById("timerModal").style.display = "none";
+        let round = parseInt(sessionStorage.getItem("round"));
+            let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
+            sessionStorage.setItem("round", round + 1);
+            sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
+            let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + canvasPoints;
+            sessionStorage.setItem("totalPoints", newTotalPoints);
+            if (canvasNumber > 0) {
+                canvasNumber = canvasNumber - 1;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
+            } else {
+                canvasNumber = 0;
+                sessionStorage.setItem("canvasNumber", canvasNumber);
+            }
+            fetchRound();
     }
 }

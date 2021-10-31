@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/styleCanvas.css">
 </head>
 
-<body>
+<body onload="resetGame()">
     <div id="game-container">
         <div id="newsfeed-modal" class="modal">
             <div class="modal-content">
@@ -40,6 +40,25 @@
                 </div>
             </div>
         </div>
+        <div id="timerModal" class="modal">
+            <div class="modal-content">
+                <span class="closePopup">&times;</span>
+                <div>
+                    <h2 id="timer-message">
+                        <!-- Timer message -->
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div id="informationModal" class="modal">
+            <div class="model-content-excel">
+                <span class="closeModal">&times;</span>
+                <div id="information-table">
+                    <iframe src="https://drive.google.com/file/d/1mAj-L0ngvXrgWpF013VjFNvO5QiHaVpb/preview"></iframe>
+                    <!-- Information table gets inserted here -->
+                </div>
+            </div>
+        </div>
         <div class="canvas-header">
             <div class="logo">
                 <img class="logo-img" src="images/logo-zonder-tekst.png" alt="logo Bias Brothers" />
@@ -51,7 +70,7 @@
                 <h2 id="timer"></h2><!-- Javascript timer -->
             </div>
             <div class="bias-button">
-                <button id="allBiasesBtn">Omschrijving alle biasen</button>
+                <button id="allBiasesBtn">Omschrijving alle biases</button>
                 <div id="allBiasesModal" class="modal">
                     <div class="modal-content model-content-big">
                         <span class="closeModal">&times;</span>
@@ -142,8 +161,8 @@
                             <label for="biasC"></label>
                         </li>
                     </ol>
-                    <div class="tooltip"><input type="image" id="questionmark-img" src="images/question-mark.png"
-                            alt="questionmark" />
+                    <div class="tooltip">
+                        <input type="image" id="questionmark-img" src="images/question-mark.png" alt="tooltip"/>
                         <span class="tooltiptext"> Omschrijving biases</span>
                         <div id="biasModal" class="modal">
                             <div class="modal-content model-content-big">
@@ -176,6 +195,7 @@
         </div>
         <div class="submit-button">
             <button type="submit" class="next" id="next">Antwoorden inleveren</button>
+            <button id="informationBtn">test</button>
         </div>
     </div>
     <script src="scripts/script.js"></script>
