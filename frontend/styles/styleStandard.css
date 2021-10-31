@@ -7,6 +7,12 @@
     --bg-color: rgba(97, 206, 112, 0.8);
 }
 
+.container {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+}
+
 body {
     background-color: var(--bg-color);
     color: #555;
@@ -36,6 +42,32 @@ button:hover {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), var(--bg-color);
 }
 
+h1 {
+    text-transform: full-width;
+    font-size: 40px;
+    margin: 30px;
+    line-height: 0.5em;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+span {
+    color: #2b5b3e
+}
+
+#welcomeName {
+    font-size: 24px;
+}
+
+input {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
 table {
     text-align: center;
 }
@@ -51,6 +83,12 @@ table {
 
 .logo-img {
     max-width: 55px;
+}
+
+#welcome-text {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 30px;
 }
 
 .twoColumn {
