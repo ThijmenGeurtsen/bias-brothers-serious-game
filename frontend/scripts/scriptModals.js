@@ -11,6 +11,7 @@ function loadRoundWarningModals() {
         document.getElementById("informationBtn").style.display = "grid";
         let iframe = document.getElementById("iframe");
         checkCanvas(iframe);
+        iframe.att
         document.getElementById("information-table").appendChild(iframe);
     } else {
         document.getElementById("informationBtn").style.display = "none";
@@ -46,15 +47,15 @@ function checkCanvas(iframe){
 
     switch (canvasNumer) {
         case 1:
-            return iframe.src = "https://drive.google.com/file/d/1CWZcrZjt0kWoUQ0YPBc2eRF011kpXj-S/view";
+            return iframe.src = "https://drive.google.com/file/d/1CWZcrZjt0kWoUQ0YPBc2eRF011kpXj-S/preview";
         case 2:
-            return iframe.src = "https://drive.google.com/file/d/1xCR3xDrw8yJFzJNKttVE4fTIuKGRfAwq/view";
+            return iframe.src = "https://drive.google.com/file/d/1xCR3xDrw8yJFzJNKttVE4fTIuKGRfAwq/preview";
         case 3:
-            return iframe.src = "https://drive.google.com/file/d/1lMN0tctuVwQPsJGJgDOKozMVeVGXafL8/view";
+            return iframe.src = "https://drive.google.com/file/d/1lMN0tctuVwQPsJGJgDOKozMVeVGXafL8/preview";
         case 4:
-            return iframe.src = "https://drive.google.com/file/d/1IZknPUbU-mxo8i3gF-u_Rk1mC2_7Vhp4/view";
+            return iframe.src = "https://drive.google.com/file/d/1IZknPUbU-mxo8i3gF-u_Rk1mC2_7Vhp4/preview";
         case 5:
-            return iframe.src = "https://drive.google.com/file/d/115sW4vc252NxeVeL3moiKDJaXGAzYd40/view";
+            return iframe.src = "https://drive.google.com/file/d/115sW4vc252NxeVeL3moiKDJaXGAzYd40/preview";
 
     }
 }
