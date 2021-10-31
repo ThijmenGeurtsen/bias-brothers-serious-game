@@ -164,6 +164,10 @@ width: 100%;
     display: grid;
 }
 
+#informationBtn {
+    width: 100%;
+}
+
 .question-bias-list li label {
     cursor: pointer;
 }
