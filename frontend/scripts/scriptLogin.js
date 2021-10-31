@@ -7,9 +7,7 @@ function buttonLoginClick() {
     window.open("welcome.html", '_top');
 }
 
-document.getElementById("form").addEventListener('keypress', function (event){
-    if (event.which.valueOf() === 13){
-        event.preventDefault();
-        buttonLoginClick();
-    }
+document.getElementById("form").addEventListener('submit', function (event){
+    event.preventDefault();
+    buttonLoginClick();
 });
