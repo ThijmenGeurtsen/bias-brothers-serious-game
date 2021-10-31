@@ -44,17 +44,19 @@ function checkCanvas(iframe){
     let canvasNumer = parseInt(sessionStorage.getItem("canvasNumber")) + 1;
     console.log(canvasNumer);
 
+    iframe.setAttribute(SameSite="Lax", "iframe");
+
     switch (canvasNumer) {
         case 1:
-            return iframe.src = "https://drive.google.com/file/d/1mAj-L0ngvXrgWpF013VjFNvO5QiHaVpb/view";
+            return iframe.src = "round4/Canvas 1.html";
         case 2:
-            return iframe.src = "https://drive.google.com/file/d/1umgRn741Rm6FpScgK1tzEPrg5LEPFIz0/view";
+            return iframe.src = "round4/Canvas 2.html";
         case 3:
-            return iframe.src = "https://drive.google.com/file/d/1j4PdDTtev_bP1hD9dHRfBB19wiBDr--P/view";
+            return iframe.src = "round4/Canvas 3.html";
         case 4:
-            return iframe.src = "https://drive.google.com/file/d/1lOzuy54uKVzMqV-NShGmwYpX6qtBfFDh/view";
+            return iframe.src = "round4/Canvas 4.html";
         case 5:
-            return iframe.src = "https://drive.google.com/file/d/1x_PsgGMDo3Md4OwBq61kxVpwsqDVhvXo/view";
+            return iframe.src = "round4/Canvas 5.html";
 
     }
 }

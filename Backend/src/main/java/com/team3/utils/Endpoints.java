@@ -54,7 +54,7 @@ public class Endpoints {
             int roundNumber = Integer.parseInt(req.params(":number"));
             Round round = dataHandler.getRoundsData().get(roundNumber - 1);
 
-            System.out.println("Round " + roundNumber + " has been loaded");
+            //System.out.println("Round " + roundNumber + " has been loaded");
 
             return gson.toJson(round);
         });
@@ -71,7 +71,7 @@ public class Endpoints {
 
         get("/biases", (req, res) -> {
             ArrayList<Bias> biasList = dataHandler.getBiaslistData();
-            System.out.println("Bias list has been loaded");
+            //System.out.println("Bias list has been loaded");
 
             return gson.toJson(biasList);
         });
