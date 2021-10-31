@@ -1,7 +1,7 @@
 // Checks if both questions have been filled in.
 document.getElementById("next").addEventListener
     ("click", giveAnswer);
-function giveAnswer(e) {
+function giveAnswer() {
     let bias = document.getElementsByName('answer-bias');
     let measure = document.getElementsByName('answer-measure');
     let biasValue;
@@ -43,11 +43,10 @@ function nextRound(biasAnswer, measureAnswer) {
     //console.log("Roundpoints: " + roundPoints);
     let round = parseInt(sessionStorage.getItem("round"));
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
-    let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
-    round = round + 1;
-    sessionStorage.setItem("round", round);
+    let newCanvasNumber = fetchMeasure(round, canvasNumber, measureAnswer);
+    sessionStorage.setItem("round", round + 1);
     sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
-    sessionStorage.setItem("canvasNumber", newCanvasNumber);
+    sessionStorage.setItem("canvasNumber", (newCanvasNumber - 1));
 
     let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
     sessionStorage.setItem("totalPoints", newTotalPoints);
