@@ -40,7 +40,7 @@ function giveAnswer(e) {
 // Checks the answers and loads the correct new round json file.
 function nextRound(biasAnswer, measureAnswer) {
     let roundPoints = countRoundPoints(biasAnswer, measureAnswer);
-    console.log("Roundpoints: " + roundPoints);
+    //console.log("Roundpoints: " + roundPoints);
     let round = parseInt(sessionStorage.getItem("round"));
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     let newCanvasNumber = checkAnswer(round, canvasNumber, measureAnswer);
@@ -51,7 +51,7 @@ function nextRound(biasAnswer, measureAnswer) {
 
     let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
     sessionStorage.setItem("totalPoints", newTotalPoints);
-    console.log("Total points: " + sessionStorage.getItem("totalPoints"));
+    //console.log("Total points: " + sessionStorage.getItem("totalPoints"));
     sessionStorage.setItem("timerValue", timerValue);
     if (round === 7) {
         window.open("scorePage.html", '_top');
@@ -78,6 +78,6 @@ function countRoundPoints(biasAnswer, measureAnswer) {
             measurePoints = measureQuestionCollection[i].measurePoints;
         }
     }
-    console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
+    //console.log("Biaspoints: " + biasPoints + "\nMeasurepoints: " + measurePoints + "\nCanvaspoints: " + canvasPoints);
     return biasPoints + measurePoints + canvasPoints;
 }
