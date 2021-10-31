@@ -165,7 +165,7 @@ width: 100%;
 }
 
 #informationBtn {
-    display: none;
+    width: 100%;
 }
 
 .question-bias-list li label {

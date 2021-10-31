@@ -8,7 +8,7 @@ function loadRoundWarningModals() {
     openCloseModal(document.getElementById("informationBtn"), document.getElementById("informationModal"), 2)
 
     if(parseInt(round) === 4) {
-        document.getElementById("informationBtn").style.display = "block";
+        document.getElementById("informationBtn").style.display = "grid";
     }else {
         document.getElementById("informationBtn").style.display = "none";
     }
