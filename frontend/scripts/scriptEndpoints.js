@@ -30,12 +30,11 @@ function fetchRound() {
 
 function fetchMeasure(round, canvasNumber, measureAnswer) {
     let xhr = new XMLHttpRequest();
-    let endpointName = sessionStorage.getItem("endpointName");
     xhr.open('GET', 'http://localhost:5000/' + "measure/" + round + "/" + canvasNumber + "/" + measureAnswer, true);
     xhr.onload = function () {
         if (this.status === 200) {
             const output = JSON.parse(this.responseText);
-            return output;
+            sessionStorage.setItem("canvasNumber", output)
         } else {
             console.log("Niet gevonden")
         }
