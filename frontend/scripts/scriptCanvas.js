@@ -21,7 +21,7 @@ function loadGame(output) {
     let round = sessionStorage.getItem("round");
     biasCollection = output.biasCollection;
     measureQuestionCollection = output.measureQuestionCollection;
-    canvasPoints = output.canvasCollection[canvasNumber];
+    canvasPoints = output.canvasCollection[canvasNumber].points;
     loadTitleRound(output.roundNumber, output.roundTitle);
     loadScenario(output.scenario.scenarioTitle, output.scenario.scenarioText)
     loadBias(output.biasCollection[0].biasName, output.biasCollection[1].biasName, output.biasCollection[2].biasName);
