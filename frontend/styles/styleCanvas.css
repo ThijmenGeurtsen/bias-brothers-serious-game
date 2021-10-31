@@ -5,9 +5,12 @@
     margin: auto;
     animation: fadeIn 4s;
 }
-iframe {
+
+#container {
+    display: grid;
     width: 100%;
-    height: 600px;
+    align-items: center;
+    justify-content: center;
 }
 
 .canvas-header {
@@ -249,13 +252,21 @@ width: 100%;
 }
 
 .model-content-excel {
-
     margin: 5% auto;
     width: 80%;
     animation: fadeIn 1s;
     background-color: white;
     padding: 20px;
     border: 1px solid #888;
+}
+
+#iframe {
+    display: grid;
+    width: 80%;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 /* The closeModal Button */
