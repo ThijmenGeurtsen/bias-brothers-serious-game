@@ -6,8 +6,12 @@ function loadRoundWarningModals() {
     openCloseModal(document.getElementById("questionmark-img"), document.getElementById("biasModal"),5);
     openCloseModal(document.getElementById("allBiasesBtn"), document.getElementById("allBiasesModal"), 3);
     openCloseModal(document.getElementById("informationBtn"), document.getElementById("informationModal"), 2)
-    loadInformationModal(document.getElementById("information-table"));
 
+    if(parseInt(round) === 4) {
+        document.getElementById("informationBtn").style.display = "block";
+    }else {
+        document.getElementById("informationBtn").style.display = "none";
+    }
 
     document.getElementById("scenario-box").style.display = 'none';
     document.getElementById("question-box").style.display = 'none';
@@ -62,15 +66,6 @@ function openCloseModal(button, modal, index) {
 // Loads the biases in the questionmark button below
 function loadBiasModals(bias) {
     makeTable(bias, document.getElementById('bias-table-div'));
-}
-
-// Loads the information for round 4
-function loadInformationModal(){
-    //places iframe in modal
-
-    //adds button to get acces to this modal
-
-    //makes sure this only happens in round 4
 }
 
 // Creates both bias tables in HTML
