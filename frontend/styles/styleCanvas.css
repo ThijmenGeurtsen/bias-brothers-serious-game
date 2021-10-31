@@ -164,7 +164,6 @@ width: 100%;
     width: 100%;
 }
 
-
 .question-bias-list li label, .question-measure-list li label {
     cursor: pointer;
 }
@@ -264,10 +263,8 @@ width: 100%;
 
 #iframe {
     display: grid;
-    width: 80%;
+    width: 100%;
     height: 600px;
-    align-items: center;
-    justify-content: center;
     margin: auto;
 }
 
