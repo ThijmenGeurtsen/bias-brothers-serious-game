@@ -45,7 +45,7 @@ function nextRound(biasAnswer, measureAnswer) {
     let canvasNumber = parseInt(sessionStorage.getItem("canvasNumber"));
     fetchMeasure(round, canvasNumber, measureAnswer);
     sessionStorage.setItem("round", round + 1);
-    sessionStorage.setItem("endpointName", "round" + sessionStorage.getItem("round").toString());
+    sessionStorage.setItem("endpointName", "round/" + sessionStorage.getItem("round").toString());
 
     let newTotalPoints = parseInt(sessionStorage.getItem("totalPoints")) + roundPoints;
     sessionStorage.setItem("totalPoints", newTotalPoints);

@@ -21,6 +21,7 @@ function fetchRound() {
     //http://localhost:5000/
     let xhr = new XMLHttpRequest();
     let endpointName = sessionStorage.getItem("endpointName");
+    console.log(endpointName);
     xhr.open('GET', 'http://localhost:5000/' + endpointName, true);
     xhr.onload = function () {
         if (this.status === 200) {
